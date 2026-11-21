@@ -57,6 +57,9 @@ class Ledger:
         self.age = dict(zip(key, p["age_days"]))
         self.store_start = p.groupby("location_id")["available"].sum().astype(int).to_dict()
         self.cat_start = p.groupby(["location_id", "cat_group"])["available"].sum().astype(int).to_dict()
+        self.store_cats = defaultdict(list)
+        for (s, c) in self.cat_start:
+            self.store_cats[s].append(c)
         self.style_start = p.groupby(["location_id", "style_id"])["available"].sum().astype(int).to_dict()
         self.style_vel = p.groupby(["location_id", "style_id"])["vel_daily"].sum().astype(float).to_dict()
         self.chain_vel_sku = p.groupby("sku_id")["vel_daily"].sum().astype(float).to_dict()
@@ -65,6 +68,8 @@ class Ledger:
         self.given = defaultdict(int)       # (loc, sku) -> units out
         self.recv = defaultdict(int)        # (loc, sku) -> units in
         self.store_in = defaultdict(int)
+        self.store_in0 = defaultdict(int)   # receives shipping as_of + 1
+        self.store_inl = defaultdict(int)   # receives shipping later
         self.store_out = defaultdict(int)
         self.cat_in = defaultdict(int)
         self.cat_out = defaultdict(int)
@@ -126,8 +131,7 @@ class Ledger:
         return max(0, self.min_units.get((self.tier[store], cat), 0) - self.cat_total(store, cat))
 
     def min_display_reserve(self, store: str) -> int:
-        cats = {c for (s, c) in self.cat_start if s == store}
-        return sum(self.cat_deficit(store, c) for c in cats)
+        return sum(self.cat_deficit(store, c) for c in self.store_cats.get(store, ()))
 
     # ---------- rules ----------
     def give_limit(self, store: str, sku: str, for_s2s: bool) -> int:
@@ -156,38 +160,55 @@ class Ledger:
                 lim = min(lim, x)
         return max(0, int(lim))
 
-    def receive_limit(self, store: str, reserve_min_display: bool = False) -> int:
-        """Capacity headroom (outbound moves NOT credited — S3 replays receives before same-day gives)."""
+    def receive_limit(self, store: str, ship_on=None, cat: str | None = None, reserve_min_display: bool = False) -> int:
+        """Capacity headroom for a receive shipping on `ship_on` (default: as_of + 1).
+
+        All store-origin moves ship as_of + 1 and S3 replays lines by ship_on, then group order. So a
+        receive shipping as_of + 1 may be replayed before that day's gives (outbound NOT credited), while a
+        receive shipping later is replayed after every give (outbound credited). With `reserve_min_display`
+        the store's outstanding min-display deficits in OTHER categories stay free for pass 4.
+        """
         if store == C.WH_ID:
             return 10 ** 9
         start = self.store_start.get(store, 0)
-        if start > self.capacity[store]:                       # already over capacity: receives nothing
+        cap = self.capacity[store]
+        if start > cap:                                        # already over capacity: receives nothing
             return 0
-        head = self.capacity[store] - start - self.store_in[store]
+        d = self.ship0 if ship_on is None else pd.Timestamp(ship_on)
+        in0, inl, out = self.store_in0[store], self.store_inl[store], self.store_out[store]
+        if d <= self.ship0:
+            head = cap - start - in0 - max(0, inl - out)
+        else:
+            head = cap - start - in0 - inl + out
         if reserve_min_display:
-            head -= self.min_display_reserve(store)
+            own = self.cat_deficit(store, cat) if cat else 0
+            other = self.min_display_reserve(store) - own
+            head = head - other if head >= other + own else min(own, head - other)
         return max(0, int(head))
+
+    def can_receive(self, store: str, sku: str) -> bool:
+        return store != C.WH_ID and self.given[(store, sku)] == 0 and \
+            self.store_start.get(store, 0) <= self.capacity[store]
 
     # ---------- WH supply ----------
     def _wh_slack(self, sku: str) -> list[tuple[pd.Timestamp, int]]:
-        """(date, supply - cumulative allocations) at each supply point."""
+        """(date, supply shipped-able by date - allocations by date) at every supply point and allocation date."""
+        pts = self.wh_points.get(sku, [])
         alloc = self.wh_alloc[sku]
-        out, used = [], 0
-        dates = sorted(alloc)
-        i = 0
-        for d, cq in self.wh_points.get(sku, []):
-            while i < len(dates) and dates[i] <= d:
-                used += alloc[dates[i]]
-                i += 1
-            out.append((d, cq - used))
+        out = []
+        for d in sorted({t for t, _ in pts} | set(alloc)):
+            sup = [cq for t, cq in pts if t <= d]
+            used = sum(q for t, q in alloc.items() if t <= d)
+            out.append((d, (sup[-1] if sup else 0) - used))
         return out
 
     def _wh_free_at(self, slack, d) -> int:
-        vals = [s for (t, s) in slack if t >= d]
-        prior = [t for (t, _) in slack if t <= d]
-        if not prior:
+        if not any(t <= d for t, _ in slack):
             return 0
-        return max(0, min(vals)) if vals else 0
+        vals = [s for (t, s) in slack if t >= d]
+        if not vals:                                           # d after the last point: free = last slack
+            vals = [slack[-1][1]]
+        return max(0, min(vals))
 
     def wh_free(self, sku: str, by_date) -> int:
         """Units the WH can still ship of `sku` on or before `by_date` without going negative on any date."""
@@ -222,6 +243,25 @@ class Ledger:
                 taken += q
         return out
 
+    def send_from_wh(self, kind: str, store: str, sku: str, qty: int, latest, reserve: bool, ctx=None) -> int:
+        """Ship up to `qty` of `sku` from the WH to `store` by `latest`, respecting capacity by ship date.
+        Units that do not fit on as_of + 1 (before that day's gives) move to as_of + 2. Returns units sent."""
+        if qty <= 0 or not self.can_receive(store, sku):
+            return 0
+        cat = self.items.at[sku, "cat_group"]
+        sent = 0
+        for d, qd in self.wh_take(sku, qty, latest):
+            days = [d] if d > self.ship0 else [self.ship0, self.ship0 + pd.Timedelta(days=1)]
+            for day in days:
+                if qd <= 0 or day > pd.Timestamp(latest):
+                    break
+                a = min(qd, self.receive_limit(store, day, cat, reserve))
+                if a > 0:
+                    self.record("WH_TO_STORE", kind, C.WH_ID, store, sku, a, day, ctx)
+                    qd -= a
+                    sent += a
+        return sent
+
     # ---------- write ----------
     def record(self, typ: str, kind: str, frm: str, to: str, sku: str, qty: int, ship_on, ctx: dict | None = None):
         qty = int(qty)
@@ -242,6 +282,10 @@ class Ledger:
         if to != C.WH_ID:
             self.recv[(to, sku)] += qty
             self.store_in[to] += qty
+            if ship_on <= self.ship0:
+                self.store_in0[to] += qty
+            else:
+                self.store_inl[to] += qty
             self.cat_in[(to, cat)] += qty
             self.style_in[(to, style)] += qty
         rar = 0.0
@@ -316,8 +360,194 @@ def _explain(L: Ledger, g: dict) -> str:
     return f"{frm} → {to} · {g['qty']} × {g['style_id']} ({sizes}): {g['problem_kind'].lower()}"
 
 
+# ---------------------------------------------------------------- pass helpers
+def _is_new_launch(L: Ledger, style: str) -> bool:
+    ld = L.items.at[L.style_skus[style][0], "launch_date"]
+    return pd.notna(ld) and 0 <= (L.as_of - ld).days <= 60
+
+
+def _wh_latest(L: Ledger, store: str) -> pd.Timestamp:
+    return L.as_of + pd.Timedelta(days=L.target_days[store])
+
+
+def _surplus(L: Ledger, store: str, sku: str, days: int = C.DONOR_MIN_COVER_DAYS) -> int:
+    """SKU units above `days` of the store's own cover."""
+    return max(0, L.stock(store, sku) - math.ceil(L.vel.get((store, sku), 0.0) * days))
+
+
+def _style_has_wh_supply(L: Ledger, style: str) -> bool:
+    return any(L.wh_points.get(s) and L.wh_points[s][-1][1] > 0 for s in L.style_skus[style])
+
+
+def _s2s_to_needs(L: Ledger, kind: str, giver: str, sku: str, max_qty: int) -> int:
+    """Offer up to `max_qty` of the giver's SKU to stores with a velocity need, nearest first."""
+    sent = 0
+    cat = L.items.at[sku, "cat_group"]
+    recvs = [s for s in L.store_ids if s != giver and L.can_receive(s, sku) and L.vel_need(s, sku) > 0]
+    recvs.sort(key=lambda s: (L.lead(giver, s), -L.vel.get((s, sku), 0.0)))
+    for r in recvs:
+        if sent >= max_qty:
+            break
+        q = min(max_qty - sent, L.vel_need(r, sku), L.receive_limit(r, None, cat, True),
+                L.give_limit(giver, sku, True))
+        if q > 0:
+            L.record("STORE_TO_STORE", kind, giver, r, sku, q, L.ship0)
+            sent += q
+    return sent
+
+
+def _proportional(total: int, caps: dict, weights: dict) -> dict:
+    """Largest-remainder split of `total` by `weights`, never above `caps`."""
+    out = defaultdict(int)
+    left = total
+    while left > 0:
+        live = {k: w for k, w in weights.items() if w > 0 and caps[k] - out[k] > 0}
+        W = sum(live.values())
+        if not live or W <= 0:
+            break
+        raw = {k: left * w / W for k, w in live.items()}
+        add = {k: min(int(math.floor(v)), caps[k] - out[k]) for k, v in raw.items()}
+        for k, v in add.items():
+            out[k] += v
+        given = sum(add.values())
+        left -= given
+        for k in sorted(live, key=lambda k: -(raw[k] - math.floor(raw[k]))):
+            if left <= 0:
+                break
+            if caps[k] - out[k] > 0:
+                out[k] += 1
+                left -= 1
+        if given == 0 and left == total:
+            break
+        total = left
+    return out
+
+
+# ---------------------------------------------------------------- passes
+def pass1_capacity_overstock(L: Ledger) -> None:
+    """Over-capacity stores release their slowest stock (to need stores first, rest pulled back);
+    then gross overstock rows (> 120 days cover, >= 10 units) offer stock to need stores and pull back
+    what exceeds 120 days."""
+    by_store = defaultdict(list)
+    for (loc, sku), a in L.avail.items():
+        if loc in L.capacity and a > 0:
+            by_store[loc].append(sku)
+
+    for store in L.store_ids:
+        if L.store_start.get(store, 0) <= L.capacity[store]:
+            continue
+        release = L.store_total(store) - L.capacity[store]
+        skus = sorted(by_store[store], key=lambda k: (-_cover(L.stock(store, k), L.vel.get((store, k), 0.0)),
+                                                      -L.stock(store, k)))
+        for sku in skus:
+            if release <= 0:
+                break
+            sur = _surplus(L, store, sku)
+            if sur <= 0:
+                continue
+            moved = _s2s_to_needs(L, "CAPACITY", store, sku, sur)
+            release -= moved
+            q = min(sur - moved, release, L.give_limit(store, sku, False))
+            if q > 0:
+                L.record("PULL_BACK", "CAPACITY", store, C.WH_ID, sku, q, L.ship0)
+                release -= q
+
+    rows = []
+    for store in L.store_ids:
+        for sku in by_store[store]:
+            st, v = L.stock(store, sku), L.vel.get((store, sku), 0.0)
+            if st >= 10 and _cover(st, v) > 120 and L.given[(store, sku)] == 0:
+                rows.append((store, sku))
+    rows.sort(key=lambda r: -_surplus(L, r[0], r[1], 120) * int(L.items.at[r[1], "mrp"]))
+    for store, sku in rows:
+        _s2s_to_needs(L, "OVERSTOCK", store, sku, _surplus(L, store, sku))
+        q = min(_surplus(L, store, sku, 120), L.give_limit(store, sku, False))
+        if q > 0:
+            L.record("PULL_BACK", "OVERSTOCK", store, C.WH_ID, sku, q, L.ship0)
+
+
+def pass2_store_to_store(L: Ledger) -> None:
+    """Needs the WH cannot cover within the target window are filled from donors' surplus
+    (same city -> same zone -> other zone)."""
+    latest = max(_wh_latest(L, s) for s in L.store_ids)
+    skus = sorted(L.chain_vel_sku, key=lambda k: -L.chain_vel_sku[k] * int(L.items.at[k, "mrp"]))
+    for sku in skus:
+        recvs = [s for s in L.store_ids if L.can_receive(s, sku) and L.vel_need(s, sku) > 0]
+        if not recvs:
+            continue
+        shortage = sum(L.vel_need(s, sku) for s in recvs) - L.wh_free(sku, latest)
+        if shortage <= 0:
+            continue
+        style = L.items.at[sku, "style_id"]
+        kind = "UNDERSTOCK" if _style_has_wh_supply(L, style) else "SOLD_OUT_CONSOLIDATION"
+        cat = L.items.at[sku, "cat_group"]
+        donors = [s for s in L.store_ids if s not in recvs and _surplus(L, s, sku) > 0
+                  and L.give_limit(s, sku, True) > 0]
+        if not donors:
+            continue
+        for r in sorted(recvs, key=lambda s: -L.vel.get((s, sku), 0.0)):
+            if shortage <= 0:
+                break
+            want = min(L.vel_need(r, sku), shortage)
+            for d in sorted(donors, key=lambda d: (L.lead(d, r), -_surplus(L, d, sku))):
+                if want <= 0:
+                    break
+                q = min(want, _surplus(L, d, sku), L.give_limit(d, sku, True), L.receive_limit(r, None, cat, True))
+                if q > 0:
+                    L.record("STORE_TO_STORE", kind, d, r, sku, q, L.ship0)
+                    want -= q
+                    shortage -= q
+
+
+def pass3_wh_to_store(L: Ledger) -> None:
+    """WH supply (on hand + inbound shipping inside each store's target window) to store needs.
+    Enough supply: fill all. Scarce: 1 unit to every selling store (highest velocity first), then the
+    rest by need x velocity (largest remainder)."""
+    latest = max(_wh_latest(L, s) for s in L.store_ids)
+
+    def need_value(sku):
+        return sum(L.vel_need(s, sku) for s in L.store_ids) * int(L.items.at[sku, "mrp"])
+
+    skus = [k for k in L.wh_points if k in L.items.index and L.wh_points[k][-1][1] > 0]
+    skus.sort(key=lambda k: -need_value(k))
+    for sku in skus:
+        style = L.items.at[sku, "style_id"]
+        for _round in range(2):
+            needs = {s: L.vel_need(s, sku) for s in L.store_ids if L.can_receive(s, sku)}
+            needs = {s: n for s, n in needs.items() if n > 0}
+            supply = L.wh_free(sku, latest)
+            if not needs or supply <= 0:
+                break
+            total = sum(needs.values())
+            if _round == 0:
+                kind = "NEW_LAUNCH" if _is_new_launch(L, style) else ("SCARCITY" if supply < total else "UNDERSTOCK")
+            if supply >= total:
+                alloc = dict(needs)
+            else:
+                alloc = defaultdict(int)
+                left = supply
+                for s in sorted(needs, key=lambda s: -L.vel.get((s, sku), 0.0)):
+                    if left <= 0:
+                        break
+                    if L.vel.get((s, sku), 0.0) > 0:
+                        alloc[s] += 1
+                        left -= 1
+                rem = {s: needs[s] - alloc[s] for s in needs}
+                extra = _proportional(left, rem, {s: rem[s] * L.vel.get((s, sku), 0.0) for s in needs})
+                for s, q in extra.items():
+                    alloc[s] += q
+            sent = 0
+            for s in sorted(alloc, key=lambda s: -L.vel.get((s, sku), 0.0)):
+                sent += L.send_from_wh(kind, s, sku, alloc[s], _wh_latest(L, s), reserve=True)
+            if sent == 0:
+                break
+
+
 # ---------------------------------------------------------------- entry
 def generate_moves(data: Data, feats: Features) -> dict:
     L = Ledger(data, feats)
+    pass1_capacity_overstock(L)
+    pass2_store_to_store(L)
+    pass3_wh_to_store(L)
     groups = assemble_groups(L)
     return {"groups": groups, "problems": []}
