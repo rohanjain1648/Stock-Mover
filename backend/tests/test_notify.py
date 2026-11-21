@@ -197,3 +197,12 @@ def test_daily_job_swallows_validation_failure(monkeypatch, real_run):
     monkeypatch.setattr(runs, "trigger_run", blocked)
     monkeypatch.setattr(notify, "send_all", lambda run: pytest.fail("must not notify a blocked run"))
     scheduler.daily_job()       # no exception
+
+
+def test_app_link_treats_star_as_unset(monkeypatch):
+    from backend.app.notify import app_link
+    monkeypatch.setenv("PUBLIC_APP_URL", "*")
+    monkeypatch.setenv("FRONTEND_ORIGIN", "*")
+    assert app_link() == "http://localhost:5173/"
+    monkeypatch.setenv("FRONTEND_ORIGIN", "https://stock-mover.vercel.app")
+    assert app_link() == "https://stock-mover.vercel.app"

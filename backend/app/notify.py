@@ -42,7 +42,7 @@ def current_week() -> str:
 
 def app_link() -> str:
     url = os.environ.get("PUBLIC_APP_URL", "").strip()
-    if not url:
+    if not url or url == "*":
         fo = os.environ.get("FRONTEND_ORIGIN", "").split(",")[0].strip()
         url = fo if fo and fo != "*" else "http://localhost:5173/"
     return url
