@@ -77,6 +77,7 @@ class Ledger:
         self.cat_out = defaultdict(int)
         self.style_in = defaultdict(int)
         self.style_out = defaultdict(int)
+        self.style_s2s_out = defaultdict(int)
 
         # WH supply points: (ship date, cumulative supply). On-hand ships as_of + 1.
         self.wh_points: dict[str, list[tuple[pd.Timestamp, int]]] = {}
@@ -152,7 +153,9 @@ class Ledger:
         # rule 1: giver's cat_group total (start - out, inbound ignored) stays >= min display
         cat_now = self.cat_start.get((store, cat), 0) - self.cat_out[(store, cat)]
         lim = min(lim, cat_now - self.min_units.get((self.tier[store], cat), 0))
-        if for_s2s:                                            # rule 5: style cover after >= 30 days
+        # rule 5: style cover after >= 30 days. Once the store has given this style store->store, later
+        # pull-backs keep the cover too (S3 replays by date then group order, so final stock must hold).
+        if for_s2s or self.style_s2s_out[(store, style)] > 0:
             V = self.style_vel.get((store, style), 0.0)
             if V > 0:
                 S = self.style_start.get((store, style), 0) - self.style_out[(store, style)]
@@ -281,6 +284,8 @@ class Ledger:
             self.store_out[frm] += qty
             self.cat_out[(frm, cat)] += qty
             self.style_out[(frm, style)] += qty
+            if to != C.WH_ID:
+                self.style_s2s_out[(frm, style)] += qty
         if to != C.WH_ID:
             self.recv[(to, sku)] += qty
             self.store_in[to] += qty
