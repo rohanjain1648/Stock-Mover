@@ -165,7 +165,7 @@ def validate(data: Data, feats, groups: list[dict]) -> dict:
                 cover = style_total[(frm, style)] / v if v > 0 else math.inf
                 if cover < C.DONOR_MIN_COVER_DAYS:
                     flag("DONOR_COVER", gid, f"{frm} -> {to} {sku}: {frm} keeps {style_total[(frm, style)]} of {style} "
-                                             f"at {v:.2f}/day = {_num(cover)} days cover (< {C.DONOR_MIN_COVER_DAYS})")
+                                             f"at {v:.3g}/day = {_num(cover)} days cover (< {C.DONOR_MIN_COVER_DAYS})")
         elif frm == WH:
             wh_sent[sku] += qty
             supply = wh_supply(sku, ship)
