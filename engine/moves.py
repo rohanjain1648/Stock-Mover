@@ -55,6 +55,8 @@ class Ledger:
         self.avail = dict(zip(key, p["available"].astype(int)))
         self.vel = dict(zip(key, p["vel_daily"].astype(float)))
         self.age = dict(zip(key, p["age_days"]))
+        self.need0 = dict(zip(key, p["need_units"].astype(int)))   # S1: velocity need + min-display top-up
+        self.is_core = it.set_index("style_id")["is_core"].astype(bool).groupby(level=0).first().to_dict()
         self.store_start = p.groupby("location_id")["available"].sum().astype(int).to_dict()
         self.cat_start = p.groupby(["location_id", "cat_group"])["available"].sum().astype(int).to_dict()
         self.store_cats = defaultdict(list)
@@ -543,11 +545,211 @@ def pass3_wh_to_store(L: Ledger) -> None:
                 break
 
 
+def _s2s_one(L: Ledger, kind: str, store: str, sku: str, qty: int) -> int:
+    """Fill up to `qty` of `sku` at `store` from donors' surplus (nearest first). Returns units sent."""
+    if qty <= 0 or not L.can_receive(store, sku):
+        return 0
+    cat = L.items.at[sku, "cat_group"]
+    donors = [d for d in L.store_ids if d != store and _surplus(L, d, sku) > 0 and L.give_limit(d, sku, True) > 0]
+    sent = 0
+    for d in sorted(donors, key=lambda d: (L.lead(d, store), -_surplus(L, d, sku))):
+        if sent >= qty:
+            break
+        q = min(qty - sent, _surplus(L, d, sku), L.give_limit(d, sku, True), L.receive_limit(store, None, cat, True))
+        if q > 0:
+            L.record("STORE_TO_STORE", kind, d, store, sku, q, L.ship0)
+            sent += q
+    return sent
+
+
+def pass4_min_display(L: Ledger) -> None:
+    """Store x cat_group still below min display: first fill S1's need_units headroom (velocity need +
+    min-display top-up, spread over the store's fastest SKUs), then one unit at a time round-robin over
+    the ranked SKUs. Each unit comes from the WH if it can ship inside the target window, else from a
+    donor store's surplus."""
+    cats_of = L.items.groupby("cat_group").groups
+    for store in L.store_ids:
+        if L.store_start.get(store, 0) > L.capacity[store]:
+            continue
+        for cat in sorted(L.store_cats.get(store, ())):
+            if L.cat_deficit(store, cat) <= 0:
+                continue
+            skus = [k for k in cats_of.get(cat, []) if (store, k) in L.avail]
+            live = [k for k in skus if L.vel.get((store, k), 0.0) > 0 or L.chain_vel_sku.get(k, 0.0) > 0]
+            ranked = sorted(live or skus, key=lambda k: (-L.vel.get((store, k), 0.0), -L.chain_vel_sku.get(k, 0.0), k))
+            latest = _wh_latest(L, store)
+
+            def give(k, q):
+                if q <= 0 or not L.can_receive(store, k):
+                    return 0
+                s = L.send_from_wh("MIN_DISPLAY", store, k, q, latest, reserve=True)
+                return s + _s2s_one(L, "MIN_DISPLAY", store, k, q - s)
+
+            for k in ranked:                                       # phase A: S1's per-SKU need headroom
+                left = L.cat_deficit(store, cat)
+                if left <= 0:
+                    break
+                give(k, min(left, L.need0.get((store, k), 0) - L.recv[(store, k)]))
+            stuck = set()
+            while L.cat_deficit(store, cat) > 0 and len(stuck) < len(ranked):   # phase B: round robin
+                for k in ranked:
+                    if L.cat_deficit(store, cat) <= 0:
+                        break
+                    if k not in stuck and give(k, 1) == 0:
+                        stuck.add(k)
+
+
+def _aged(L: Ledger, store: str, sku: str) -> bool:
+    age = L.age.get((store, sku))
+    if age is None or pd.isna(age):
+        return False
+    core = L.is_core.get(L.items.at[sku, "style_id"], True)
+    return age > (C.AGEING_DAYS_CORE if core else C.AGEING_DAYS_FASHION)
+
+
+AGEING_SLOW = 0.02     # units/day at or below which aged stock "does not sell" where it sits
+
+
+def _aged_rows(L: Ledger) -> list[tuple[str, str]]:
+    rows = [(s, k) for (s, k), oh in L.on_hand.items()
+            if s in L.capacity and oh > 0 and L.vel.get((s, k), 0.0) <= AGEING_SLOW and _aged(L, s, k)
+            and L.given[(s, k)] == 0 and L.recv[(s, k)] == 0]
+    rows.sort(key=lambda r: (-L.age.get(r, 0), -L.on_hand[r] * int(L.items.at[r[1], "mrp"]), r))
+    return rows
+
+
+def pass5a_ageing_to_sellers(L: Ledger) -> None:
+    """Aged store x SKU stock (> 180 days core, > 90 days fashion) that does not sell there
+    (vel_daily <= 0.02) goes to the stores selling that SKU fastest (> 0.02/day), within their need and
+    arriving by season end. Runs before passes 2-3 so aged units fill needs before fresh WH stock does.
+    Fastest seller first; each takes from the nearest aged donor (oldest first on ties)."""
+    donors_of = defaultdict(list)
+    for store, sku in _aged_rows(L):
+        donors_of[sku].append(store)
+    for sku in sorted(donors_of, key=lambda k: (-L.chain_vel_sku.get(k, 0.0), k)):
+        cat = L.items.at[sku, "cat_group"]
+        sellers = [r for r in L.store_ids if L.vel.get((r, sku), 0.0) > AGEING_SLOW and L.can_receive(r, sku)]
+        for r in sorted(sellers, key=lambda r: (-L.vel.get((r, sku), 0.0), r)):
+            for d in sorted(donors_of[sku], key=lambda d: (L.lead(d, r), -L.age.get((d, sku), 0), d)):
+                want = L.vel_need(r, sku)
+                if want <= 0:
+                    break
+                if d == r or L.ship0 + pd.Timedelta(days=L.lead(d, r)) > L.season_end:
+                    continue
+                q = min(want, L.give_limit(d, sku, True), L.receive_limit(r, None, cat, True))
+                if q > 0:
+                    L.record("STORE_TO_STORE", "AGEING", d, r, sku, q, L.ship0)
+
+
+def pass5b_ageing_pull_back(L: Ledger) -> None:
+    """Aged stock still in place goes back to the WH when the whole style is dead at that store
+    (style-level vel_daily <= 0.02) and the store receives nothing of that style in this run
+    (fringe sizes of a style that sells stay, so size runs are not broken)."""
+    for store, sku in _aged_rows(L):
+        style = L.items.at[sku, "style_id"]
+        if L.style_vel.get((store, style), 0.0) > AGEING_SLOW or L.style_in[(store, style)] > 0:
+            continue
+        q = L.give_limit(store, sku, False)
+        if q > 0:
+            L.record("PULL_BACK", "AGEING", store, C.WH_ID, sku, q, L.ship0)
+
+
+# ---------------------------------------------------------------- problems
+def _fmt_units(n) -> str:
+    return f"{int(n):,}"
+
+
+def _inr(v) -> str:
+    v = float(v)
+    if v >= 1e7:
+        return f"Rs {v / 1e7:.2f} cr"
+    if v >= 1e5:
+        return f"Rs {v / 1e5:.1f} L"
+    return f"Rs {v:,.0f}"
+
+
+def build_problems(groups: list[dict], data: Data, feats: Features) -> list[dict]:
+    """C2 problem cards. One per CAPACITY store, NEW_LAUNCH style, SCARCITY style, UNDERSTOCK store and
+    MIN_DISPLAY store; one combined card each for OVERSTOCK, AGEING and SOLD_OUT_CONSOLIDATION. Every
+    group sits in exactly one card."""
+    st = data.stores.set_index("store_id")
+    sp = feats.sku_pos
+    start_units = sp.groupby("location_id")["available"].sum()
+    style_name = data.items.groupby("style_id")["style_name"].first()
+    buckets: dict[tuple, list[dict]] = defaultdict(list)
+    for g in groups:
+        k = g["problem_kind"]
+        if k == "CAPACITY":
+            key = (k, g["from"])
+        elif k in ("NEW_LAUNCH", "SCARCITY"):
+            key = (k, g["style_id"])
+        elif k in ("UNDERSTOCK", "MIN_DISPLAY"):
+            key = (k, g["to"])
+        else:
+            key = (k, None)
+        buckets[key].append(g)
+
+    cards = []
+    for (kind, ref), gs in buckets.items():
+        units = sum(g["qty"] for g in gs)
+        mrp = sum(g["mrp_value"] for g in gs)
+        stores = sorted({g["to"] for g in gs if g["to"] != C.WH_ID} | {g["from"] for g in gs if g["from"] != C.WH_ID})
+        back = sum(g["qty"] for g in gs if g["type"] == "PULL_BACK")
+        if kind == "CAPACITY":
+            u, cap = int(start_units.get(ref, 0)), int(st.at[ref, "capacity"])
+            title = f"{ref} is at {u / cap:.0%} of capacity"
+            detail = (f"{ref} holds {_fmt_units(u)} units against capacity {_fmt_units(cap)}. Release {_fmt_units(units)} "
+                      f"units ({_fmt_units(units - back)} to stores that need them, {_fmt_units(back)} back to WH).")
+        elif kind == "NEW_LAUNCH":
+            ld = data.items.loc[data.items.style_id == ref, "launch_date"].min()
+            days = (data.as_of - ld).days if pd.notna(ld) else None
+            title = f"{ref} {style_name.get(ref, '')} launched {days} days ago: {_fmt_units(units)} units to {len(stores)} stores"
+            detail = f"New launch: send {_fmt_units(units)} units ({_inr(mrp)} at MRP) to the {len(stores)} stores selling it, sized by need."
+        elif kind == "SCARCITY":
+            need = int(sum(sp.loc[(sp.style_id == ref) & (sp.location_id != C.WH_ID), "need_units"]))
+            title = f"{ref} {style_name.get(ref, '')}: {_fmt_units(units)} units for {_fmt_units(need)} units of need"
+            detail = (f"Warehouse supply is short of demand, so {len(stores)} selling stores each get a presentation "
+                      f"minimum first and the rest is split by need x velocity.")
+        elif kind == "UNDERSTOCK":
+            title = f"{ref} is short: {_fmt_units(units)} units across {len(gs)} styles"
+            detail = f"Top up {ref} to {L_TARGET_TEXT}: {_fmt_units(units)} units worth {_inr(mrp)} at MRP."
+        elif kind == "MIN_DISPLAY":
+            cats = sorted({g["category"] for g in gs})
+            title = f"{ref} is below minimum display in {', '.join(cats)}: {_fmt_units(units)} units"
+            detail = f"Bring {ref} back to its tier minimum display ({st.at[ref, 'tier']} tier) with {_fmt_units(units)} units."
+        elif kind == "AGEING":
+            title = f"{_fmt_units(units)} aged units are not selling where they sit"
+            detail = (f"Stock older than {C.AGEING_DAYS_CORE} days (core) / {C.AGEING_DAYS_FASHION} days (fashion) selling "
+                      f"<= 0.02/day: {_fmt_units(units - back)} units move to stores that sell them, {_fmt_units(back)} go back to WH.")
+        elif kind == "SOLD_OUT_CONSOLIDATION":
+            styles = len({g["style_id"] for g in gs})
+            title = f"{styles} styles sold out at the WH: {_fmt_units(units)} units consolidated between stores"
+            detail = f"No warehouse stock for these styles, so slow stores' surplus ({_fmt_units(units)} units, {_inr(mrp)}) moves to stores that sell them."
+        else:  # OVERSTOCK
+            title = f"{_fmt_units(units)} units are overstocked (> 120 days of cover)"
+            detail = (f"Deep cover rows: {_fmt_units(units - back)} units go to stores that need them, "
+                      f"{_fmt_units(back)} go back to WH.")
+        cards.append({"problem_id": None, "kind": kind, "title": title, "detail": detail,
+                      "group_ids": [g["group_id"] for g in gs],
+                      "_rank": sum(g["priority"] for g in gs)})
+    cards.sort(key=lambda c: (-c["_rank"], c["kind"], c["title"]))
+    for i, c in enumerate(cards, 1):
+        c["problem_id"] = f"P{i:02d}"
+        c.pop("_rank")
+    return cards
+
+
+L_TARGET_TEXT = f"lead time + {C.REVIEW_DAYS} review + {C.SAFETY_DAYS} safety days of cover"
+
+
 # ---------------------------------------------------------------- entry
 def generate_moves(data: Data, feats: Features) -> dict:
     L = Ledger(data, feats)
     pass1_capacity_overstock(L)
+    pass5a_ageing_to_sellers(L)
     pass2_store_to_store(L)
     pass3_wh_to_store(L)
+    pass4_min_display(L)
+    pass5b_ageing_pull_back(L)
     groups = assemble_groups(L)
-    return {"groups": groups, "problems": []}
+    return {"groups": groups, "problems": build_problems(groups, data, feats)}

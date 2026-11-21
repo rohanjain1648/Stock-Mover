@@ -49,3 +49,29 @@ def test_p4_kur01_spread_not_hoarded(ctx):
     stores = {g["to"] for g in kur01}
     assert len(stores) >= 8
     assert max(sum(g["qty"] for g in kur01 if g["to"] == s) for s in stores) <= 0.25 * sum(g["qty"] for g in kur01)
+
+def _end_cat_units(data, feats, res, store, cat_group):
+    p = feats.sku_pos
+    start = p[(p.location_id == store) & (p.cat_group == cat_group)].available.sum()
+    cats = data.items.set_index("sku_id").cat_group
+    delta = sum((l["qty"] if g["to"] == store else -l["qty"])
+                for g in res["groups"] for l in g["lines"]
+                if store in (g["to"], g["from"]) and cats[l["sku_id"]] == cat_group)
+    return start + delta
+
+def test_p2_mzf01_mojari_reaches_min(ctx):
+    data, feats, res = ctx
+    assert _end_cat_units(data, feats, res, "MZF-01", "Mojari") >= 8
+
+def test_p7_blr05_sherwani_reaches_min(ctx):
+    data, feats, res = ctx
+    assert _end_cat_units(data, feats, res, "BLR-05", "Sherwani") >= 5
+
+def test_p6_jkt08_moves_out_of_stores(ctx):
+    _, _, res = ctx
+    assert any(g["style_id"] == "JKT-08" and g["problem_kind"] == "AGEING" for g in res["groups"])
+
+def test_problems_cover_every_group_once(ctx):
+    _, _, res = ctx
+    ids = [gid for p in res["problems"] for gid in p["group_ids"]]
+    assert sorted(ids) == sorted(g["group_id"] for g in res["groups"])
