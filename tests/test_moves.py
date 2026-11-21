@@ -93,3 +93,10 @@ def test_explanations_are_one_line_with_numbers(ctx):
         assert e.startswith(f"{frm} → {to} · {g['qty']} × {g['style_id']} ("), e
         reason = e.split("): ", 1)[1]
         assert len(re.findall(r"\d+(?:\.\d+)?", reason)) >= 2, e
+
+def test_validator_passes(ctx):
+    data, feats, res = ctx
+    pytest.importorskip("engine.rules")
+    from engine.interfaces import validate
+    v = validate(data, feats, res["groups"])
+    assert v["passed"], v["violations"][:5]
