@@ -11,6 +11,7 @@ import hmac
 import io
 import logging
 import os
+import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Literal
@@ -19,7 +20,7 @@ from fastapi import FastAPI, Header, HTTPException, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from backend.app import runs, store
+from backend.app import notify, runs, scheduler, store
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("stock_mover.api")
@@ -48,10 +49,16 @@ def _background_enabled() -> bool:
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     store.init_db(os.environ.get("STATE_DB") or DEFAULT_DB)
+    app.state.last_notify = None
     if _background_enabled():
+        scheduler.start(app)
         # serve the stored run / sample immediately; refresh from the engine in the background
-        runs.start_background_run("schedule")
-    yield
+        # (boot runs don't email: Render restarts on every deploy) and warm the AM directory
+        runs.start_background_run("schedule", then=lambda _run: notify.am_directory())
+    try:
+        yield
+    finally:
+        scheduler.stop(app)
 
 
 app = FastAPI(title="Stock Mover API", version="1.0.0", lifespan=lifespan)
@@ -67,6 +74,26 @@ class DecisionIn(BaseModel):
 
 class BatchDecisionIn(DecisionIn):
     group_ids: list[str] = Field(default_factory=list)
+
+
+class NotificationLogIn(BaseModel):
+    channel: str = Field(min_length=1, max_length=20)
+    to: str = Field("", max_length=200)
+    subject: str = Field("", max_length=300)
+    ok: bool
+    reason: str | None = Field(None, max_length=300)
+
+
+def _send_in_background(run: dict) -> threading.Thread:
+    def work():
+        try:
+            notify.send_all(run)
+        except Exception:  # noqa: BLE001 - notifications never fail a run
+            log.exception("notifications for %s failed", run["run_id"])
+    t = threading.Thread(target=work, name=f"notify-{run['run_id']}", daemon=True)
+    t.start()
+    app.state.last_notify = t
+    return t
 
 
 @app.get("/api/health")
@@ -162,4 +189,24 @@ def trigger(trigger: Literal["github", "manual", "schedule"] = Query("manual"),
         raise HTTPException(409, {"error": "validation failed; previous run stays live",
                                   "run_id": e.run["run_id"], "n_violations": len(v["violations"]),
                                   "violations": v["violations"][:5]})
+    _send_in_background(run)
     return {"run_id": run["run_id"], "summary": run["summary"], "passed": run["validation"]["passed"]}
+
+
+@app.get("/api/notifications/today")
+def notifications_today():
+    return notify.today()
+
+
+@app.get("/api/notifications/log")
+def notifications_log():
+    return store.notification_log()
+
+
+@app.post("/api/notifications/log")
+def notifications_log_add(body: NotificationLogIn):
+    store.log_notification(body.channel, body.to, body.subject, body.ok, body.reason)
+    # a delivered Fo alert to an area manager counts toward their weekly cap
+    if body.ok and body.channel != "email" and body.to in {a["area_manager_id"] for a in notify.am_directory()}:
+        notify.record_am_items(body.to)
+    return {"ok": True}

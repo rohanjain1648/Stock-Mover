@@ -18,6 +18,18 @@ def client(tmp_path, monkeypatch):
     from backend.app.main import app
     with TestClient(app) as c:
         yield c
+        t = getattr(app.state, "last_notify", None)
+        if t is not None:
+            t.join(10)
+
+
+@pytest.fixture(autouse=True)
+def no_smtp(monkeypatch):
+    """Never send real mail from tests, whatever the developer's shell exports."""
+    import os as _os
+    for k in [k for k in _os.environ if k.startswith(("SMTP_", "AM_EMAIL_")) or k == "DIGEST_TO"]:
+        monkeypatch.delenv(k, raising=False)
+    monkeypatch.setenv("PUBLIC_APP_URL", "https://stock-mover.vercel.app/")
 
 
 @pytest.fixture()
