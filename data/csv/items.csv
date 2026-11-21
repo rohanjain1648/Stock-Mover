@@ -1,0 +1,386 @@
+sku_id,style_id,style_name,category,size,mrp,cost_price,launch_date,is_core_style,is_packaging
+SHW-01-S,SHW-01,Wine Velvet Embroidered Sherwani,Sherwani,S,24599,8766,2023-06-01,1,0
+SHW-01-M,SHW-01,Wine Velvet Embroidered Sherwani,Sherwani,M,24599,8766,2023-06-01,1,0
+SHW-01-L,SHW-01,Wine Velvet Embroidered Sherwani,Sherwani,L,24599,8766,2023-06-01,1,0
+SHW-01-XL,SHW-01,Wine Velvet Embroidered Sherwani,Sherwani,XL,24599,8766,2023-06-01,1,0
+SHW-01-XXL,SHW-01,Wine Velvet Embroidered Sherwani,Sherwani,XXL,24599,8766,2023-06-01,1,0
+SHW-01-XXXL,SHW-01,Wine Velvet Embroidered Sherwani,Sherwani,XXXL,24599,8766,2023-06-01,1,0
+SHW-02-S,SHW-02,Mint Brocade Sherwani,Sherwani,S,27699,9519,2023-06-01,1,0
+SHW-02-M,SHW-02,Mint Brocade Sherwani,Sherwani,M,27699,9519,2023-06-01,1,0
+SHW-02-L,SHW-02,Mint Brocade Sherwani,Sherwani,L,27699,9519,2023-06-01,1,0
+SHW-02-XL,SHW-02,Mint Brocade Sherwani,Sherwani,XL,27699,9519,2023-06-01,1,0
+SHW-02-XXL,SHW-02,Mint Brocade Sherwani,Sherwani,XXL,27699,9519,2023-06-01,1,0
+SHW-02-XXXL,SHW-02,Mint Brocade Sherwani,Sherwani,XXXL,27699,9519,2023-06-01,1,0
+SHW-03-S,SHW-03,Ivory Silk Zari Sherwani,Sherwani,S,21799,7072,2023-06-01,1,0
+SHW-03-M,SHW-03,Ivory Silk Zari Sherwani,Sherwani,M,21799,7072,2023-06-01,1,0
+SHW-03-L,SHW-03,Ivory Silk Zari Sherwani,Sherwani,L,21799,7072,2023-06-01,1,0
+SHW-03-XL,SHW-03,Ivory Silk Zari Sherwani,Sherwani,XL,21799,7072,2023-06-01,1,0
+SHW-03-XXL,SHW-03,Ivory Silk Zari Sherwani,Sherwani,XXL,21799,7072,2023-06-01,1,0
+SHW-03-XXXL,SHW-03,Ivory Silk Zari Sherwani,Sherwani,XXXL,21799,7072,2023-06-01,1,0
+SHW-04-S,SHW-04,Champagne Silk Zari Sherwani,Sherwani,S,16299,5265,2023-06-01,1,0
+SHW-04-M,SHW-04,Champagne Silk Zari Sherwani,Sherwani,M,16299,5265,2023-06-01,1,0
+SHW-04-L,SHW-04,Champagne Silk Zari Sherwani,Sherwani,L,16299,5265,2023-06-01,1,0
+SHW-04-XL,SHW-04,Champagne Silk Zari Sherwani,Sherwani,XL,16299,5265,2023-06-01,1,0
+SHW-04-XXL,SHW-04,Champagne Silk Zari Sherwani,Sherwani,XXL,16299,5265,2023-06-01,1,0
+SHW-04-XXXL,SHW-04,Champagne Silk Zari Sherwani,Sherwani,XXXL,16299,5265,2023-06-01,1,0
+SHW-05-S,SHW-05,Rust Silk Zari Sherwani,Sherwani,S,22699,8416,2023-06-01,0,0
+SHW-05-M,SHW-05,Rust Silk Zari Sherwani,Sherwani,M,22699,8416,2023-06-01,0,0
+SHW-05-L,SHW-05,Rust Silk Zari Sherwani,Sherwani,L,22699,8416,2023-06-01,0,0
+SHW-05-XL,SHW-05,Rust Silk Zari Sherwani,Sherwani,XL,22699,8416,2023-06-01,0,0
+SHW-05-XXL,SHW-05,Rust Silk Zari Sherwani,Sherwani,XXL,22699,8416,2023-06-01,0,0
+SHW-05-XXXL,SHW-05,Rust Silk Zari Sherwani,Sherwani,XXXL,22699,8416,2023-06-01,0,0
+SHW-06-S,SHW-06,Lilac Velvet Embroidered Sherwani,Sherwani,S,16799,5460,2025-07-01,0,0
+SHW-06-M,SHW-06,Lilac Velvet Embroidered Sherwani,Sherwani,M,16799,5460,2025-07-01,0,0
+SHW-06-L,SHW-06,Lilac Velvet Embroidered Sherwani,Sherwani,L,16799,5460,2025-07-01,0,0
+SHW-06-XL,SHW-06,Lilac Velvet Embroidered Sherwani,Sherwani,XL,16799,5460,2025-07-01,0,0
+SHW-06-XXL,SHW-06,Lilac Velvet Embroidered Sherwani,Sherwani,XXL,16799,5460,2025-07-01,0,0
+SHW-06-XXXL,SHW-06,Lilac Velvet Embroidered Sherwani,Sherwani,XXXL,16799,5460,2025-07-01,0,0
+SHW-07-S,SHW-07,Lilac Threadwork Sherwani,Sherwani,S,26799,10143,2023-06-01,0,0
+SHW-07-M,SHW-07,Lilac Threadwork Sherwani,Sherwani,M,26799,10143,2023-06-01,0,0
+SHW-07-L,SHW-07,Lilac Threadwork Sherwani,Sherwani,L,26799,10143,2023-06-01,0,0
+SHW-07-XL,SHW-07,Lilac Threadwork Sherwani,Sherwani,XL,26799,10143,2023-06-01,0,0
+SHW-07-XXL,SHW-07,Lilac Threadwork Sherwani,Sherwani,XXL,26799,10143,2023-06-01,0,0
+SHW-07-XXXL,SHW-07,Lilac Threadwork Sherwani,Sherwani,XXXL,26799,10143,2023-06-01,0,0
+SHW-08-S,SHW-08,Teal Brocade Sherwani,Sherwani,S,26399,9472,2023-06-01,0,0
+SHW-08-M,SHW-08,Teal Brocade Sherwani,Sherwani,M,26399,9472,2023-06-01,0,0
+SHW-08-L,SHW-08,Teal Brocade Sherwani,Sherwani,L,26399,9472,2023-06-01,0,0
+SHW-08-XL,SHW-08,Teal Brocade Sherwani,Sherwani,XL,26399,9472,2023-06-01,0,0
+SHW-08-XXL,SHW-08,Teal Brocade Sherwani,Sherwani,XXL,26399,9472,2023-06-01,0,0
+SHW-08-XXXL,SHW-08,Teal Brocade Sherwani,Sherwani,XXXL,26399,9472,2023-06-01,0,0
+SHW-09-S,SHW-09,Black Threadwork Sherwani,Sherwani,S,28499,9743,2025-10-01,0,0
+SHW-09-M,SHW-09,Black Threadwork Sherwani,Sherwani,M,28499,9743,2025-10-01,0,0
+SHW-09-L,SHW-09,Black Threadwork Sherwani,Sherwani,L,28499,9743,2025-10-01,0,0
+SHW-09-XL,SHW-09,Black Threadwork Sherwani,Sherwani,XL,28499,9743,2025-10-01,0,0
+SHW-09-XXL,SHW-09,Black Threadwork Sherwani,Sherwani,XXL,28499,9743,2025-10-01,0,0
+SHW-09-XXXL,SHW-09,Black Threadwork Sherwani,Sherwani,XXXL,28499,9743,2025-10-01,0,0
+SHW-10-S,SHW-10,Onion Pink Threadwork Sherwani,Sherwani,S,27399,8522,2023-06-01,0,0
+SHW-10-M,SHW-10,Onion Pink Threadwork Sherwani,Sherwani,M,27399,8522,2023-06-01,0,0
+SHW-10-L,SHW-10,Onion Pink Threadwork Sherwani,Sherwani,L,27399,8522,2023-06-01,0,0
+SHW-10-XL,SHW-10,Onion Pink Threadwork Sherwani,Sherwani,XL,27399,8522,2023-06-01,0,0
+SHW-10-XXL,SHW-10,Onion Pink Threadwork Sherwani,Sherwani,XXL,27399,8522,2023-06-01,0,0
+SHW-10-XXXL,SHW-10,Onion Pink Threadwork Sherwani,Sherwani,XXXL,27399,8522,2023-06-01,0,0
+SHW-11-S,SHW-11,Rust Velvet Embroidered Sherwani,Sherwani,S,18999,6064,2023-06-01,0,0
+SHW-11-M,SHW-11,Rust Velvet Embroidered Sherwani,Sherwani,M,18999,6064,2023-06-01,0,0
+SHW-11-L,SHW-11,Rust Velvet Embroidered Sherwani,Sherwani,L,18999,6064,2023-06-01,0,0
+SHW-11-XL,SHW-11,Rust Velvet Embroidered Sherwani,Sherwani,XL,18999,6064,2023-06-01,0,0
+SHW-11-XXL,SHW-11,Rust Velvet Embroidered Sherwani,Sherwani,XXL,18999,6064,2023-06-01,0,0
+SHW-11-XXXL,SHW-11,Rust Velvet Embroidered Sherwani,Sherwani,XXXL,18999,6064,2023-06-01,0,0
+SHW-12-S,SHW-12,Lilac Velvet Embroidered Sherwani,Sherwani,S,26899,9961,2025-05-01,0,0
+SHW-12-M,SHW-12,Lilac Velvet Embroidered Sherwani,Sherwani,M,26899,9961,2025-05-01,0,0
+SHW-12-L,SHW-12,Lilac Velvet Embroidered Sherwani,Sherwani,L,26899,9961,2025-05-01,0,0
+SHW-12-XL,SHW-12,Lilac Velvet Embroidered Sherwani,Sherwani,XL,26899,9961,2025-05-01,0,0
+SHW-12-XXL,SHW-12,Lilac Velvet Embroidered Sherwani,Sherwani,XXL,26899,9961,2025-05-01,0,0
+SHW-12-XXXL,SHW-12,Lilac Velvet Embroidered Sherwani,Sherwani,XXXL,26899,9961,2025-05-01,0,0
+IW-01-S,IW-01,Lilac Asymmetric Indo-Western,Indo-Western,S,24099,7801,2023-06-01,1,0
+IW-01-M,IW-01,Lilac Asymmetric Indo-Western,Indo-Western,M,24099,7801,2023-06-01,1,0
+IW-01-L,IW-01,Lilac Asymmetric Indo-Western,Indo-Western,L,24099,7801,2023-06-01,1,0
+IW-01-XL,IW-01,Lilac Asymmetric Indo-Western,Indo-Western,XL,24099,7801,2023-06-01,1,0
+IW-01-XXL,IW-01,Lilac Asymmetric Indo-Western,Indo-Western,XXL,24099,7801,2023-06-01,1,0
+IW-01-XXXL,IW-01,Lilac Asymmetric Indo-Western,Indo-Western,XXXL,24099,7801,2023-06-01,1,0
+IW-02-S,IW-02,Cream Draped Indo-Western,Indo-Western,S,16499,5269,2023-06-01,1,0
+IW-02-M,IW-02,Cream Draped Indo-Western,Indo-Western,M,16499,5269,2023-06-01,1,0
+IW-02-L,IW-02,Cream Draped Indo-Western,Indo-Western,L,16499,5269,2023-06-01,1,0
+IW-02-XL,IW-02,Cream Draped Indo-Western,Indo-Western,XL,16499,5269,2023-06-01,1,0
+IW-02-XXL,IW-02,Cream Draped Indo-Western,Indo-Western,XXL,16499,5269,2023-06-01,1,0
+IW-02-XXXL,IW-02,Cream Draped Indo-Western,Indo-Western,XXXL,16499,5269,2023-06-01,1,0
+IW-03-S,IW-03,Teal Jacket-style Indo-Western,Indo-Western,S,17999,6204,2023-06-01,1,0
+IW-03-M,IW-03,Teal Jacket-style Indo-Western,Indo-Western,M,17999,6204,2023-06-01,1,0
+IW-03-L,IW-03,Teal Jacket-style Indo-Western,Indo-Western,L,17999,6204,2023-06-01,1,0
+IW-03-XL,IW-03,Teal Jacket-style Indo-Western,Indo-Western,XL,17999,6204,2023-06-01,1,0
+IW-03-XXL,IW-03,Teal Jacket-style Indo-Western,Indo-Western,XXL,17999,6204,2023-06-01,1,0
+IW-03-XXXL,IW-03,Teal Jacket-style Indo-Western,Indo-Western,XXXL,17999,6204,2023-06-01,1,0
+IW-04-S,IW-04,Mint Asymmetric Indo-Western,Indo-Western,S,22999,8621,2023-06-01,0,0
+IW-04-M,IW-04,Mint Asymmetric Indo-Western,Indo-Western,M,22999,8621,2023-06-01,0,0
+IW-04-L,IW-04,Mint Asymmetric Indo-Western,Indo-Western,L,22999,8621,2023-06-01,0,0
+IW-04-XL,IW-04,Mint Asymmetric Indo-Western,Indo-Western,XL,22999,8621,2023-06-01,0,0
+IW-04-XXL,IW-04,Mint Asymmetric Indo-Western,Indo-Western,XXL,22999,8621,2023-06-01,0,0
+IW-04-XXXL,IW-04,Mint Asymmetric Indo-Western,Indo-Western,XXXL,22999,8621,2023-06-01,0,0
+IW-05-S,IW-05,Onion Pink Mirror-work Indo-Western,Indo-Western,S,24099,8214,2023-06-01,0,0
+IW-05-M,IW-05,Onion Pink Mirror-work Indo-Western,Indo-Western,M,24099,8214,2023-06-01,0,0
+IW-05-L,IW-05,Onion Pink Mirror-work Indo-Western,Indo-Western,L,24099,8214,2023-06-01,0,0
+IW-05-XL,IW-05,Onion Pink Mirror-work Indo-Western,Indo-Western,XL,24099,8214,2023-06-01,0,0
+IW-05-XXL,IW-05,Onion Pink Mirror-work Indo-Western,Indo-Western,XXL,24099,8214,2023-06-01,0,0
+IW-05-XXXL,IW-05,Onion Pink Mirror-work Indo-Western,Indo-Western,XXXL,24099,8214,2023-06-01,0,0
+IW-06-S,IW-06,Wine Asymmetric Indo-Western,Indo-Western,S,20199,6100,2025-06-01,0,0
+IW-06-M,IW-06,Wine Asymmetric Indo-Western,Indo-Western,M,20199,6100,2025-06-01,0,0
+IW-06-L,IW-06,Wine Asymmetric Indo-Western,Indo-Western,L,20199,6100,2025-06-01,0,0
+IW-06-XL,IW-06,Wine Asymmetric Indo-Western,Indo-Western,XL,20199,6100,2025-06-01,0,0
+IW-06-XXL,IW-06,Wine Asymmetric Indo-Western,Indo-Western,XXL,20199,6100,2025-06-01,0,0
+IW-06-XXXL,IW-06,Wine Asymmetric Indo-Western,Indo-Western,XXXL,20199,6100,2025-06-01,0,0
+IW-07-S,IW-07,Rose Pink Draped Indo-Western,Indo-Western,S,24699,8178,2023-06-01,0,0
+IW-07-M,IW-07,Rose Pink Draped Indo-Western,Indo-Western,M,24699,8178,2023-06-01,0,0
+IW-07-L,IW-07,Rose Pink Draped Indo-Western,Indo-Western,L,24699,8178,2023-06-01,0,0
+IW-07-XL,IW-07,Rose Pink Draped Indo-Western,Indo-Western,XL,24699,8178,2023-06-01,0,0
+IW-07-XXL,IW-07,Rose Pink Draped Indo-Western,Indo-Western,XXL,24699,8178,2023-06-01,0,0
+IW-07-XXXL,IW-07,Rose Pink Draped Indo-Western,Indo-Western,XXXL,24699,8178,2023-06-01,0,0
+IW-08-S,IW-08,Pastel Mint Draped Indo-Western,Indo-Western,S,21199,7922,2026-04-01,0,0
+IW-08-M,IW-08,Pastel Mint Draped Indo-Western,Indo-Western,M,21199,7922,2026-04-01,0,0
+IW-08-L,IW-08,Pastel Mint Draped Indo-Western,Indo-Western,L,21199,7922,2026-04-01,0,0
+IW-08-XL,IW-08,Pastel Mint Draped Indo-Western,Indo-Western,XL,21199,7922,2026-04-01,0,0
+IW-08-XXL,IW-08,Pastel Mint Draped Indo-Western,Indo-Western,XXL,21199,7922,2026-04-01,0,0
+IW-08-XXXL,IW-08,Pastel Mint Draped Indo-Western,Indo-Western,XXXL,21199,7922,2026-04-01,0,0
+IW-09-S,IW-09,Maroon Mirror-work Indo-Western,Indo-Western,S,22499,6759,2025-08-01,0,0
+IW-09-M,IW-09,Maroon Mirror-work Indo-Western,Indo-Western,M,22499,6759,2025-08-01,0,0
+IW-09-L,IW-09,Maroon Mirror-work Indo-Western,Indo-Western,L,22499,6759,2025-08-01,0,0
+IW-09-XL,IW-09,Maroon Mirror-work Indo-Western,Indo-Western,XL,22499,6759,2025-08-01,0,0
+IW-09-XXL,IW-09,Maroon Mirror-work Indo-Western,Indo-Western,XXL,22499,6759,2025-08-01,0,0
+IW-09-XXXL,IW-09,Maroon Mirror-work Indo-Western,Indo-Western,XXXL,22499,6759,2025-08-01,0,0
+IW-10-S,IW-10,Cream Asymmetric Indo-Western,Indo-Western,S,23699,8039,2023-06-01,0,0
+IW-10-M,IW-10,Cream Asymmetric Indo-Western,Indo-Western,M,23699,8039,2023-06-01,0,0
+IW-10-L,IW-10,Cream Asymmetric Indo-Western,Indo-Western,L,23699,8039,2023-06-01,0,0
+IW-10-XL,IW-10,Cream Asymmetric Indo-Western,Indo-Western,XL,23699,8039,2023-06-01,0,0
+IW-10-XXL,IW-10,Cream Asymmetric Indo-Western,Indo-Western,XXL,23699,8039,2023-06-01,0,0
+IW-10-XXXL,IW-10,Cream Asymmetric Indo-Western,Indo-Western,XXXL,23699,8039,2023-06-01,0,0
+KUR-01-S,KUR-01,Teal Embroidered Yoke Kurta Set,Kurta Set,S,2624,848,2023-06-01,1,0
+KUR-01-M,KUR-01,Teal Embroidered Yoke Kurta Set,Kurta Set,M,2624,848,2023-06-01,1,0
+KUR-01-L,KUR-01,Teal Embroidered Yoke Kurta Set,Kurta Set,L,2624,848,2023-06-01,1,0
+KUR-01-XL,KUR-01,Teal Embroidered Yoke Kurta Set,Kurta Set,XL,2624,848,2023-06-01,1,0
+KUR-01-XXL,KUR-01,Teal Embroidered Yoke Kurta Set,Kurta Set,XXL,2624,848,2023-06-01,1,0
+KUR-01-XXXL,KUR-01,Teal Embroidered Yoke Kurta Set,Kurta Set,XXXL,2624,848,2023-06-01,1,0
+KUR-02-S,KUR-02,Mustard Embroidered Yoke Kurta Set,Kurta Set,S,6299,2390,2023-06-01,1,0
+KUR-02-M,KUR-02,Mustard Embroidered Yoke Kurta Set,Kurta Set,M,6299,2390,2023-06-01,1,0
+KUR-02-L,KUR-02,Mustard Embroidered Yoke Kurta Set,Kurta Set,L,6299,2390,2023-06-01,1,0
+KUR-02-XL,KUR-02,Mustard Embroidered Yoke Kurta Set,Kurta Set,XL,6299,2390,2023-06-01,1,0
+KUR-02-XXL,KUR-02,Mustard Embroidered Yoke Kurta Set,Kurta Set,XXL,6299,2390,2023-06-01,1,0
+KUR-02-XXXL,KUR-02,Mustard Embroidered Yoke Kurta Set,Kurta Set,XXXL,6299,2390,2023-06-01,1,0
+KUR-03-S,KUR-03,Sky Blue Cotton Silk Kurta Set,Kurta Set,S,2699,917,2023-06-01,1,0
+KUR-03-M,KUR-03,Sky Blue Cotton Silk Kurta Set,Kurta Set,M,2699,917,2023-06-01,1,0
+KUR-03-L,KUR-03,Sky Blue Cotton Silk Kurta Set,Kurta Set,L,2699,917,2023-06-01,1,0
+KUR-03-XL,KUR-03,Sky Blue Cotton Silk Kurta Set,Kurta Set,XL,2699,917,2023-06-01,1,0
+KUR-03-XXL,KUR-03,Sky Blue Cotton Silk Kurta Set,Kurta Set,XXL,2699,917,2023-06-01,1,0
+KUR-03-XXXL,KUR-03,Sky Blue Cotton Silk Kurta Set,Kurta Set,XXXL,2699,917,2023-06-01,1,0
+KUR-04-S,KUR-04,Ivory Chikankari Kurta Set,Kurta Set,S,7199,2551,2026-09-20,0,0
+KUR-04-M,KUR-04,Ivory Chikankari Kurta Set,Kurta Set,M,7199,2551,2026-09-20,0,0
+KUR-04-L,KUR-04,Ivory Chikankari Kurta Set,Kurta Set,L,7199,2551,2026-09-20,0,0
+KUR-04-XL,KUR-04,Ivory Chikankari Kurta Set,Kurta Set,XL,7199,2551,2026-09-20,0,0
+KUR-04-XXL,KUR-04,Ivory Chikankari Kurta Set,Kurta Set,XXL,7199,2551,2026-09-20,0,0
+KUR-04-XXXL,KUR-04,Ivory Chikankari Kurta Set,Kurta Set,XXXL,7199,2551,2026-09-20,0,0
+KUR-05-S,KUR-05,Peach Cotton Silk Kurta Set,Kurta Set,S,7499,2290,2023-06-01,1,0
+KUR-05-M,KUR-05,Peach Cotton Silk Kurta Set,Kurta Set,M,7499,2290,2023-06-01,1,0
+KUR-05-L,KUR-05,Peach Cotton Silk Kurta Set,Kurta Set,L,7499,2290,2023-06-01,1,0
+KUR-05-XL,KUR-05,Peach Cotton Silk Kurta Set,Kurta Set,XL,7499,2290,2023-06-01,1,0
+KUR-05-XXL,KUR-05,Peach Cotton Silk Kurta Set,Kurta Set,XXL,7499,2290,2023-06-01,1,0
+KUR-05-XXXL,KUR-05,Peach Cotton Silk Kurta Set,Kurta Set,XXXL,7499,2290,2023-06-01,1,0
+KUR-06-S,KUR-06,Maroon Cotton Silk Kurta Set,Kurta Set,S,5399,1714,2023-06-01,1,0
+KUR-06-M,KUR-06,Maroon Cotton Silk Kurta Set,Kurta Set,M,5399,1714,2023-06-01,1,0
+KUR-06-L,KUR-06,Maroon Cotton Silk Kurta Set,Kurta Set,L,5399,1714,2023-06-01,1,0
+KUR-06-XL,KUR-06,Maroon Cotton Silk Kurta Set,Kurta Set,XL,5399,1714,2023-06-01,1,0
+KUR-06-XXL,KUR-06,Maroon Cotton Silk Kurta Set,Kurta Set,XXL,5399,1714,2023-06-01,1,0
+KUR-06-XXXL,KUR-06,Maroon Cotton Silk Kurta Set,Kurta Set,XXXL,5399,1714,2023-06-01,1,0
+KUR-07-S,KUR-07,Royal Blue Embroidered Yoke Kurta Set,Kurta Set,S,4699,1704,2023-06-01,0,0
+KUR-07-M,KUR-07,Royal Blue Embroidered Yoke Kurta Set,Kurta Set,M,4699,1704,2023-06-01,0,0
+KUR-07-L,KUR-07,Royal Blue Embroidered Yoke Kurta Set,Kurta Set,L,4699,1704,2023-06-01,0,0
+KUR-07-XL,KUR-07,Royal Blue Embroidered Yoke Kurta Set,Kurta Set,XL,4699,1704,2023-06-01,0,0
+KUR-07-XXL,KUR-07,Royal Blue Embroidered Yoke Kurta Set,Kurta Set,XXL,4699,1704,2023-06-01,0,0
+KUR-07-XXXL,KUR-07,Royal Blue Embroidered Yoke Kurta Set,Kurta Set,XXXL,4699,1704,2023-06-01,0,0
+KUR-08-S,KUR-08,Royal Blue Cotton Silk Kurta Set,Kurta Set,S,4999,1848,2023-06-01,1,0
+KUR-08-M,KUR-08,Royal Blue Cotton Silk Kurta Set,Kurta Set,M,4999,1848,2023-06-01,1,0
+KUR-08-L,KUR-08,Royal Blue Cotton Silk Kurta Set,Kurta Set,L,4999,1848,2023-06-01,1,0
+KUR-08-XL,KUR-08,Royal Blue Cotton Silk Kurta Set,Kurta Set,XL,4999,1848,2023-06-01,1,0
+KUR-08-XXL,KUR-08,Royal Blue Cotton Silk Kurta Set,Kurta Set,XXL,4999,1848,2023-06-01,1,0
+KUR-08-XXXL,KUR-08,Royal Blue Cotton Silk Kurta Set,Kurta Set,XXXL,4999,1848,2023-06-01,1,0
+KUR-09-S,KUR-09,Gold Chikankari Kurta Set,Kurta Set,S,2699,868,2023-06-01,1,0
+KUR-09-M,KUR-09,Gold Chikankari Kurta Set,Kurta Set,M,2699,868,2023-06-01,1,0
+KUR-09-L,KUR-09,Gold Chikankari Kurta Set,Kurta Set,L,2699,868,2023-06-01,1,0
+KUR-09-XL,KUR-09,Gold Chikankari Kurta Set,Kurta Set,XL,2699,868,2023-06-01,1,0
+KUR-09-XXL,KUR-09,Gold Chikankari Kurta Set,Kurta Set,XXL,2699,868,2023-06-01,1,0
+KUR-09-XXXL,KUR-09,Gold Chikankari Kurta Set,Kurta Set,XXXL,2699,868,2023-06-01,1,0
+KUR-10-S,KUR-10,Teal Self-Design Kurta Set,Kurta Set,S,5199,1638,2023-06-01,0,0
+KUR-10-M,KUR-10,Teal Self-Design Kurta Set,Kurta Set,M,5199,1638,2023-06-01,0,0
+KUR-10-L,KUR-10,Teal Self-Design Kurta Set,Kurta Set,L,5199,1638,2023-06-01,0,0
+KUR-10-XL,KUR-10,Teal Self-Design Kurta Set,Kurta Set,XL,5199,1638,2023-06-01,0,0
+KUR-10-XXL,KUR-10,Teal Self-Design Kurta Set,Kurta Set,XXL,5199,1638,2023-06-01,0,0
+KUR-10-XXXL,KUR-10,Teal Self-Design Kurta Set,Kurta Set,XXXL,5199,1638,2023-06-01,0,0
+KUR-11-S,KUR-11,Royal Blue Self-Design Kurta Set,Kurta Set,S,5199,1602,2023-06-01,0,0
+KUR-11-M,KUR-11,Royal Blue Self-Design Kurta Set,Kurta Set,M,5199,1602,2023-06-01,0,0
+KUR-11-L,KUR-11,Royal Blue Self-Design Kurta Set,Kurta Set,L,5199,1602,2023-06-01,0,0
+KUR-11-XL,KUR-11,Royal Blue Self-Design Kurta Set,Kurta Set,XL,5199,1602,2023-06-01,0,0
+KUR-11-XXL,KUR-11,Royal Blue Self-Design Kurta Set,Kurta Set,XXL,5199,1602,2023-06-01,0,0
+KUR-11-XXXL,KUR-11,Royal Blue Self-Design Kurta Set,Kurta Set,XXXL,5199,1602,2023-06-01,0,0
+KUR-12-S,KUR-12,Teal Cotton Silk Kurta Set,Kurta Set,S,6799,2474,2025-08-01,0,0
+KUR-12-M,KUR-12,Teal Cotton Silk Kurta Set,Kurta Set,M,6799,2474,2025-08-01,0,0
+KUR-12-L,KUR-12,Teal Cotton Silk Kurta Set,Kurta Set,L,6799,2474,2025-08-01,0,0
+KUR-12-XL,KUR-12,Teal Cotton Silk Kurta Set,Kurta Set,XL,6799,2474,2025-08-01,0,0
+KUR-12-XXL,KUR-12,Teal Cotton Silk Kurta Set,Kurta Set,XXL,6799,2474,2025-08-01,0,0
+KUR-12-XXXL,KUR-12,Teal Cotton Silk Kurta Set,Kurta Set,XXXL,6799,2474,2025-08-01,0,0
+KUR-13-S,KUR-13,Mint Chikankari Kurta Set,Kurta Set,S,4299,1297,2023-06-01,0,0
+KUR-13-M,KUR-13,Mint Chikankari Kurta Set,Kurta Set,M,4299,1297,2023-06-01,0,0
+KUR-13-L,KUR-13,Mint Chikankari Kurta Set,Kurta Set,L,4299,1297,2023-06-01,0,0
+KUR-13-XL,KUR-13,Mint Chikankari Kurta Set,Kurta Set,XL,4299,1297,2023-06-01,0,0
+KUR-13-XXL,KUR-13,Mint Chikankari Kurta Set,Kurta Set,XXL,4299,1297,2023-06-01,0,0
+KUR-13-XXXL,KUR-13,Mint Chikankari Kurta Set,Kurta Set,XXXL,4299,1297,2023-06-01,0,0
+KUR-14-S,KUR-14,Mint Self-Design Kurta Set,Kurta Set,S,5599,1927,2023-06-01,0,0
+KUR-14-M,KUR-14,Mint Self-Design Kurta Set,Kurta Set,M,5599,1927,2023-06-01,0,0
+KUR-14-L,KUR-14,Mint Self-Design Kurta Set,Kurta Set,L,5599,1927,2023-06-01,0,0
+KUR-14-XL,KUR-14,Mint Self-Design Kurta Set,Kurta Set,XL,5599,1927,2023-06-01,0,0
+KUR-14-XXL,KUR-14,Mint Self-Design Kurta Set,Kurta Set,XXL,5599,1927,2023-06-01,0,0
+KUR-14-XXXL,KUR-14,Mint Self-Design Kurta Set,Kurta Set,XXXL,5599,1927,2023-06-01,0,0
+KUR-15-S,KUR-15,Ivory Cotton Silk Kurta Set,Kurta Set,S,6499,2405,2025-03-01,0,0
+KUR-15-M,KUR-15,Ivory Cotton Silk Kurta Set,Kurta Set,M,6499,2405,2025-03-01,0,0
+KUR-15-L,KUR-15,Ivory Cotton Silk Kurta Set,Kurta Set,L,6499,2405,2025-03-01,0,0
+KUR-15-XL,KUR-15,Ivory Cotton Silk Kurta Set,Kurta Set,XL,6499,2405,2025-03-01,0,0
+KUR-15-XXL,KUR-15,Ivory Cotton Silk Kurta Set,Kurta Set,XXL,6499,2405,2025-03-01,0,0
+KUR-15-XXXL,KUR-15,Ivory Cotton Silk Kurta Set,Kurta Set,XXXL,6499,2405,2025-03-01,0,0
+KUR-16-S,KUR-16,Ivory Embroidered Yoke Kurta Set,Kurta Set,S,3299,1173,2023-06-01,0,0
+KUR-16-M,KUR-16,Ivory Embroidered Yoke Kurta Set,Kurta Set,M,3299,1173,2023-06-01,0,0
+KUR-16-L,KUR-16,Ivory Embroidered Yoke Kurta Set,Kurta Set,L,3299,1173,2023-06-01,0,0
+KUR-16-XL,KUR-16,Ivory Embroidered Yoke Kurta Set,Kurta Set,XL,3299,1173,2023-06-01,0,0
+KUR-16-XXL,KUR-16,Ivory Embroidered Yoke Kurta Set,Kurta Set,XXL,3299,1173,2023-06-01,0,0
+KUR-16-XXXL,KUR-16,Ivory Embroidered Yoke Kurta Set,Kurta Set,XXXL,3299,1173,2023-06-01,0,0
+KUR-17-S,KUR-17,Sky Blue Printed Kurta Set,Kurta Set,S,4499,1414,2023-06-01,0,0
+KUR-17-M,KUR-17,Sky Blue Printed Kurta Set,Kurta Set,M,4499,1414,2023-06-01,0,0
+KUR-17-L,KUR-17,Sky Blue Printed Kurta Set,Kurta Set,L,4499,1414,2023-06-01,0,0
+KUR-17-XL,KUR-17,Sky Blue Printed Kurta Set,Kurta Set,XL,4499,1414,2023-06-01,0,0
+KUR-17-XXL,KUR-17,Sky Blue Printed Kurta Set,Kurta Set,XXL,4499,1414,2023-06-01,0,0
+KUR-17-XXXL,KUR-17,Sky Blue Printed Kurta Set,Kurta Set,XXXL,4499,1414,2023-06-01,0,0
+KUR-18-S,KUR-18,Onion Pink Embroidered Yoke Kurta Set,Kurta Set,S,6399,2410,2025-03-01,0,0
+KUR-18-M,KUR-18,Onion Pink Embroidered Yoke Kurta Set,Kurta Set,M,6399,2410,2025-03-01,0,0
+KUR-18-L,KUR-18,Onion Pink Embroidered Yoke Kurta Set,Kurta Set,L,6399,2410,2025-03-01,0,0
+KUR-18-XL,KUR-18,Onion Pink Embroidered Yoke Kurta Set,Kurta Set,XL,6399,2410,2025-03-01,0,0
+KUR-18-XXL,KUR-18,Onion Pink Embroidered Yoke Kurta Set,Kurta Set,XXL,6399,2410,2025-03-01,0,0
+KUR-18-XXXL,KUR-18,Onion Pink Embroidered Yoke Kurta Set,Kurta Set,XXXL,6399,2410,2025-03-01,0,0
+KUR-19-S,KUR-19,Lilac Cotton Silk Kurta Set,Kurta Set,S,6899,2386,2023-06-01,0,0
+KUR-19-M,KUR-19,Lilac Cotton Silk Kurta Set,Kurta Set,M,6899,2386,2023-06-01,0,0
+KUR-19-L,KUR-19,Lilac Cotton Silk Kurta Set,Kurta Set,L,6899,2386,2023-06-01,0,0
+KUR-19-XL,KUR-19,Lilac Cotton Silk Kurta Set,Kurta Set,XL,6899,2386,2023-06-01,0,0
+KUR-19-XXL,KUR-19,Lilac Cotton Silk Kurta Set,Kurta Set,XXL,6899,2386,2023-06-01,0,0
+KUR-19-XXXL,KUR-19,Lilac Cotton Silk Kurta Set,Kurta Set,XXXL,6899,2386,2023-06-01,0,0
+KUR-20-S,KUR-20,Mustard Self-Design Kurta Set,Kurta Set,S,5299,1665,2023-06-01,0,0
+KUR-20-M,KUR-20,Mustard Self-Design Kurta Set,Kurta Set,M,5299,1665,2023-06-01,0,0
+KUR-20-L,KUR-20,Mustard Self-Design Kurta Set,Kurta Set,L,5299,1665,2023-06-01,0,0
+KUR-20-XL,KUR-20,Mustard Self-Design Kurta Set,Kurta Set,XL,5299,1665,2023-06-01,0,0
+KUR-20-XXL,KUR-20,Mustard Self-Design Kurta Set,Kurta Set,XXL,5299,1665,2023-06-01,0,0
+KUR-20-XXXL,KUR-20,Mustard Self-Design Kurta Set,Kurta Set,XXXL,5299,1665,2023-06-01,0,0
+KUR-21-S,KUR-21,Wine Self-Design Kurta Set,Kurta Set,S,6799,2212,2025-07-01,0,0
+KUR-21-M,KUR-21,Wine Self-Design Kurta Set,Kurta Set,M,6799,2212,2025-07-01,0,0
+KUR-21-L,KUR-21,Wine Self-Design Kurta Set,Kurta Set,L,6799,2212,2025-07-01,0,0
+KUR-21-XL,KUR-21,Wine Self-Design Kurta Set,Kurta Set,XL,6799,2212,2025-07-01,0,0
+KUR-21-XXL,KUR-21,Wine Self-Design Kurta Set,Kurta Set,XXL,6799,2212,2025-07-01,0,0
+KUR-21-XXXL,KUR-21,Wine Self-Design Kurta Set,Kurta Set,XXXL,6799,2212,2025-07-01,0,0
+KUR-22-S,KUR-22,Navy Linen Blend Kurta Set,Kurta Set,S,4499,1668,2023-06-01,0,0
+KUR-22-M,KUR-22,Navy Linen Blend Kurta Set,Kurta Set,M,4499,1668,2023-06-01,0,0
+KUR-22-L,KUR-22,Navy Linen Blend Kurta Set,Kurta Set,L,4499,1668,2023-06-01,0,0
+KUR-22-XL,KUR-22,Navy Linen Blend Kurta Set,Kurta Set,XL,4499,1668,2023-06-01,0,0
+KUR-22-XXL,KUR-22,Navy Linen Blend Kurta Set,Kurta Set,XXL,4499,1668,2023-06-01,0,0
+KUR-22-XXXL,KUR-22,Navy Linen Blend Kurta Set,Kurta Set,XXXL,4499,1668,2023-06-01,0,0
+KUR-23-S,KUR-23,Rust Printed Kurta Set,Kurta Set,S,5999,2170,2023-06-01,0,0
+KUR-23-M,KUR-23,Rust Printed Kurta Set,Kurta Set,M,5999,2170,2023-06-01,0,0
+KUR-23-L,KUR-23,Rust Printed Kurta Set,Kurta Set,L,5999,2170,2023-06-01,0,0
+KUR-23-XL,KUR-23,Rust Printed Kurta Set,Kurta Set,XL,5999,2170,2023-06-01,0,0
+KUR-23-XXL,KUR-23,Rust Printed Kurta Set,Kurta Set,XXL,5999,2170,2023-06-01,0,0
+KUR-23-XXXL,KUR-23,Rust Printed Kurta Set,Kurta Set,XXXL,5999,2170,2023-06-01,0,0
+KUR-24-S,KUR-24,Champagne Chikankari Kurta Set,Kurta Set,S,6099,2057,2025-06-01,0,0
+KUR-24-M,KUR-24,Champagne Chikankari Kurta Set,Kurta Set,M,6099,2057,2025-06-01,0,0
+KUR-24-L,KUR-24,Champagne Chikankari Kurta Set,Kurta Set,L,6099,2057,2025-06-01,0,0
+KUR-24-XL,KUR-24,Champagne Chikankari Kurta Set,Kurta Set,XL,6099,2057,2025-06-01,0,0
+KUR-24-XXL,KUR-24,Champagne Chikankari Kurta Set,Kurta Set,XXL,6099,2057,2025-06-01,0,0
+KUR-24-XXXL,KUR-24,Champagne Chikankari Kurta Set,Kurta Set,XXXL,6099,2057,2025-06-01,0,0
+JKT-01-S,JKT-01,Rust Nehru Jacket,Jacket,S,5099,1884,2023-06-01,1,0
+JKT-01-M,JKT-01,Rust Nehru Jacket,Jacket,M,5099,1884,2023-06-01,1,0
+JKT-01-L,JKT-01,Rust Nehru Jacket,Jacket,L,5099,1884,2023-06-01,1,0
+JKT-01-XL,JKT-01,Rust Nehru Jacket,Jacket,XL,5099,1884,2023-06-01,1,0
+JKT-01-XXL,JKT-01,Rust Nehru Jacket,Jacket,XXL,5099,1884,2023-06-01,1,0
+JKT-01-XXXL,JKT-01,Rust Nehru Jacket,Jacket,XXXL,5099,1884,2023-06-01,1,0
+JKT-02-S,JKT-02,Teal Printed Nehru Jacket,Jacket,S,3199,1115,2023-06-01,1,0
+JKT-02-M,JKT-02,Teal Printed Nehru Jacket,Jacket,M,3199,1115,2023-06-01,1,0
+JKT-02-L,JKT-02,Teal Printed Nehru Jacket,Jacket,L,3199,1115,2023-06-01,1,0
+JKT-02-XL,JKT-02,Teal Printed Nehru Jacket,Jacket,XL,3199,1115,2023-06-01,1,0
+JKT-02-XXL,JKT-02,Teal Printed Nehru Jacket,Jacket,XXL,3199,1115,2023-06-01,1,0
+JKT-02-XXXL,JKT-02,Teal Printed Nehru Jacket,Jacket,XXXL,3199,1115,2023-06-01,1,0
+JKT-03-S,JKT-03,Gold Printed Nehru Jacket,Jacket,S,3699,1367,2023-06-01,1,0
+JKT-03-M,JKT-03,Gold Printed Nehru Jacket,Jacket,M,3699,1367,2023-06-01,1,0
+JKT-03-L,JKT-03,Gold Printed Nehru Jacket,Jacket,L,3699,1367,2023-06-01,1,0
+JKT-03-XL,JKT-03,Gold Printed Nehru Jacket,Jacket,XL,3699,1367,2023-06-01,1,0
+JKT-03-XXL,JKT-03,Gold Printed Nehru Jacket,Jacket,XXL,3699,1367,2023-06-01,1,0
+JKT-03-XXXL,JKT-03,Gold Printed Nehru Jacket,Jacket,XXXL,3699,1367,2023-06-01,1,0
+JKT-04-S,JKT-04,Mustard Brocade Nehru Jacket,Jacket,S,4099,1238,2023-06-01,0,0
+JKT-04-M,JKT-04,Mustard Brocade Nehru Jacket,Jacket,M,4099,1238,2023-06-01,0,0
+JKT-04-L,JKT-04,Mustard Brocade Nehru Jacket,Jacket,L,4099,1238,2023-06-01,0,0
+JKT-04-XL,JKT-04,Mustard Brocade Nehru Jacket,Jacket,XL,4099,1238,2023-06-01,0,0
+JKT-04-XXL,JKT-04,Mustard Brocade Nehru Jacket,Jacket,XXL,4099,1238,2023-06-01,0,0
+JKT-04-XXXL,JKT-04,Mustard Brocade Nehru Jacket,Jacket,XXXL,4099,1238,2023-06-01,0,0
+JKT-05-S,JKT-05,Peach Bandhgala Jacket,Jacket,S,3399,1273,2023-06-01,0,0
+JKT-05-M,JKT-05,Peach Bandhgala Jacket,Jacket,M,3399,1273,2023-06-01,0,0
+JKT-05-L,JKT-05,Peach Bandhgala Jacket,Jacket,L,3399,1273,2023-06-01,0,0
+JKT-05-XL,JKT-05,Peach Bandhgala Jacket,Jacket,XL,3399,1273,2023-06-01,0,0
+JKT-05-XXL,JKT-05,Peach Bandhgala Jacket,Jacket,XXL,3399,1273,2023-06-01,0,0
+JKT-05-XXXL,JKT-05,Peach Bandhgala Jacket,Jacket,XXXL,3399,1273,2023-06-01,0,0
+JKT-06-S,JKT-06,Champagne Brocade Nehru Jacket,Jacket,S,4199,1543,2025-04-01,0,0
+JKT-06-M,JKT-06,Champagne Brocade Nehru Jacket,Jacket,M,4199,1543,2025-04-01,0,0
+JKT-06-L,JKT-06,Champagne Brocade Nehru Jacket,Jacket,L,4199,1543,2025-04-01,0,0
+JKT-06-XL,JKT-06,Champagne Brocade Nehru Jacket,Jacket,XL,4199,1543,2025-04-01,0,0
+JKT-06-XXL,JKT-06,Champagne Brocade Nehru Jacket,Jacket,XXL,4199,1543,2025-04-01,0,0
+JKT-06-XXXL,JKT-06,Champagne Brocade Nehru Jacket,Jacket,XXXL,4199,1543,2025-04-01,0,0
+JKT-07-S,JKT-07,Mustard Printed Nehru Jacket,Jacket,S,6299,2305,2023-06-01,0,0
+JKT-07-M,JKT-07,Mustard Printed Nehru Jacket,Jacket,M,6299,2305,2023-06-01,0,0
+JKT-07-L,JKT-07,Mustard Printed Nehru Jacket,Jacket,L,6299,2305,2023-06-01,0,0
+JKT-07-XL,JKT-07,Mustard Printed Nehru Jacket,Jacket,XL,6299,2305,2023-06-01,0,0
+JKT-07-XXL,JKT-07,Mustard Printed Nehru Jacket,Jacket,XXL,6299,2305,2023-06-01,0,0
+JKT-07-XXXL,JKT-07,Mustard Printed Nehru Jacket,Jacket,XXXL,6299,2305,2023-06-01,0,0
+JKT-08-S,JKT-08,Neon Lime Printed Nehru Jacket,Jacket,S,4299,1483,2026-03-01,0,0
+JKT-08-M,JKT-08,Neon Lime Printed Nehru Jacket,Jacket,M,4299,1483,2026-03-01,0,0
+JKT-08-L,JKT-08,Neon Lime Printed Nehru Jacket,Jacket,L,4299,1483,2026-03-01,0,0
+JKT-08-XL,JKT-08,Neon Lime Printed Nehru Jacket,Jacket,XL,4299,1483,2026-03-01,0,0
+JKT-08-XXL,JKT-08,Neon Lime Printed Nehru Jacket,Jacket,XXL,4299,1483,2026-03-01,0,0
+JKT-08-XXXL,JKT-08,Neon Lime Printed Nehru Jacket,Jacket,XXXL,4299,1483,2026-03-01,0,0
+JKT-09-S,JKT-09,Teal Nehru Jacket,Jacket,S,5499,1999,2025-09-01,0,0
+JKT-09-M,JKT-09,Teal Nehru Jacket,Jacket,M,5499,1999,2025-09-01,0,0
+JKT-09-L,JKT-09,Teal Nehru Jacket,Jacket,L,5499,1999,2025-09-01,0,0
+JKT-09-XL,JKT-09,Teal Nehru Jacket,Jacket,XL,5499,1999,2025-09-01,0,0
+JKT-09-XXL,JKT-09,Teal Nehru Jacket,Jacket,XXL,5499,1999,2025-09-01,0,0
+JKT-09-XXXL,JKT-09,Teal Nehru Jacket,Jacket,XXXL,5499,1999,2025-09-01,0,0
+JKT-10-S,JKT-10,Champagne Bandhgala Jacket,Jacket,S,6999,2279,2023-06-01,0,0
+JKT-10-M,JKT-10,Champagne Bandhgala Jacket,Jacket,M,6999,2279,2023-06-01,0,0
+JKT-10-L,JKT-10,Champagne Bandhgala Jacket,Jacket,L,6999,2279,2023-06-01,0,0
+JKT-10-XL,JKT-10,Champagne Bandhgala Jacket,Jacket,XL,6999,2279,2023-06-01,0,0
+JKT-10-XXL,JKT-10,Champagne Bandhgala Jacket,Jacket,XXL,6999,2279,2023-06-01,0,0
+JKT-10-XXXL,JKT-10,Champagne Bandhgala Jacket,Jacket,XXXL,6999,2279,2023-06-01,0,0
+MOJ-01-6,MOJ-01,Peach Leather Mojari,Mojari,6,2199,736,2023-06-01,1,0
+MOJ-01-7,MOJ-01,Peach Leather Mojari,Mojari,7,2199,736,2023-06-01,1,0
+MOJ-01-8,MOJ-01,Peach Leather Mojari,Mojari,8,2199,736,2023-06-01,1,0
+MOJ-01-9,MOJ-01,Peach Leather Mojari,Mojari,9,2199,736,2023-06-01,1,0
+MOJ-01-10,MOJ-01,Peach Leather Mojari,Mojari,10,2199,736,2023-06-01,1,0
+MOJ-01-11,MOJ-01,Peach Leather Mojari,Mojari,11,2199,736,2023-06-01,1,0
+MOJ-02-6,MOJ-02,Lilac Zari Mojari,Mojari,6,3399,1260,2023-06-01,1,0
+MOJ-02-7,MOJ-02,Lilac Zari Mojari,Mojari,7,3399,1260,2023-06-01,1,0
+MOJ-02-8,MOJ-02,Lilac Zari Mojari,Mojari,8,3399,1260,2023-06-01,1,0
+MOJ-02-9,MOJ-02,Lilac Zari Mojari,Mojari,9,3399,1260,2023-06-01,1,0
+MOJ-02-10,MOJ-02,Lilac Zari Mojari,Mojari,10,3399,1260,2023-06-01,1,0
+MOJ-02-11,MOJ-02,Lilac Zari Mojari,Mojari,11,3399,1260,2023-06-01,1,0
+MOJ-03-6,MOJ-03,Rust Zari Mojari,Mojari,6,3999,1347,2025-07-01,0,0
+MOJ-03-7,MOJ-03,Rust Zari Mojari,Mojari,7,3999,1347,2025-07-01,0,0
+MOJ-03-8,MOJ-03,Rust Zari Mojari,Mojari,8,3999,1347,2025-07-01,0,0
+MOJ-03-9,MOJ-03,Rust Zari Mojari,Mojari,9,3999,1347,2025-07-01,0,0
+MOJ-03-10,MOJ-03,Rust Zari Mojari,Mojari,10,3999,1347,2025-07-01,0,0
+MOJ-03-11,MOJ-03,Rust Zari Mojari,Mojari,11,3999,1347,2025-07-01,0,0
+MOJ-04-6,MOJ-04,Royal Blue Zari Mojari,Mojari,6,3499,1199,2023-06-01,0,0
+MOJ-04-7,MOJ-04,Royal Blue Zari Mojari,Mojari,7,3499,1199,2023-06-01,0,0
+MOJ-04-8,MOJ-04,Royal Blue Zari Mojari,Mojari,8,3499,1199,2023-06-01,0,0
+MOJ-04-9,MOJ-04,Royal Blue Zari Mojari,Mojari,9,3499,1199,2023-06-01,0,0
+MOJ-04-10,MOJ-04,Royal Blue Zari Mojari,Mojari,10,3499,1199,2023-06-01,0,0
+MOJ-04-11,MOJ-04,Royal Blue Zari Mojari,Mojari,11,3499,1199,2023-06-01,0,0
+MOJ-05-6,MOJ-05,Teal Leather Mojari,Mojari,6,2699,1009,2023-06-01,0,0
+MOJ-05-7,MOJ-05,Teal Leather Mojari,Mojari,7,2699,1009,2023-06-01,0,0
+MOJ-05-8,MOJ-05,Teal Leather Mojari,Mojari,8,2699,1009,2023-06-01,0,0
+MOJ-05-9,MOJ-05,Teal Leather Mojari,Mojari,9,2699,1009,2023-06-01,0,0
+MOJ-05-10,MOJ-05,Teal Leather Mojari,Mojari,10,2699,1009,2023-06-01,0,0
+MOJ-05-11,MOJ-05,Teal Leather Mojari,Mojari,11,2699,1009,2023-06-01,0,0
+MOJ-06-6,MOJ-06,Lilac Embroidered Mojari,Mojari,6,2499,766,2025-03-01,0,0
+MOJ-06-7,MOJ-06,Lilac Embroidered Mojari,Mojari,7,2499,766,2025-03-01,0,0
+MOJ-06-8,MOJ-06,Lilac Embroidered Mojari,Mojari,8,2499,766,2025-03-01,0,0
+MOJ-06-9,MOJ-06,Lilac Embroidered Mojari,Mojari,9,2499,766,2025-03-01,0,0
+MOJ-06-10,MOJ-06,Lilac Embroidered Mojari,Mojari,10,2499,766,2025-03-01,0,0
+MOJ-06-11,MOJ-06,Lilac Embroidered Mojari,Mojari,11,2499,766,2025-03-01,0,0
+SAF-01-FS,SAF-01,Black Plain Silk Safa,Safa,FS,1899,665,2023-06-01,1,0
+SAF-02-FS,SAF-02,Teal Bandhani Safa,Safa,FS,2399,861,2023-06-01,1,0
+SAF-03-FS,SAF-03,Rose Pink Bandhani Safa,Safa,FS,1899,656,2025-11-01,0,0
+SAF-04-FS,SAF-04,Emerald Plain Silk Safa,Safa,FS,1899,622,2023-06-01,0,0
+MAL-01-FS,MAL-01,Royal Blue Bead Mala,Mala,FS,1299,445,2023-06-01,1,0
+MAL-02-FS,MAL-02,Sky Blue Pearl Mala,Mala,FS,1199,373,2023-06-01,1,0
+MAL-03-FS,MAL-03,Lilac Kundan Mala,Mala,FS,999,379,2025-09-01,0,0
+STL-01-FS,STL-01,Emerald Embroidered Stole,Stole,FS,2699,1007,2023-06-01,1,0
+STL-02-FS,STL-02,Beige Embroidered Stole,Stole,FS,2199,735,2023-06-01,1,0
+STL-03-FS,STL-03,Rose Pink Brocade Stole,Stole,FS,1399,453,2025-03-01,0,0
+PKG-BAG,PKG-BAG,Carry Bag,Packaging,FS,0,0,,0,1
+PKG-COVER,PKG-COVER,Garment Cover,Packaging,FS,0,0,,0,1
+PKG-BOX,PKG-BOX,Gift Box,Packaging,FS,0,0,,0,1

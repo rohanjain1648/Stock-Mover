@@ -1,0 +1,7 @@
+route,days
+"Warehouse WH-KOL to store, East zone (Bihar)",3
+"Warehouse WH-KOL to store, North zone (UP)",4
+"Warehouse WH-KOL to store, South zone (Karnataka)",6
+"Store to store, same city",2
+"Store to store, same zone, different city",4
+"Store to store, different zone",7

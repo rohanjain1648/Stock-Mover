@@ -1,0 +1,9 @@
+rule,detail
+Minimum display,Every store keeps at least the minimum display quantity per category for its tier (table below). A store giving stock away must not drop below it.
+Flagship protection,S++ stores never give away stock of their top-20 styles (sheet flagship_protected).
+Capacity,Do not send a store more stock than its stock_capacity_units (stores sheet).
+In-transit,Stock already in transit counts as arriving. Do not send it again.
+Donor cover,No store-to-store transfer if the giving store would drop below 30 days of cover for that style.
+Approval,"Any single recommended move worth more than Rs 1,00,000 at MRP needs a human approval before it goes."
+Replenishment cycle,Today the company tops stores up from the warehouse every Monday. Your system can recommend any day.
+Logistics cost,Ignore transport cost. Lead time still matters (table below).

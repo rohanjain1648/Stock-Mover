@@ -1,0 +1,7 @@
+area_manager_id,name,city,stores,max_alerts_per_week
+AM-01,Rakesh Srivastava,Lucknow,"LKO-01, LKO-02, LKO-03, LKO-04",5
+AM-02,Alok Tiwari,Kanpur,"KNP-01, KNP-02, KNP-03",5
+AM-03,Nitin Sinha,Patna,"PAT-01, PAT-02, PAT-03, PAT-04",5
+AM-04,Pankaj Jha,Muzaffarpur,"MZF-01, MZF-02",5
+AM-05,Harish Gowda,Bengaluru,"BLR-01, BLR-02, BLR-03, BLR-04, BLR-05",5
+AM-06,Mahesh Shetty,Mysuru,"MYS-01, MYS-02",5

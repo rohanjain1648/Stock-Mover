@@ -1,0 +1,2374 @@
+date,state,festival,is_wedding_date
+2024-11-01,Uttar Pradesh,Diwali,0
+2024-11-01,Bihar,Diwali,0
+2024-11-01,Karnataka,Diwali,0
+2024-11-02,Uttar Pradesh,,0
+2024-11-02,Bihar,,0
+2024-11-02,Karnataka,,0
+2024-11-03,Uttar Pradesh,,0
+2024-11-03,Bihar,,0
+2024-11-03,Karnataka,,0
+2024-11-04,Uttar Pradesh,,0
+2024-11-04,Bihar,,0
+2024-11-04,Karnataka,,0
+2024-11-05,Uttar Pradesh,,0
+2024-11-05,Bihar,,0
+2024-11-05,Karnataka,,0
+2024-11-06,Uttar Pradesh,,0
+2024-11-06,Bihar,,0
+2024-11-06,Karnataka,,0
+2024-11-07,Uttar Pradesh,,0
+2024-11-07,Bihar,Chhath Puja,0
+2024-11-07,Karnataka,,0
+2024-11-08,Uttar Pradesh,,0
+2024-11-08,Bihar,,0
+2024-11-08,Karnataka,,0
+2024-11-09,Uttar Pradesh,,0
+2024-11-09,Bihar,,0
+2024-11-09,Karnataka,,0
+2024-11-10,Uttar Pradesh,,0
+2024-11-10,Bihar,,0
+2024-11-10,Karnataka,,0
+2024-11-11,Uttar Pradesh,,0
+2024-11-11,Bihar,,0
+2024-11-11,Karnataka,,0
+2024-11-12,Uttar Pradesh,,1
+2024-11-12,Bihar,,1
+2024-11-12,Karnataka,,1
+2024-11-13,Uttar Pradesh,,0
+2024-11-13,Bihar,,0
+2024-11-13,Karnataka,,0
+2024-11-14,Uttar Pradesh,,1
+2024-11-14,Bihar,,1
+2024-11-14,Karnataka,,0
+2024-11-15,Uttar Pradesh,,0
+2024-11-15,Bihar,,0
+2024-11-15,Karnataka,,0
+2024-11-16,Uttar Pradesh,,1
+2024-11-16,Bihar,,1
+2024-11-16,Karnataka,,0
+2024-11-17,Uttar Pradesh,,0
+2024-11-17,Bihar,,0
+2024-11-17,Karnataka,,0
+2024-11-18,Uttar Pradesh,,1
+2024-11-18,Bihar,,1
+2024-11-18,Karnataka,,1
+2024-11-19,Uttar Pradesh,,0
+2024-11-19,Bihar,,0
+2024-11-19,Karnataka,,0
+2024-11-20,Uttar Pradesh,,1
+2024-11-20,Bihar,,1
+2024-11-20,Karnataka,,0
+2024-11-21,Uttar Pradesh,,0
+2024-11-21,Bihar,,0
+2024-11-21,Karnataka,,0
+2024-11-22,Uttar Pradesh,,1
+2024-11-22,Bihar,,1
+2024-11-22,Karnataka,,0
+2024-11-23,Uttar Pradesh,,0
+2024-11-23,Bihar,,0
+2024-11-23,Karnataka,,0
+2024-11-24,Uttar Pradesh,,1
+2024-11-24,Bihar,,1
+2024-11-24,Karnataka,,1
+2024-11-25,Uttar Pradesh,,0
+2024-11-25,Bihar,,0
+2024-11-25,Karnataka,,0
+2024-11-26,Uttar Pradesh,,1
+2024-11-26,Bihar,,1
+2024-11-26,Karnataka,,0
+2024-11-27,Uttar Pradesh,,0
+2024-11-27,Bihar,,0
+2024-11-27,Karnataka,,0
+2024-11-28,Uttar Pradesh,,1
+2024-11-28,Bihar,,1
+2024-11-28,Karnataka,,0
+2024-11-29,Uttar Pradesh,,0
+2024-11-29,Bihar,,0
+2024-11-29,Karnataka,,0
+2024-11-30,Uttar Pradesh,,1
+2024-11-30,Bihar,,1
+2024-11-30,Karnataka,,1
+2024-12-01,Uttar Pradesh,,0
+2024-12-01,Bihar,,0
+2024-12-01,Karnataka,,0
+2024-12-02,Uttar Pradesh,,1
+2024-12-02,Bihar,,1
+2024-12-02,Karnataka,,0
+2024-12-03,Uttar Pradesh,,0
+2024-12-03,Bihar,,0
+2024-12-03,Karnataka,,0
+2024-12-04,Uttar Pradesh,,1
+2024-12-04,Bihar,,1
+2024-12-04,Karnataka,,0
+2024-12-05,Uttar Pradesh,,0
+2024-12-05,Bihar,,0
+2024-12-05,Karnataka,,0
+2024-12-06,Uttar Pradesh,,1
+2024-12-06,Bihar,,1
+2024-12-06,Karnataka,,1
+2024-12-07,Uttar Pradesh,,0
+2024-12-07,Bihar,,0
+2024-12-07,Karnataka,,0
+2024-12-08,Uttar Pradesh,,1
+2024-12-08,Bihar,,1
+2024-12-08,Karnataka,,0
+2024-12-09,Uttar Pradesh,,0
+2024-12-09,Bihar,,0
+2024-12-09,Karnataka,,0
+2024-12-10,Uttar Pradesh,,1
+2024-12-10,Bihar,,1
+2024-12-10,Karnataka,,0
+2024-12-11,Uttar Pradesh,,0
+2024-12-11,Bihar,,0
+2024-12-11,Karnataka,,0
+2024-12-12,Uttar Pradesh,,1
+2024-12-12,Bihar,,1
+2024-12-12,Karnataka,,1
+2024-12-13,Uttar Pradesh,,0
+2024-12-13,Bihar,,0
+2024-12-13,Karnataka,,0
+2024-12-14,Uttar Pradesh,,1
+2024-12-14,Bihar,,1
+2024-12-14,Karnataka,,0
+2024-12-15,Uttar Pradesh,,0
+2024-12-15,Bihar,,0
+2024-12-15,Karnataka,,0
+2024-12-16,Uttar Pradesh,,0
+2024-12-16,Bihar,,0
+2024-12-16,Karnataka,,0
+2024-12-17,Uttar Pradesh,,0
+2024-12-17,Bihar,,0
+2024-12-17,Karnataka,,0
+2024-12-18,Uttar Pradesh,,0
+2024-12-18,Bihar,,0
+2024-12-18,Karnataka,,0
+2024-12-19,Uttar Pradesh,,0
+2024-12-19,Bihar,,0
+2024-12-19,Karnataka,,0
+2024-12-20,Uttar Pradesh,,0
+2024-12-20,Bihar,,0
+2024-12-20,Karnataka,,0
+2024-12-21,Uttar Pradesh,,0
+2024-12-21,Bihar,,0
+2024-12-21,Karnataka,,0
+2024-12-22,Uttar Pradesh,,0
+2024-12-22,Bihar,,0
+2024-12-22,Karnataka,,0
+2024-12-23,Uttar Pradesh,,0
+2024-12-23,Bihar,,0
+2024-12-23,Karnataka,,0
+2024-12-24,Uttar Pradesh,,0
+2024-12-24,Bihar,,0
+2024-12-24,Karnataka,,0
+2024-12-25,Uttar Pradesh,,0
+2024-12-25,Bihar,,0
+2024-12-25,Karnataka,,0
+2024-12-26,Uttar Pradesh,,0
+2024-12-26,Bihar,,0
+2024-12-26,Karnataka,,0
+2024-12-27,Uttar Pradesh,,0
+2024-12-27,Bihar,,0
+2024-12-27,Karnataka,,0
+2024-12-28,Uttar Pradesh,,0
+2024-12-28,Bihar,,0
+2024-12-28,Karnataka,,0
+2024-12-29,Uttar Pradesh,,0
+2024-12-29,Bihar,,0
+2024-12-29,Karnataka,,0
+2024-12-30,Uttar Pradesh,,0
+2024-12-30,Bihar,,0
+2024-12-30,Karnataka,,0
+2024-12-31,Uttar Pradesh,,0
+2024-12-31,Bihar,,0
+2024-12-31,Karnataka,,0
+2025-01-01,Uttar Pradesh,,0
+2025-01-01,Bihar,,0
+2025-01-01,Karnataka,,0
+2025-01-02,Uttar Pradesh,,0
+2025-01-02,Bihar,,0
+2025-01-02,Karnataka,,0
+2025-01-03,Uttar Pradesh,,0
+2025-01-03,Bihar,,0
+2025-01-03,Karnataka,,0
+2025-01-04,Uttar Pradesh,,0
+2025-01-04,Bihar,,0
+2025-01-04,Karnataka,,0
+2025-01-05,Uttar Pradesh,,0
+2025-01-05,Bihar,,0
+2025-01-05,Karnataka,,0
+2025-01-06,Uttar Pradesh,,0
+2025-01-06,Bihar,,0
+2025-01-06,Karnataka,,0
+2025-01-07,Uttar Pradesh,,0
+2025-01-07,Bihar,,0
+2025-01-07,Karnataka,,0
+2025-01-08,Uttar Pradesh,,0
+2025-01-08,Bihar,,0
+2025-01-08,Karnataka,,0
+2025-01-09,Uttar Pradesh,,0
+2025-01-09,Bihar,,0
+2025-01-09,Karnataka,,0
+2025-01-10,Uttar Pradesh,,0
+2025-01-10,Bihar,,0
+2025-01-10,Karnataka,,0
+2025-01-11,Uttar Pradesh,,0
+2025-01-11,Bihar,,0
+2025-01-11,Karnataka,,0
+2025-01-12,Uttar Pradesh,,0
+2025-01-12,Bihar,,0
+2025-01-12,Karnataka,,0
+2025-01-13,Uttar Pradesh,,0
+2025-01-13,Bihar,,0
+2025-01-13,Karnataka,,0
+2025-01-14,Uttar Pradesh,,0
+2025-01-14,Bihar,,0
+2025-01-14,Karnataka,,0
+2025-01-15,Uttar Pradesh,,0
+2025-01-15,Bihar,,0
+2025-01-15,Karnataka,,0
+2025-01-16,Uttar Pradesh,,1
+2025-01-16,Bihar,,1
+2025-01-16,Karnataka,,0
+2025-01-17,Uttar Pradesh,,0
+2025-01-17,Bihar,,0
+2025-01-17,Karnataka,,0
+2025-01-18,Uttar Pradesh,,0
+2025-01-18,Bihar,,0
+2025-01-18,Karnataka,,0
+2025-01-19,Uttar Pradesh,,1
+2025-01-19,Bihar,,1
+2025-01-19,Karnataka,,0
+2025-01-20,Uttar Pradesh,,0
+2025-01-20,Bihar,,0
+2025-01-20,Karnataka,,0
+2025-01-21,Uttar Pradesh,,0
+2025-01-21,Bihar,,0
+2025-01-21,Karnataka,,0
+2025-01-22,Uttar Pradesh,,1
+2025-01-22,Bihar,,1
+2025-01-22,Karnataka,,0
+2025-01-23,Uttar Pradesh,,0
+2025-01-23,Bihar,,0
+2025-01-23,Karnataka,,0
+2025-01-24,Uttar Pradesh,,0
+2025-01-24,Bihar,,0
+2025-01-24,Karnataka,,0
+2025-01-25,Uttar Pradesh,,1
+2025-01-25,Bihar,,1
+2025-01-25,Karnataka,,0
+2025-01-26,Uttar Pradesh,,0
+2025-01-26,Bihar,,0
+2025-01-26,Karnataka,,0
+2025-01-27,Uttar Pradesh,,0
+2025-01-27,Bihar,,0
+2025-01-27,Karnataka,,0
+2025-01-28,Uttar Pradesh,,1
+2025-01-28,Bihar,,1
+2025-01-28,Karnataka,,0
+2025-01-29,Uttar Pradesh,,0
+2025-01-29,Bihar,,0
+2025-01-29,Karnataka,,0
+2025-01-30,Uttar Pradesh,,0
+2025-01-30,Bihar,,0
+2025-01-30,Karnataka,,0
+2025-01-31,Uttar Pradesh,,1
+2025-01-31,Bihar,,1
+2025-01-31,Karnataka,,0
+2025-02-01,Uttar Pradesh,,0
+2025-02-01,Bihar,,0
+2025-02-01,Karnataka,,0
+2025-02-02,Uttar Pradesh,,0
+2025-02-02,Bihar,,0
+2025-02-02,Karnataka,,0
+2025-02-03,Uttar Pradesh,,1
+2025-02-03,Bihar,,1
+2025-02-03,Karnataka,,1
+2025-02-04,Uttar Pradesh,,0
+2025-02-04,Bihar,,0
+2025-02-04,Karnataka,,0
+2025-02-05,Uttar Pradesh,,0
+2025-02-05,Bihar,,0
+2025-02-05,Karnataka,,0
+2025-02-06,Uttar Pradesh,,1
+2025-02-06,Bihar,,1
+2025-02-06,Karnataka,,1
+2025-02-07,Uttar Pradesh,,0
+2025-02-07,Bihar,,0
+2025-02-07,Karnataka,,0
+2025-02-08,Uttar Pradesh,,0
+2025-02-08,Bihar,,0
+2025-02-08,Karnataka,,0
+2025-02-09,Uttar Pradesh,,1
+2025-02-09,Bihar,,1
+2025-02-09,Karnataka,,1
+2025-02-10,Uttar Pradesh,,0
+2025-02-10,Bihar,,0
+2025-02-10,Karnataka,,0
+2025-02-11,Uttar Pradesh,,0
+2025-02-11,Bihar,,0
+2025-02-11,Karnataka,,0
+2025-02-12,Uttar Pradesh,,1
+2025-02-12,Bihar,,1
+2025-02-12,Karnataka,,1
+2025-02-13,Uttar Pradesh,,0
+2025-02-13,Bihar,,0
+2025-02-13,Karnataka,,0
+2025-02-14,Uttar Pradesh,,0
+2025-02-14,Bihar,,0
+2025-02-14,Karnataka,,0
+2025-02-15,Uttar Pradesh,,1
+2025-02-15,Bihar,,1
+2025-02-15,Karnataka,,1
+2025-02-16,Uttar Pradesh,,0
+2025-02-16,Bihar,,0
+2025-02-16,Karnataka,,0
+2025-02-17,Uttar Pradesh,,0
+2025-02-17,Bihar,,0
+2025-02-17,Karnataka,,0
+2025-02-18,Uttar Pradesh,,1
+2025-02-18,Bihar,,1
+2025-02-18,Karnataka,,1
+2025-02-19,Uttar Pradesh,,0
+2025-02-19,Bihar,,0
+2025-02-19,Karnataka,,0
+2025-02-20,Uttar Pradesh,,0
+2025-02-20,Bihar,,0
+2025-02-20,Karnataka,,0
+2025-02-21,Uttar Pradesh,,1
+2025-02-21,Bihar,,1
+2025-02-21,Karnataka,,1
+2025-02-22,Uttar Pradesh,,0
+2025-02-22,Bihar,,0
+2025-02-22,Karnataka,,0
+2025-02-23,Uttar Pradesh,,0
+2025-02-23,Bihar,,0
+2025-02-23,Karnataka,,0
+2025-02-24,Uttar Pradesh,,1
+2025-02-24,Bihar,,1
+2025-02-24,Karnataka,,1
+2025-02-25,Uttar Pradesh,,0
+2025-02-25,Bihar,,0
+2025-02-25,Karnataka,,0
+2025-02-26,Uttar Pradesh,,0
+2025-02-26,Bihar,,0
+2025-02-26,Karnataka,,0
+2025-02-27,Uttar Pradesh,,1
+2025-02-27,Bihar,,1
+2025-02-27,Karnataka,,1
+2025-02-28,Uttar Pradesh,,0
+2025-02-28,Bihar,,0
+2025-02-28,Karnataka,,0
+2025-03-01,Uttar Pradesh,,0
+2025-03-01,Bihar,,0
+2025-03-01,Karnataka,,0
+2025-03-02,Uttar Pradesh,,1
+2025-03-02,Bihar,,1
+2025-03-02,Karnataka,,0
+2025-03-03,Uttar Pradesh,,0
+2025-03-03,Bihar,,0
+2025-03-03,Karnataka,,0
+2025-03-04,Uttar Pradesh,,0
+2025-03-04,Bihar,,0
+2025-03-04,Karnataka,,0
+2025-03-05,Uttar Pradesh,,1
+2025-03-05,Bihar,,1
+2025-03-05,Karnataka,,0
+2025-03-06,Uttar Pradesh,,0
+2025-03-06,Bihar,,0
+2025-03-06,Karnataka,,0
+2025-03-07,Uttar Pradesh,,0
+2025-03-07,Bihar,,0
+2025-03-07,Karnataka,,0
+2025-03-08,Uttar Pradesh,,1
+2025-03-08,Bihar,,1
+2025-03-08,Karnataka,,0
+2025-03-09,Uttar Pradesh,,0
+2025-03-09,Bihar,,0
+2025-03-09,Karnataka,,0
+2025-03-10,Uttar Pradesh,,0
+2025-03-10,Bihar,,0
+2025-03-10,Karnataka,,0
+2025-03-11,Uttar Pradesh,,1
+2025-03-11,Bihar,,1
+2025-03-11,Karnataka,,0
+2025-03-12,Uttar Pradesh,,0
+2025-03-12,Bihar,,0
+2025-03-12,Karnataka,,0
+2025-03-13,Uttar Pradesh,,0
+2025-03-13,Bihar,,0
+2025-03-13,Karnataka,,0
+2025-03-14,Uttar Pradesh,Holi,0
+2025-03-14,Bihar,Holi,0
+2025-03-14,Karnataka,,0
+2025-03-15,Uttar Pradesh,,0
+2025-03-15,Bihar,,0
+2025-03-15,Karnataka,,0
+2025-03-16,Uttar Pradesh,,0
+2025-03-16,Bihar,,0
+2025-03-16,Karnataka,,0
+2025-03-17,Uttar Pradesh,,0
+2025-03-17,Bihar,,0
+2025-03-17,Karnataka,,0
+2025-03-18,Uttar Pradesh,,0
+2025-03-18,Bihar,,0
+2025-03-18,Karnataka,,0
+2025-03-19,Uttar Pradesh,,0
+2025-03-19,Bihar,,0
+2025-03-19,Karnataka,,0
+2025-03-20,Uttar Pradesh,,0
+2025-03-20,Bihar,,0
+2025-03-20,Karnataka,,0
+2025-03-21,Uttar Pradesh,,0
+2025-03-21,Bihar,,0
+2025-03-21,Karnataka,,0
+2025-03-22,Uttar Pradesh,,0
+2025-03-22,Bihar,,0
+2025-03-22,Karnataka,,0
+2025-03-23,Uttar Pradesh,,0
+2025-03-23,Bihar,,0
+2025-03-23,Karnataka,,0
+2025-03-24,Uttar Pradesh,,0
+2025-03-24,Bihar,,0
+2025-03-24,Karnataka,,0
+2025-03-25,Uttar Pradesh,,0
+2025-03-25,Bihar,,0
+2025-03-25,Karnataka,,0
+2025-03-26,Uttar Pradesh,,0
+2025-03-26,Bihar,,0
+2025-03-26,Karnataka,,0
+2025-03-27,Uttar Pradesh,,0
+2025-03-27,Bihar,,0
+2025-03-27,Karnataka,,0
+2025-03-28,Uttar Pradesh,,0
+2025-03-28,Bihar,,0
+2025-03-28,Karnataka,,0
+2025-03-29,Uttar Pradesh,,0
+2025-03-29,Bihar,,0
+2025-03-29,Karnataka,,0
+2025-03-30,Uttar Pradesh,,0
+2025-03-30,Bihar,,0
+2025-03-30,Karnataka,Ugadi,0
+2025-03-31,Uttar Pradesh,Eid al-Fitr,0
+2025-03-31,Bihar,Eid al-Fitr,0
+2025-03-31,Karnataka,Eid al-Fitr,0
+2025-04-01,Uttar Pradesh,,0
+2025-04-01,Bihar,,0
+2025-04-01,Karnataka,,0
+2025-04-02,Uttar Pradesh,,0
+2025-04-02,Bihar,,0
+2025-04-02,Karnataka,,0
+2025-04-03,Uttar Pradesh,,0
+2025-04-03,Bihar,,0
+2025-04-03,Karnataka,,0
+2025-04-04,Uttar Pradesh,,0
+2025-04-04,Bihar,,0
+2025-04-04,Karnataka,,0
+2025-04-05,Uttar Pradesh,,0
+2025-04-05,Bihar,,0
+2025-04-05,Karnataka,,0
+2025-04-06,Uttar Pradesh,,0
+2025-04-06,Bihar,,0
+2025-04-06,Karnataka,,0
+2025-04-07,Uttar Pradesh,,0
+2025-04-07,Bihar,,0
+2025-04-07,Karnataka,,0
+2025-04-08,Uttar Pradesh,,0
+2025-04-08,Bihar,,0
+2025-04-08,Karnataka,,0
+2025-04-09,Uttar Pradesh,,0
+2025-04-09,Bihar,,0
+2025-04-09,Karnataka,,0
+2025-04-10,Uttar Pradesh,,0
+2025-04-10,Bihar,,0
+2025-04-10,Karnataka,,0
+2025-04-11,Uttar Pradesh,,0
+2025-04-11,Bihar,,0
+2025-04-11,Karnataka,,0
+2025-04-12,Uttar Pradesh,,0
+2025-04-12,Bihar,,0
+2025-04-12,Karnataka,,0
+2025-04-13,Uttar Pradesh,,0
+2025-04-13,Bihar,,0
+2025-04-13,Karnataka,,0
+2025-04-14,Uttar Pradesh,,1
+2025-04-14,Bihar,,1
+2025-04-14,Karnataka,,0
+2025-04-15,Uttar Pradesh,,0
+2025-04-15,Bihar,,0
+2025-04-15,Karnataka,,0
+2025-04-16,Uttar Pradesh,,1
+2025-04-16,Bihar,,1
+2025-04-16,Karnataka,,0
+2025-04-17,Uttar Pradesh,,0
+2025-04-17,Bihar,,0
+2025-04-17,Karnataka,,0
+2025-04-18,Uttar Pradesh,,1
+2025-04-18,Bihar,,1
+2025-04-18,Karnataka,,1
+2025-04-19,Uttar Pradesh,,0
+2025-04-19,Bihar,,0
+2025-04-19,Karnataka,,0
+2025-04-20,Uttar Pradesh,,1
+2025-04-20,Bihar,,1
+2025-04-20,Karnataka,,0
+2025-04-21,Uttar Pradesh,,0
+2025-04-21,Bihar,,0
+2025-04-21,Karnataka,,0
+2025-04-22,Uttar Pradesh,,1
+2025-04-22,Bihar,,1
+2025-04-22,Karnataka,,0
+2025-04-23,Uttar Pradesh,,0
+2025-04-23,Bihar,,0
+2025-04-23,Karnataka,,0
+2025-04-24,Uttar Pradesh,,1
+2025-04-24,Bihar,,1
+2025-04-24,Karnataka,,1
+2025-04-25,Uttar Pradesh,,0
+2025-04-25,Bihar,,0
+2025-04-25,Karnataka,,0
+2025-04-26,Uttar Pradesh,,1
+2025-04-26,Bihar,,1
+2025-04-26,Karnataka,,0
+2025-04-27,Uttar Pradesh,,0
+2025-04-27,Bihar,,0
+2025-04-27,Karnataka,,0
+2025-04-28,Uttar Pradesh,,1
+2025-04-28,Bihar,,1
+2025-04-28,Karnataka,,0
+2025-04-29,Uttar Pradesh,,0
+2025-04-29,Bihar,,0
+2025-04-29,Karnataka,,0
+2025-04-30,Uttar Pradesh,,1
+2025-04-30,Bihar,,1
+2025-04-30,Karnataka,,1
+2025-05-01,Uttar Pradesh,,0
+2025-05-01,Bihar,,0
+2025-05-01,Karnataka,,0
+2025-05-02,Uttar Pradesh,,1
+2025-05-02,Bihar,,1
+2025-05-02,Karnataka,,0
+2025-05-03,Uttar Pradesh,,0
+2025-05-03,Bihar,,0
+2025-05-03,Karnataka,,0
+2025-05-04,Uttar Pradesh,,1
+2025-05-04,Bihar,,1
+2025-05-04,Karnataka,,0
+2025-05-05,Uttar Pradesh,,0
+2025-05-05,Bihar,,0
+2025-05-05,Karnataka,,0
+2025-05-06,Uttar Pradesh,,1
+2025-05-06,Bihar,,1
+2025-05-06,Karnataka,,1
+2025-05-07,Uttar Pradesh,,0
+2025-05-07,Bihar,,0
+2025-05-07,Karnataka,,0
+2025-05-08,Uttar Pradesh,,1
+2025-05-08,Bihar,,1
+2025-05-08,Karnataka,,0
+2025-05-09,Uttar Pradesh,,0
+2025-05-09,Bihar,,0
+2025-05-09,Karnataka,,0
+2025-05-10,Uttar Pradesh,,1
+2025-05-10,Bihar,,1
+2025-05-10,Karnataka,,0
+2025-05-11,Uttar Pradesh,,0
+2025-05-11,Bihar,,0
+2025-05-11,Karnataka,,0
+2025-05-12,Uttar Pradesh,,1
+2025-05-12,Bihar,,1
+2025-05-12,Karnataka,,1
+2025-05-13,Uttar Pradesh,,0
+2025-05-13,Bihar,,0
+2025-05-13,Karnataka,,0
+2025-05-14,Uttar Pradesh,,1
+2025-05-14,Bihar,,1
+2025-05-14,Karnataka,,0
+2025-05-15,Uttar Pradesh,,0
+2025-05-15,Bihar,,0
+2025-05-15,Karnataka,,0
+2025-05-16,Uttar Pradesh,,1
+2025-05-16,Bihar,,1
+2025-05-16,Karnataka,,0
+2025-05-17,Uttar Pradesh,,0
+2025-05-17,Bihar,,0
+2025-05-17,Karnataka,,0
+2025-05-18,Uttar Pradesh,,1
+2025-05-18,Bihar,,1
+2025-05-18,Karnataka,,1
+2025-05-19,Uttar Pradesh,,0
+2025-05-19,Bihar,,0
+2025-05-19,Karnataka,,0
+2025-05-20,Uttar Pradesh,,1
+2025-05-20,Bihar,,1
+2025-05-20,Karnataka,,0
+2025-05-21,Uttar Pradesh,,0
+2025-05-21,Bihar,,0
+2025-05-21,Karnataka,,0
+2025-05-22,Uttar Pradesh,,1
+2025-05-22,Bihar,,1
+2025-05-22,Karnataka,,0
+2025-05-23,Uttar Pradesh,,0
+2025-05-23,Bihar,,0
+2025-05-23,Karnataka,,0
+2025-05-24,Uttar Pradesh,,1
+2025-05-24,Bihar,,1
+2025-05-24,Karnataka,,1
+2025-05-25,Uttar Pradesh,,0
+2025-05-25,Bihar,,0
+2025-05-25,Karnataka,,0
+2025-05-26,Uttar Pradesh,,1
+2025-05-26,Bihar,,1
+2025-05-26,Karnataka,,0
+2025-05-27,Uttar Pradesh,,0
+2025-05-27,Bihar,,0
+2025-05-27,Karnataka,,0
+2025-05-28,Uttar Pradesh,,1
+2025-05-28,Bihar,,1
+2025-05-28,Karnataka,,0
+2025-05-29,Uttar Pradesh,,0
+2025-05-29,Bihar,,0
+2025-05-29,Karnataka,,0
+2025-05-30,Uttar Pradesh,,1
+2025-05-30,Bihar,,1
+2025-05-30,Karnataka,,1
+2025-05-31,Uttar Pradesh,,0
+2025-05-31,Bihar,,0
+2025-05-31,Karnataka,,0
+2025-06-01,Uttar Pradesh,,1
+2025-06-01,Bihar,,1
+2025-06-01,Karnataka,,0
+2025-06-02,Uttar Pradesh,,0
+2025-06-02,Bihar,,0
+2025-06-02,Karnataka,,0
+2025-06-03,Uttar Pradesh,,1
+2025-06-03,Bihar,,1
+2025-06-03,Karnataka,,1
+2025-06-04,Uttar Pradesh,,0
+2025-06-04,Bihar,,0
+2025-06-04,Karnataka,,0
+2025-06-05,Uttar Pradesh,,1
+2025-06-05,Bihar,,1
+2025-06-05,Karnataka,,0
+2025-06-06,Uttar Pradesh,,0
+2025-06-06,Bihar,,0
+2025-06-06,Karnataka,,0
+2025-06-07,Uttar Pradesh,Eid al-Adha,1
+2025-06-07,Bihar,Eid al-Adha,1
+2025-06-07,Karnataka,Eid al-Adha,0
+2025-06-08,Uttar Pradesh,,0
+2025-06-08,Bihar,,0
+2025-06-08,Karnataka,,0
+2025-06-09,Uttar Pradesh,,0
+2025-06-09,Bihar,,0
+2025-06-09,Karnataka,,0
+2025-06-10,Uttar Pradesh,,0
+2025-06-10,Bihar,,0
+2025-06-10,Karnataka,,0
+2025-06-11,Uttar Pradesh,,0
+2025-06-11,Bihar,,0
+2025-06-11,Karnataka,,0
+2025-06-12,Uttar Pradesh,,0
+2025-06-12,Bihar,,0
+2025-06-12,Karnataka,,0
+2025-06-13,Uttar Pradesh,,0
+2025-06-13,Bihar,,0
+2025-06-13,Karnataka,,0
+2025-06-14,Uttar Pradesh,,0
+2025-06-14,Bihar,,0
+2025-06-14,Karnataka,,0
+2025-06-15,Uttar Pradesh,,0
+2025-06-15,Bihar,,0
+2025-06-15,Karnataka,,0
+2025-06-16,Uttar Pradesh,,0
+2025-06-16,Bihar,,0
+2025-06-16,Karnataka,,0
+2025-06-17,Uttar Pradesh,,0
+2025-06-17,Bihar,,0
+2025-06-17,Karnataka,,0
+2025-06-18,Uttar Pradesh,,0
+2025-06-18,Bihar,,0
+2025-06-18,Karnataka,,0
+2025-06-19,Uttar Pradesh,,0
+2025-06-19,Bihar,,0
+2025-06-19,Karnataka,,0
+2025-06-20,Uttar Pradesh,,0
+2025-06-20,Bihar,,0
+2025-06-20,Karnataka,,0
+2025-06-21,Uttar Pradesh,,0
+2025-06-21,Bihar,,0
+2025-06-21,Karnataka,,0
+2025-06-22,Uttar Pradesh,,0
+2025-06-22,Bihar,,0
+2025-06-22,Karnataka,,0
+2025-06-23,Uttar Pradesh,,0
+2025-06-23,Bihar,,0
+2025-06-23,Karnataka,,0
+2025-06-24,Uttar Pradesh,,0
+2025-06-24,Bihar,,0
+2025-06-24,Karnataka,,0
+2025-06-25,Uttar Pradesh,,0
+2025-06-25,Bihar,,0
+2025-06-25,Karnataka,,0
+2025-06-26,Uttar Pradesh,,0
+2025-06-26,Bihar,,0
+2025-06-26,Karnataka,,0
+2025-06-27,Uttar Pradesh,,0
+2025-06-27,Bihar,,0
+2025-06-27,Karnataka,,0
+2025-06-28,Uttar Pradesh,,0
+2025-06-28,Bihar,,0
+2025-06-28,Karnataka,,0
+2025-06-29,Uttar Pradesh,,0
+2025-06-29,Bihar,,0
+2025-06-29,Karnataka,,0
+2025-06-30,Uttar Pradesh,,0
+2025-06-30,Bihar,,0
+2025-06-30,Karnataka,,0
+2025-07-01,Uttar Pradesh,,0
+2025-07-01,Bihar,,0
+2025-07-01,Karnataka,,0
+2025-07-02,Uttar Pradesh,,0
+2025-07-02,Bihar,,0
+2025-07-02,Karnataka,,0
+2025-07-03,Uttar Pradesh,,0
+2025-07-03,Bihar,,0
+2025-07-03,Karnataka,,0
+2025-07-04,Uttar Pradesh,,0
+2025-07-04,Bihar,,0
+2025-07-04,Karnataka,,0
+2025-07-05,Uttar Pradesh,,0
+2025-07-05,Bihar,,0
+2025-07-05,Karnataka,,0
+2025-07-06,Uttar Pradesh,,0
+2025-07-06,Bihar,,0
+2025-07-06,Karnataka,,0
+2025-07-07,Uttar Pradesh,,0
+2025-07-07,Bihar,,0
+2025-07-07,Karnataka,,0
+2025-07-08,Uttar Pradesh,,0
+2025-07-08,Bihar,,0
+2025-07-08,Karnataka,,0
+2025-07-09,Uttar Pradesh,,0
+2025-07-09,Bihar,,0
+2025-07-09,Karnataka,,0
+2025-07-10,Uttar Pradesh,,0
+2025-07-10,Bihar,,0
+2025-07-10,Karnataka,,0
+2025-07-11,Uttar Pradesh,,0
+2025-07-11,Bihar,,0
+2025-07-11,Karnataka,,0
+2025-07-12,Uttar Pradesh,,0
+2025-07-12,Bihar,,0
+2025-07-12,Karnataka,,0
+2025-07-13,Uttar Pradesh,,0
+2025-07-13,Bihar,,0
+2025-07-13,Karnataka,,0
+2025-07-14,Uttar Pradesh,,0
+2025-07-14,Bihar,,0
+2025-07-14,Karnataka,,0
+2025-07-15,Uttar Pradesh,,0
+2025-07-15,Bihar,,0
+2025-07-15,Karnataka,,0
+2025-07-16,Uttar Pradesh,,0
+2025-07-16,Bihar,,0
+2025-07-16,Karnataka,,0
+2025-07-17,Uttar Pradesh,,0
+2025-07-17,Bihar,,0
+2025-07-17,Karnataka,,0
+2025-07-18,Uttar Pradesh,,0
+2025-07-18,Bihar,,0
+2025-07-18,Karnataka,,0
+2025-07-19,Uttar Pradesh,,0
+2025-07-19,Bihar,,0
+2025-07-19,Karnataka,,0
+2025-07-20,Uttar Pradesh,,0
+2025-07-20,Bihar,,0
+2025-07-20,Karnataka,,0
+2025-07-21,Uttar Pradesh,,0
+2025-07-21,Bihar,,0
+2025-07-21,Karnataka,,0
+2025-07-22,Uttar Pradesh,,0
+2025-07-22,Bihar,,0
+2025-07-22,Karnataka,,0
+2025-07-23,Uttar Pradesh,,0
+2025-07-23,Bihar,,0
+2025-07-23,Karnataka,,0
+2025-07-24,Uttar Pradesh,,0
+2025-07-24,Bihar,,0
+2025-07-24,Karnataka,,0
+2025-07-25,Uttar Pradesh,,0
+2025-07-25,Bihar,,0
+2025-07-25,Karnataka,,0
+2025-07-26,Uttar Pradesh,,0
+2025-07-26,Bihar,,0
+2025-07-26,Karnataka,,0
+2025-07-27,Uttar Pradesh,,0
+2025-07-27,Bihar,,0
+2025-07-27,Karnataka,,0
+2025-07-28,Uttar Pradesh,,0
+2025-07-28,Bihar,,0
+2025-07-28,Karnataka,,0
+2025-07-29,Uttar Pradesh,,0
+2025-07-29,Bihar,,0
+2025-07-29,Karnataka,,0
+2025-07-30,Uttar Pradesh,,0
+2025-07-30,Bihar,,0
+2025-07-30,Karnataka,,0
+2025-07-31,Uttar Pradesh,,0
+2025-07-31,Bihar,,0
+2025-07-31,Karnataka,,0
+2025-08-01,Uttar Pradesh,,0
+2025-08-01,Bihar,,0
+2025-08-01,Karnataka,,0
+2025-08-02,Uttar Pradesh,,0
+2025-08-02,Bihar,,0
+2025-08-02,Karnataka,,0
+2025-08-03,Uttar Pradesh,,0
+2025-08-03,Bihar,,0
+2025-08-03,Karnataka,,0
+2025-08-04,Uttar Pradesh,,0
+2025-08-04,Bihar,,0
+2025-08-04,Karnataka,,0
+2025-08-05,Uttar Pradesh,,0
+2025-08-05,Bihar,,0
+2025-08-05,Karnataka,,0
+2025-08-06,Uttar Pradesh,,0
+2025-08-06,Bihar,,0
+2025-08-06,Karnataka,,0
+2025-08-07,Uttar Pradesh,,0
+2025-08-07,Bihar,,0
+2025-08-07,Karnataka,,0
+2025-08-08,Uttar Pradesh,,0
+2025-08-08,Bihar,,0
+2025-08-08,Karnataka,,0
+2025-08-09,Uttar Pradesh,Raksha Bandhan,0
+2025-08-09,Bihar,Raksha Bandhan,0
+2025-08-09,Karnataka,Raksha Bandhan,0
+2025-08-10,Uttar Pradesh,,0
+2025-08-10,Bihar,,0
+2025-08-10,Karnataka,,0
+2025-08-11,Uttar Pradesh,,0
+2025-08-11,Bihar,,0
+2025-08-11,Karnataka,,0
+2025-08-12,Uttar Pradesh,,0
+2025-08-12,Bihar,,0
+2025-08-12,Karnataka,,0
+2025-08-13,Uttar Pradesh,,0
+2025-08-13,Bihar,,0
+2025-08-13,Karnataka,,0
+2025-08-14,Uttar Pradesh,,0
+2025-08-14,Bihar,,0
+2025-08-14,Karnataka,,0
+2025-08-15,Uttar Pradesh,,0
+2025-08-15,Bihar,,0
+2025-08-15,Karnataka,,0
+2025-08-16,Uttar Pradesh,,0
+2025-08-16,Bihar,,0
+2025-08-16,Karnataka,,0
+2025-08-17,Uttar Pradesh,,0
+2025-08-17,Bihar,,0
+2025-08-17,Karnataka,,0
+2025-08-18,Uttar Pradesh,,0
+2025-08-18,Bihar,,0
+2025-08-18,Karnataka,,0
+2025-08-19,Uttar Pradesh,,0
+2025-08-19,Bihar,,0
+2025-08-19,Karnataka,,0
+2025-08-20,Uttar Pradesh,,0
+2025-08-20,Bihar,,0
+2025-08-20,Karnataka,,0
+2025-08-21,Uttar Pradesh,,0
+2025-08-21,Bihar,,0
+2025-08-21,Karnataka,,0
+2025-08-22,Uttar Pradesh,,0
+2025-08-22,Bihar,,0
+2025-08-22,Karnataka,,0
+2025-08-23,Uttar Pradesh,,0
+2025-08-23,Bihar,,0
+2025-08-23,Karnataka,,0
+2025-08-24,Uttar Pradesh,,0
+2025-08-24,Bihar,,0
+2025-08-24,Karnataka,,0
+2025-08-25,Uttar Pradesh,,0
+2025-08-25,Bihar,,0
+2025-08-25,Karnataka,,0
+2025-08-26,Uttar Pradesh,,0
+2025-08-26,Bihar,,0
+2025-08-26,Karnataka,,0
+2025-08-27,Uttar Pradesh,,0
+2025-08-27,Bihar,,0
+2025-08-27,Karnataka,Ganesh Chaturthi,0
+2025-08-28,Uttar Pradesh,,0
+2025-08-28,Bihar,,0
+2025-08-28,Karnataka,,0
+2025-08-29,Uttar Pradesh,,0
+2025-08-29,Bihar,,0
+2025-08-29,Karnataka,,0
+2025-08-30,Uttar Pradesh,,0
+2025-08-30,Bihar,,0
+2025-08-30,Karnataka,,0
+2025-08-31,Uttar Pradesh,,0
+2025-08-31,Bihar,,0
+2025-08-31,Karnataka,,0
+2025-09-01,Uttar Pradesh,,0
+2025-09-01,Bihar,,0
+2025-09-01,Karnataka,,0
+2025-09-02,Uttar Pradesh,,0
+2025-09-02,Bihar,,0
+2025-09-02,Karnataka,,0
+2025-09-03,Uttar Pradesh,,0
+2025-09-03,Bihar,,0
+2025-09-03,Karnataka,,0
+2025-09-04,Uttar Pradesh,,0
+2025-09-04,Bihar,,0
+2025-09-04,Karnataka,,0
+2025-09-05,Uttar Pradesh,,0
+2025-09-05,Bihar,,0
+2025-09-05,Karnataka,,0
+2025-09-06,Uttar Pradesh,,0
+2025-09-06,Bihar,,0
+2025-09-06,Karnataka,,0
+2025-09-07,Uttar Pradesh,,0
+2025-09-07,Bihar,,0
+2025-09-07,Karnataka,,0
+2025-09-08,Uttar Pradesh,,0
+2025-09-08,Bihar,,0
+2025-09-08,Karnataka,,0
+2025-09-09,Uttar Pradesh,,0
+2025-09-09,Bihar,,0
+2025-09-09,Karnataka,,0
+2025-09-10,Uttar Pradesh,,0
+2025-09-10,Bihar,,0
+2025-09-10,Karnataka,,0
+2025-09-11,Uttar Pradesh,,0
+2025-09-11,Bihar,,0
+2025-09-11,Karnataka,,0
+2025-09-12,Uttar Pradesh,,0
+2025-09-12,Bihar,,0
+2025-09-12,Karnataka,,0
+2025-09-13,Uttar Pradesh,,0
+2025-09-13,Bihar,,0
+2025-09-13,Karnataka,,0
+2025-09-14,Uttar Pradesh,,0
+2025-09-14,Bihar,,0
+2025-09-14,Karnataka,,0
+2025-09-15,Uttar Pradesh,,0
+2025-09-15,Bihar,,0
+2025-09-15,Karnataka,,0
+2025-09-16,Uttar Pradesh,,0
+2025-09-16,Bihar,,0
+2025-09-16,Karnataka,,0
+2025-09-17,Uttar Pradesh,,0
+2025-09-17,Bihar,,0
+2025-09-17,Karnataka,,0
+2025-09-18,Uttar Pradesh,,0
+2025-09-18,Bihar,,0
+2025-09-18,Karnataka,,0
+2025-09-19,Uttar Pradesh,,0
+2025-09-19,Bihar,,0
+2025-09-19,Karnataka,,0
+2025-09-20,Uttar Pradesh,,0
+2025-09-20,Bihar,,0
+2025-09-20,Karnataka,,0
+2025-09-21,Uttar Pradesh,,0
+2025-09-21,Bihar,,0
+2025-09-21,Karnataka,,0
+2025-09-22,Uttar Pradesh,,0
+2025-09-22,Bihar,,0
+2025-09-22,Karnataka,,0
+2025-09-23,Uttar Pradesh,,0
+2025-09-23,Bihar,,0
+2025-09-23,Karnataka,,0
+2025-09-24,Uttar Pradesh,,0
+2025-09-24,Bihar,,0
+2025-09-24,Karnataka,,0
+2025-09-25,Uttar Pradesh,,0
+2025-09-25,Bihar,,0
+2025-09-25,Karnataka,,0
+2025-09-26,Uttar Pradesh,,0
+2025-09-26,Bihar,,0
+2025-09-26,Karnataka,,0
+2025-09-27,Uttar Pradesh,,0
+2025-09-27,Bihar,,0
+2025-09-27,Karnataka,,0
+2025-09-28,Uttar Pradesh,,0
+2025-09-28,Bihar,,0
+2025-09-28,Karnataka,,0
+2025-09-29,Uttar Pradesh,,0
+2025-09-29,Bihar,,0
+2025-09-29,Karnataka,,0
+2025-09-30,Uttar Pradesh,,0
+2025-09-30,Bihar,,0
+2025-09-30,Karnataka,,0
+2025-10-01,Uttar Pradesh,,0
+2025-10-01,Bihar,,0
+2025-10-01,Karnataka,,0
+2025-10-02,Uttar Pradesh,Dussehra / Dasara,0
+2025-10-02,Bihar,Dussehra / Dasara,0
+2025-10-02,Karnataka,Dussehra / Dasara,0
+2025-10-03,Uttar Pradesh,,0
+2025-10-03,Bihar,,0
+2025-10-03,Karnataka,,0
+2025-10-04,Uttar Pradesh,,0
+2025-10-04,Bihar,,0
+2025-10-04,Karnataka,,0
+2025-10-05,Uttar Pradesh,,0
+2025-10-05,Bihar,,0
+2025-10-05,Karnataka,,0
+2025-10-06,Uttar Pradesh,,0
+2025-10-06,Bihar,,0
+2025-10-06,Karnataka,,0
+2025-10-07,Uttar Pradesh,,0
+2025-10-07,Bihar,,0
+2025-10-07,Karnataka,,0
+2025-10-08,Uttar Pradesh,,0
+2025-10-08,Bihar,,0
+2025-10-08,Karnataka,,0
+2025-10-09,Uttar Pradesh,,0
+2025-10-09,Bihar,,0
+2025-10-09,Karnataka,,0
+2025-10-10,Uttar Pradesh,,0
+2025-10-10,Bihar,,0
+2025-10-10,Karnataka,,0
+2025-10-11,Uttar Pradesh,,0
+2025-10-11,Bihar,,0
+2025-10-11,Karnataka,,0
+2025-10-12,Uttar Pradesh,,0
+2025-10-12,Bihar,,0
+2025-10-12,Karnataka,,0
+2025-10-13,Uttar Pradesh,,0
+2025-10-13,Bihar,,0
+2025-10-13,Karnataka,,0
+2025-10-14,Uttar Pradesh,,0
+2025-10-14,Bihar,,0
+2025-10-14,Karnataka,,0
+2025-10-15,Uttar Pradesh,,0
+2025-10-15,Bihar,,0
+2025-10-15,Karnataka,,0
+2025-10-16,Uttar Pradesh,,0
+2025-10-16,Bihar,,0
+2025-10-16,Karnataka,,0
+2025-10-17,Uttar Pradesh,,0
+2025-10-17,Bihar,,0
+2025-10-17,Karnataka,,0
+2025-10-18,Uttar Pradesh,,0
+2025-10-18,Bihar,,0
+2025-10-18,Karnataka,,0
+2025-10-19,Uttar Pradesh,,0
+2025-10-19,Bihar,,0
+2025-10-19,Karnataka,,0
+2025-10-20,Uttar Pradesh,Diwali,0
+2025-10-20,Bihar,Diwali,0
+2025-10-20,Karnataka,Diwali,0
+2025-10-21,Uttar Pradesh,,0
+2025-10-21,Bihar,,0
+2025-10-21,Karnataka,,0
+2025-10-22,Uttar Pradesh,,0
+2025-10-22,Bihar,,0
+2025-10-22,Karnataka,,0
+2025-10-23,Uttar Pradesh,,0
+2025-10-23,Bihar,,0
+2025-10-23,Karnataka,,0
+2025-10-24,Uttar Pradesh,,0
+2025-10-24,Bihar,,0
+2025-10-24,Karnataka,,0
+2025-10-25,Uttar Pradesh,,0
+2025-10-25,Bihar,,0
+2025-10-25,Karnataka,,0
+2025-10-26,Uttar Pradesh,,0
+2025-10-26,Bihar,,0
+2025-10-26,Karnataka,,0
+2025-10-27,Uttar Pradesh,,0
+2025-10-27,Bihar,,0
+2025-10-27,Karnataka,,0
+2025-10-28,Uttar Pradesh,,0
+2025-10-28,Bihar,Chhath Puja,0
+2025-10-28,Karnataka,,0
+2025-10-29,Uttar Pradesh,,0
+2025-10-29,Bihar,,0
+2025-10-29,Karnataka,,0
+2025-10-30,Uttar Pradesh,,0
+2025-10-30,Bihar,,0
+2025-10-30,Karnataka,,0
+2025-10-31,Uttar Pradesh,,0
+2025-10-31,Bihar,,0
+2025-10-31,Karnataka,,0
+2025-11-01,Uttar Pradesh,,0
+2025-11-01,Bihar,,0
+2025-11-01,Karnataka,,0
+2025-11-02,Uttar Pradesh,,1
+2025-11-02,Bihar,,1
+2025-11-02,Karnataka,,0
+2025-11-03,Uttar Pradesh,,0
+2025-11-03,Bihar,,0
+2025-11-03,Karnataka,,0
+2025-11-04,Uttar Pradesh,,1
+2025-11-04,Bihar,,1
+2025-11-04,Karnataka,,0
+2025-11-05,Uttar Pradesh,,0
+2025-11-05,Bihar,,0
+2025-11-05,Karnataka,,0
+2025-11-06,Uttar Pradesh,,1
+2025-11-06,Bihar,,1
+2025-11-06,Karnataka,,1
+2025-11-07,Uttar Pradesh,,0
+2025-11-07,Bihar,,0
+2025-11-07,Karnataka,,0
+2025-11-08,Uttar Pradesh,,1
+2025-11-08,Bihar,,1
+2025-11-08,Karnataka,,0
+2025-11-09,Uttar Pradesh,,0
+2025-11-09,Bihar,,0
+2025-11-09,Karnataka,,0
+2025-11-10,Uttar Pradesh,,1
+2025-11-10,Bihar,,1
+2025-11-10,Karnataka,,0
+2025-11-11,Uttar Pradesh,,0
+2025-11-11,Bihar,,0
+2025-11-11,Karnataka,,0
+2025-11-12,Uttar Pradesh,,1
+2025-11-12,Bihar,,1
+2025-11-12,Karnataka,,1
+2025-11-13,Uttar Pradesh,,0
+2025-11-13,Bihar,,0
+2025-11-13,Karnataka,,0
+2025-11-14,Uttar Pradesh,,1
+2025-11-14,Bihar,,1
+2025-11-14,Karnataka,,0
+2025-11-15,Uttar Pradesh,,0
+2025-11-15,Bihar,,0
+2025-11-15,Karnataka,,0
+2025-11-16,Uttar Pradesh,,1
+2025-11-16,Bihar,,1
+2025-11-16,Karnataka,,0
+2025-11-17,Uttar Pradesh,,0
+2025-11-17,Bihar,,0
+2025-11-17,Karnataka,,0
+2025-11-18,Uttar Pradesh,,1
+2025-11-18,Bihar,,1
+2025-11-18,Karnataka,,1
+2025-11-19,Uttar Pradesh,,0
+2025-11-19,Bihar,,0
+2025-11-19,Karnataka,,0
+2025-11-20,Uttar Pradesh,,1
+2025-11-20,Bihar,,1
+2025-11-20,Karnataka,,0
+2025-11-21,Uttar Pradesh,,0
+2025-11-21,Bihar,,0
+2025-11-21,Karnataka,,0
+2025-11-22,Uttar Pradesh,,1
+2025-11-22,Bihar,,1
+2025-11-22,Karnataka,,0
+2025-11-23,Uttar Pradesh,,0
+2025-11-23,Bihar,,0
+2025-11-23,Karnataka,,0
+2025-11-24,Uttar Pradesh,,1
+2025-11-24,Bihar,,1
+2025-11-24,Karnataka,,1
+2025-11-25,Uttar Pradesh,,0
+2025-11-25,Bihar,,0
+2025-11-25,Karnataka,,0
+2025-11-26,Uttar Pradesh,,1
+2025-11-26,Bihar,,1
+2025-11-26,Karnataka,,0
+2025-11-27,Uttar Pradesh,,0
+2025-11-27,Bihar,,0
+2025-11-27,Karnataka,,0
+2025-11-28,Uttar Pradesh,,1
+2025-11-28,Bihar,,1
+2025-11-28,Karnataka,,0
+2025-11-29,Uttar Pradesh,,0
+2025-11-29,Bihar,,0
+2025-11-29,Karnataka,,0
+2025-11-30,Uttar Pradesh,,1
+2025-11-30,Bihar,,1
+2025-11-30,Karnataka,,1
+2025-12-01,Uttar Pradesh,,0
+2025-12-01,Bihar,,0
+2025-12-01,Karnataka,,0
+2025-12-02,Uttar Pradesh,,1
+2025-12-02,Bihar,,1
+2025-12-02,Karnataka,,0
+2025-12-03,Uttar Pradesh,,0
+2025-12-03,Bihar,,0
+2025-12-03,Karnataka,,0
+2025-12-04,Uttar Pradesh,,1
+2025-12-04,Bihar,,1
+2025-12-04,Karnataka,,0
+2025-12-05,Uttar Pradesh,,0
+2025-12-05,Bihar,,0
+2025-12-05,Karnataka,,0
+2025-12-06,Uttar Pradesh,,1
+2025-12-06,Bihar,,1
+2025-12-06,Karnataka,,1
+2025-12-07,Uttar Pradesh,,0
+2025-12-07,Bihar,,0
+2025-12-07,Karnataka,,0
+2025-12-08,Uttar Pradesh,,0
+2025-12-08,Bihar,,0
+2025-12-08,Karnataka,,0
+2025-12-09,Uttar Pradesh,,0
+2025-12-09,Bihar,,0
+2025-12-09,Karnataka,,0
+2025-12-10,Uttar Pradesh,,0
+2025-12-10,Bihar,,0
+2025-12-10,Karnataka,,0
+2025-12-11,Uttar Pradesh,,0
+2025-12-11,Bihar,,0
+2025-12-11,Karnataka,,0
+2025-12-12,Uttar Pradesh,,0
+2025-12-12,Bihar,,0
+2025-12-12,Karnataka,,0
+2025-12-13,Uttar Pradesh,,0
+2025-12-13,Bihar,,0
+2025-12-13,Karnataka,,0
+2025-12-14,Uttar Pradesh,,0
+2025-12-14,Bihar,,0
+2025-12-14,Karnataka,,0
+2025-12-15,Uttar Pradesh,,0
+2025-12-15,Bihar,,0
+2025-12-15,Karnataka,,0
+2025-12-16,Uttar Pradesh,,0
+2025-12-16,Bihar,,0
+2025-12-16,Karnataka,,0
+2025-12-17,Uttar Pradesh,,0
+2025-12-17,Bihar,,0
+2025-12-17,Karnataka,,0
+2025-12-18,Uttar Pradesh,,0
+2025-12-18,Bihar,,0
+2025-12-18,Karnataka,,0
+2025-12-19,Uttar Pradesh,,0
+2025-12-19,Bihar,,0
+2025-12-19,Karnataka,,0
+2025-12-20,Uttar Pradesh,,0
+2025-12-20,Bihar,,0
+2025-12-20,Karnataka,,0
+2025-12-21,Uttar Pradesh,,0
+2025-12-21,Bihar,,0
+2025-12-21,Karnataka,,0
+2025-12-22,Uttar Pradesh,,0
+2025-12-22,Bihar,,0
+2025-12-22,Karnataka,,0
+2025-12-23,Uttar Pradesh,,0
+2025-12-23,Bihar,,0
+2025-12-23,Karnataka,,0
+2025-12-24,Uttar Pradesh,,0
+2025-12-24,Bihar,,0
+2025-12-24,Karnataka,,0
+2025-12-25,Uttar Pradesh,,0
+2025-12-25,Bihar,,0
+2025-12-25,Karnataka,,0
+2025-12-26,Uttar Pradesh,,0
+2025-12-26,Bihar,,0
+2025-12-26,Karnataka,,0
+2025-12-27,Uttar Pradesh,,0
+2025-12-27,Bihar,,0
+2025-12-27,Karnataka,,0
+2025-12-28,Uttar Pradesh,,0
+2025-12-28,Bihar,,0
+2025-12-28,Karnataka,,0
+2025-12-29,Uttar Pradesh,,0
+2025-12-29,Bihar,,0
+2025-12-29,Karnataka,,0
+2025-12-30,Uttar Pradesh,,0
+2025-12-30,Bihar,,0
+2025-12-30,Karnataka,,0
+2025-12-31,Uttar Pradesh,,0
+2025-12-31,Bihar,,0
+2025-12-31,Karnataka,,0
+2026-01-01,Uttar Pradesh,,0
+2026-01-01,Bihar,,0
+2026-01-01,Karnataka,,0
+2026-01-02,Uttar Pradesh,,0
+2026-01-02,Bihar,,0
+2026-01-02,Karnataka,,0
+2026-01-03,Uttar Pradesh,,0
+2026-01-03,Bihar,,0
+2026-01-03,Karnataka,,0
+2026-01-04,Uttar Pradesh,,0
+2026-01-04,Bihar,,0
+2026-01-04,Karnataka,,0
+2026-01-05,Uttar Pradesh,,0
+2026-01-05,Bihar,,0
+2026-01-05,Karnataka,,0
+2026-01-06,Uttar Pradesh,,0
+2026-01-06,Bihar,,0
+2026-01-06,Karnataka,,0
+2026-01-07,Uttar Pradesh,,0
+2026-01-07,Bihar,,0
+2026-01-07,Karnataka,,0
+2026-01-08,Uttar Pradesh,,0
+2026-01-08,Bihar,,0
+2026-01-08,Karnataka,,0
+2026-01-09,Uttar Pradesh,,0
+2026-01-09,Bihar,,0
+2026-01-09,Karnataka,,0
+2026-01-10,Uttar Pradesh,,0
+2026-01-10,Bihar,,0
+2026-01-10,Karnataka,,0
+2026-01-11,Uttar Pradesh,,0
+2026-01-11,Bihar,,0
+2026-01-11,Karnataka,,0
+2026-01-12,Uttar Pradesh,,0
+2026-01-12,Bihar,,0
+2026-01-12,Karnataka,,0
+2026-01-13,Uttar Pradesh,,0
+2026-01-13,Bihar,,0
+2026-01-13,Karnataka,,0
+2026-01-14,Uttar Pradesh,,0
+2026-01-14,Bihar,,0
+2026-01-14,Karnataka,,0
+2026-01-15,Uttar Pradesh,,0
+2026-01-15,Bihar,,0
+2026-01-15,Karnataka,,0
+2026-01-16,Uttar Pradesh,,0
+2026-01-16,Bihar,,0
+2026-01-16,Karnataka,,0
+2026-01-17,Uttar Pradesh,,0
+2026-01-17,Bihar,,0
+2026-01-17,Karnataka,,0
+2026-01-18,Uttar Pradesh,,0
+2026-01-18,Bihar,,0
+2026-01-18,Karnataka,,0
+2026-01-19,Uttar Pradesh,,0
+2026-01-19,Bihar,,0
+2026-01-19,Karnataka,,0
+2026-01-20,Uttar Pradesh,,0
+2026-01-20,Bihar,,0
+2026-01-20,Karnataka,,0
+2026-01-21,Uttar Pradesh,,0
+2026-01-21,Bihar,,0
+2026-01-21,Karnataka,,0
+2026-01-22,Uttar Pradesh,,0
+2026-01-22,Bihar,,0
+2026-01-22,Karnataka,,0
+2026-01-23,Uttar Pradesh,,1
+2026-01-23,Bihar,,1
+2026-01-23,Karnataka,,0
+2026-01-24,Uttar Pradesh,,0
+2026-01-24,Bihar,,0
+2026-01-24,Karnataka,,0
+2026-01-25,Uttar Pradesh,,0
+2026-01-25,Bihar,,0
+2026-01-25,Karnataka,,0
+2026-01-26,Uttar Pradesh,,1
+2026-01-26,Bihar,,1
+2026-01-26,Karnataka,,0
+2026-01-27,Uttar Pradesh,,0
+2026-01-27,Bihar,,0
+2026-01-27,Karnataka,,0
+2026-01-28,Uttar Pradesh,,0
+2026-01-28,Bihar,,0
+2026-01-28,Karnataka,,0
+2026-01-29,Uttar Pradesh,,1
+2026-01-29,Bihar,,1
+2026-01-29,Karnataka,,0
+2026-01-30,Uttar Pradesh,,0
+2026-01-30,Bihar,,0
+2026-01-30,Karnataka,,0
+2026-01-31,Uttar Pradesh,,0
+2026-01-31,Bihar,,0
+2026-01-31,Karnataka,,0
+2026-02-01,Uttar Pradesh,,1
+2026-02-01,Bihar,,1
+2026-02-01,Karnataka,,0
+2026-02-02,Uttar Pradesh,,0
+2026-02-02,Bihar,,0
+2026-02-02,Karnataka,,0
+2026-02-03,Uttar Pradesh,,0
+2026-02-03,Bihar,,0
+2026-02-03,Karnataka,,0
+2026-02-04,Uttar Pradesh,,1
+2026-02-04,Bihar,,1
+2026-02-04,Karnataka,,0
+2026-02-05,Uttar Pradesh,,0
+2026-02-05,Bihar,,0
+2026-02-05,Karnataka,,0
+2026-02-06,Uttar Pradesh,,0
+2026-02-06,Bihar,,0
+2026-02-06,Karnataka,,0
+2026-02-07,Uttar Pradesh,,1
+2026-02-07,Bihar,,1
+2026-02-07,Karnataka,,0
+2026-02-08,Uttar Pradesh,,0
+2026-02-08,Bihar,,0
+2026-02-08,Karnataka,,0
+2026-02-09,Uttar Pradesh,,0
+2026-02-09,Bihar,,0
+2026-02-09,Karnataka,,0
+2026-02-10,Uttar Pradesh,,1
+2026-02-10,Bihar,,1
+2026-02-10,Karnataka,,0
+2026-02-11,Uttar Pradesh,,0
+2026-02-11,Bihar,,0
+2026-02-11,Karnataka,,0
+2026-02-12,Uttar Pradesh,,0
+2026-02-12,Bihar,,0
+2026-02-12,Karnataka,,0
+2026-02-13,Uttar Pradesh,,1
+2026-02-13,Bihar,,1
+2026-02-13,Karnataka,,0
+2026-02-14,Uttar Pradesh,,0
+2026-02-14,Bihar,,0
+2026-02-14,Karnataka,,0
+2026-02-15,Uttar Pradesh,,0
+2026-02-15,Bihar,,0
+2026-02-15,Karnataka,,0
+2026-02-16,Uttar Pradesh,,1
+2026-02-16,Bihar,,1
+2026-02-16,Karnataka,,0
+2026-02-17,Uttar Pradesh,,0
+2026-02-17,Bihar,,0
+2026-02-17,Karnataka,,0
+2026-02-18,Uttar Pradesh,,0
+2026-02-18,Bihar,,0
+2026-02-18,Karnataka,,0
+2026-02-19,Uttar Pradesh,,1
+2026-02-19,Bihar,,1
+2026-02-19,Karnataka,,0
+2026-02-20,Uttar Pradesh,,0
+2026-02-20,Bihar,,0
+2026-02-20,Karnataka,,0
+2026-02-21,Uttar Pradesh,,0
+2026-02-21,Bihar,,0
+2026-02-21,Karnataka,,0
+2026-02-22,Uttar Pradesh,,1
+2026-02-22,Bihar,,1
+2026-02-22,Karnataka,,0
+2026-02-23,Uttar Pradesh,,0
+2026-02-23,Bihar,,0
+2026-02-23,Karnataka,,0
+2026-02-24,Uttar Pradesh,,0
+2026-02-24,Bihar,,0
+2026-02-24,Karnataka,,0
+2026-02-25,Uttar Pradesh,,1
+2026-02-25,Bihar,,1
+2026-02-25,Karnataka,,0
+2026-02-26,Uttar Pradesh,,0
+2026-02-26,Bihar,,0
+2026-02-26,Karnataka,,0
+2026-02-27,Uttar Pradesh,,0
+2026-02-27,Bihar,,0
+2026-02-27,Karnataka,,0
+2026-02-28,Uttar Pradesh,,1
+2026-02-28,Bihar,,1
+2026-02-28,Karnataka,,0
+2026-03-01,Uttar Pradesh,,0
+2026-03-01,Bihar,,0
+2026-03-01,Karnataka,,0
+2026-03-02,Uttar Pradesh,,0
+2026-03-02,Bihar,,0
+2026-03-02,Karnataka,,0
+2026-03-03,Uttar Pradesh,,1
+2026-03-03,Bihar,,1
+2026-03-03,Karnataka,,1
+2026-03-04,Uttar Pradesh,Holi,0
+2026-03-04,Bihar,Holi,0
+2026-03-04,Karnataka,,0
+2026-03-05,Uttar Pradesh,,0
+2026-03-05,Bihar,,0
+2026-03-05,Karnataka,,0
+2026-03-06,Uttar Pradesh,,1
+2026-03-06,Bihar,,1
+2026-03-06,Karnataka,,1
+2026-03-07,Uttar Pradesh,,0
+2026-03-07,Bihar,,0
+2026-03-07,Karnataka,,0
+2026-03-08,Uttar Pradesh,,0
+2026-03-08,Bihar,,0
+2026-03-08,Karnataka,,0
+2026-03-09,Uttar Pradesh,,1
+2026-03-09,Bihar,,1
+2026-03-09,Karnataka,,1
+2026-03-10,Uttar Pradesh,,0
+2026-03-10,Bihar,,0
+2026-03-10,Karnataka,,0
+2026-03-11,Uttar Pradesh,,0
+2026-03-11,Bihar,,0
+2026-03-11,Karnataka,,0
+2026-03-12,Uttar Pradesh,,1
+2026-03-12,Bihar,,1
+2026-03-12,Karnataka,,1
+2026-03-13,Uttar Pradesh,,0
+2026-03-13,Bihar,,0
+2026-03-13,Karnataka,,0
+2026-03-14,Uttar Pradesh,,0
+2026-03-14,Bihar,,0
+2026-03-14,Karnataka,,0
+2026-03-15,Uttar Pradesh,,0
+2026-03-15,Bihar,,0
+2026-03-15,Karnataka,,0
+2026-03-16,Uttar Pradesh,,0
+2026-03-16,Bihar,,0
+2026-03-16,Karnataka,,0
+2026-03-17,Uttar Pradesh,,0
+2026-03-17,Bihar,,0
+2026-03-17,Karnataka,,0
+2026-03-18,Uttar Pradesh,,0
+2026-03-18,Bihar,,0
+2026-03-18,Karnataka,,0
+2026-03-19,Uttar Pradesh,,0
+2026-03-19,Bihar,,0
+2026-03-19,Karnataka,Ugadi,0
+2026-03-20,Uttar Pradesh,Eid al-Fitr,0
+2026-03-20,Bihar,Eid al-Fitr,0
+2026-03-20,Karnataka,Eid al-Fitr,0
+2026-03-21,Uttar Pradesh,,0
+2026-03-21,Bihar,,0
+2026-03-21,Karnataka,,0
+2026-03-22,Uttar Pradesh,,0
+2026-03-22,Bihar,,0
+2026-03-22,Karnataka,,0
+2026-03-23,Uttar Pradesh,,0
+2026-03-23,Bihar,,0
+2026-03-23,Karnataka,,0
+2026-03-24,Uttar Pradesh,,0
+2026-03-24,Bihar,,0
+2026-03-24,Karnataka,,0
+2026-03-25,Uttar Pradesh,,0
+2026-03-25,Bihar,,0
+2026-03-25,Karnataka,,0
+2026-03-26,Uttar Pradesh,,0
+2026-03-26,Bihar,,0
+2026-03-26,Karnataka,,0
+2026-03-27,Uttar Pradesh,,0
+2026-03-27,Bihar,,0
+2026-03-27,Karnataka,,0
+2026-03-28,Uttar Pradesh,,0
+2026-03-28,Bihar,,0
+2026-03-28,Karnataka,,0
+2026-03-29,Uttar Pradesh,,0
+2026-03-29,Bihar,,0
+2026-03-29,Karnataka,,0
+2026-03-30,Uttar Pradesh,,0
+2026-03-30,Bihar,,0
+2026-03-30,Karnataka,,0
+2026-03-31,Uttar Pradesh,,0
+2026-03-31,Bihar,,0
+2026-03-31,Karnataka,,0
+2026-04-01,Uttar Pradesh,,0
+2026-04-01,Bihar,,0
+2026-04-01,Karnataka,,0
+2026-04-02,Uttar Pradesh,,0
+2026-04-02,Bihar,,0
+2026-04-02,Karnataka,,0
+2026-04-03,Uttar Pradesh,,0
+2026-04-03,Bihar,,0
+2026-04-03,Karnataka,,0
+2026-04-04,Uttar Pradesh,,0
+2026-04-04,Bihar,,0
+2026-04-04,Karnataka,,0
+2026-04-05,Uttar Pradesh,,0
+2026-04-05,Bihar,,0
+2026-04-05,Karnataka,,0
+2026-04-06,Uttar Pradesh,,0
+2026-04-06,Bihar,,0
+2026-04-06,Karnataka,,0
+2026-04-07,Uttar Pradesh,,0
+2026-04-07,Bihar,,0
+2026-04-07,Karnataka,,0
+2026-04-08,Uttar Pradesh,,0
+2026-04-08,Bihar,,0
+2026-04-08,Karnataka,,0
+2026-04-09,Uttar Pradesh,,0
+2026-04-09,Bihar,,0
+2026-04-09,Karnataka,,0
+2026-04-10,Uttar Pradesh,,0
+2026-04-10,Bihar,,0
+2026-04-10,Karnataka,,0
+2026-04-11,Uttar Pradesh,,0
+2026-04-11,Bihar,,0
+2026-04-11,Karnataka,,0
+2026-04-12,Uttar Pradesh,,0
+2026-04-12,Bihar,,0
+2026-04-12,Karnataka,,0
+2026-04-13,Uttar Pradesh,,0
+2026-04-13,Bihar,,0
+2026-04-13,Karnataka,,0
+2026-04-14,Uttar Pradesh,,0
+2026-04-14,Bihar,,0
+2026-04-14,Karnataka,,0
+2026-04-15,Uttar Pradesh,,1
+2026-04-15,Bihar,,1
+2026-04-15,Karnataka,,1
+2026-04-16,Uttar Pradesh,,0
+2026-04-16,Bihar,,0
+2026-04-16,Karnataka,,0
+2026-04-17,Uttar Pradesh,,1
+2026-04-17,Bihar,,1
+2026-04-17,Karnataka,,0
+2026-04-18,Uttar Pradesh,,0
+2026-04-18,Bihar,,0
+2026-04-18,Karnataka,,0
+2026-04-19,Uttar Pradesh,,1
+2026-04-19,Bihar,,1
+2026-04-19,Karnataka,,0
+2026-04-20,Uttar Pradesh,,0
+2026-04-20,Bihar,,0
+2026-04-20,Karnataka,,0
+2026-04-21,Uttar Pradesh,,1
+2026-04-21,Bihar,,1
+2026-04-21,Karnataka,,1
+2026-04-22,Uttar Pradesh,,0
+2026-04-22,Bihar,,0
+2026-04-22,Karnataka,,0
+2026-04-23,Uttar Pradesh,,1
+2026-04-23,Bihar,,1
+2026-04-23,Karnataka,,0
+2026-04-24,Uttar Pradesh,,0
+2026-04-24,Bihar,,0
+2026-04-24,Karnataka,,0
+2026-04-25,Uttar Pradesh,,1
+2026-04-25,Bihar,,1
+2026-04-25,Karnataka,,0
+2026-04-26,Uttar Pradesh,,0
+2026-04-26,Bihar,,0
+2026-04-26,Karnataka,,0
+2026-04-27,Uttar Pradesh,,1
+2026-04-27,Bihar,,1
+2026-04-27,Karnataka,,1
+2026-04-28,Uttar Pradesh,,0
+2026-04-28,Bihar,,0
+2026-04-28,Karnataka,,0
+2026-04-29,Uttar Pradesh,,1
+2026-04-29,Bihar,,1
+2026-04-29,Karnataka,,0
+2026-04-30,Uttar Pradesh,,0
+2026-04-30,Bihar,,0
+2026-04-30,Karnataka,,0
+2026-05-01,Uttar Pradesh,,1
+2026-05-01,Bihar,,1
+2026-05-01,Karnataka,,0
+2026-05-02,Uttar Pradesh,,0
+2026-05-02,Bihar,,0
+2026-05-02,Karnataka,,0
+2026-05-03,Uttar Pradesh,,1
+2026-05-03,Bihar,,1
+2026-05-03,Karnataka,,1
+2026-05-04,Uttar Pradesh,,0
+2026-05-04,Bihar,,0
+2026-05-04,Karnataka,,0
+2026-05-05,Uttar Pradesh,,1
+2026-05-05,Bihar,,1
+2026-05-05,Karnataka,,0
+2026-05-06,Uttar Pradesh,,0
+2026-05-06,Bihar,,0
+2026-05-06,Karnataka,,0
+2026-05-07,Uttar Pradesh,,1
+2026-05-07,Bihar,,1
+2026-05-07,Karnataka,,0
+2026-05-08,Uttar Pradesh,,0
+2026-05-08,Bihar,,0
+2026-05-08,Karnataka,,0
+2026-05-09,Uttar Pradesh,,1
+2026-05-09,Bihar,,1
+2026-05-09,Karnataka,,1
+2026-05-10,Uttar Pradesh,,0
+2026-05-10,Bihar,,0
+2026-05-10,Karnataka,,0
+2026-05-11,Uttar Pradesh,,1
+2026-05-11,Bihar,,1
+2026-05-11,Karnataka,,0
+2026-05-12,Uttar Pradesh,,0
+2026-05-12,Bihar,,0
+2026-05-12,Karnataka,,0
+2026-05-13,Uttar Pradesh,,1
+2026-05-13,Bihar,,1
+2026-05-13,Karnataka,,0
+2026-05-14,Uttar Pradesh,,0
+2026-05-14,Bihar,,0
+2026-05-14,Karnataka,,0
+2026-05-15,Uttar Pradesh,,1
+2026-05-15,Bihar,,1
+2026-05-15,Karnataka,,1
+2026-05-16,Uttar Pradesh,,0
+2026-05-16,Bihar,,0
+2026-05-16,Karnataka,,0
+2026-05-17,Uttar Pradesh,,0
+2026-05-17,Bihar,,0
+2026-05-17,Karnataka,,0
+2026-05-18,Uttar Pradesh,,0
+2026-05-18,Bihar,,0
+2026-05-18,Karnataka,,0
+2026-05-19,Uttar Pradesh,,0
+2026-05-19,Bihar,,0
+2026-05-19,Karnataka,,0
+2026-05-20,Uttar Pradesh,,0
+2026-05-20,Bihar,,0
+2026-05-20,Karnataka,,0
+2026-05-21,Uttar Pradesh,,0
+2026-05-21,Bihar,,0
+2026-05-21,Karnataka,,0
+2026-05-22,Uttar Pradesh,,0
+2026-05-22,Bihar,,0
+2026-05-22,Karnataka,,0
+2026-05-23,Uttar Pradesh,,0
+2026-05-23,Bihar,,0
+2026-05-23,Karnataka,,0
+2026-05-24,Uttar Pradesh,,0
+2026-05-24,Bihar,,0
+2026-05-24,Karnataka,,0
+2026-05-25,Uttar Pradesh,,0
+2026-05-25,Bihar,,0
+2026-05-25,Karnataka,,0
+2026-05-26,Uttar Pradesh,,0
+2026-05-26,Bihar,,0
+2026-05-26,Karnataka,,0
+2026-05-27,Uttar Pradesh,Eid al-Adha,0
+2026-05-27,Bihar,Eid al-Adha,0
+2026-05-27,Karnataka,Eid al-Adha,0
+2026-05-28,Uttar Pradesh,,0
+2026-05-28,Bihar,,0
+2026-05-28,Karnataka,,0
+2026-05-29,Uttar Pradesh,,0
+2026-05-29,Bihar,,0
+2026-05-29,Karnataka,,0
+2026-05-30,Uttar Pradesh,,0
+2026-05-30,Bihar,,0
+2026-05-30,Karnataka,,0
+2026-05-31,Uttar Pradesh,,0
+2026-05-31,Bihar,,0
+2026-05-31,Karnataka,,0
+2026-06-01,Uttar Pradesh,,0
+2026-06-01,Bihar,,0
+2026-06-01,Karnataka,,0
+2026-06-02,Uttar Pradesh,,0
+2026-06-02,Bihar,,0
+2026-06-02,Karnataka,,0
+2026-06-03,Uttar Pradesh,,0
+2026-06-03,Bihar,,0
+2026-06-03,Karnataka,,0
+2026-06-04,Uttar Pradesh,,0
+2026-06-04,Bihar,,0
+2026-06-04,Karnataka,,0
+2026-06-05,Uttar Pradesh,,0
+2026-06-05,Bihar,,0
+2026-06-05,Karnataka,,0
+2026-06-06,Uttar Pradesh,,0
+2026-06-06,Bihar,,0
+2026-06-06,Karnataka,,0
+2026-06-07,Uttar Pradesh,,0
+2026-06-07,Bihar,,0
+2026-06-07,Karnataka,,0
+2026-06-08,Uttar Pradesh,,0
+2026-06-08,Bihar,,0
+2026-06-08,Karnataka,,0
+2026-06-09,Uttar Pradesh,,0
+2026-06-09,Bihar,,0
+2026-06-09,Karnataka,,0
+2026-06-10,Uttar Pradesh,,0
+2026-06-10,Bihar,,0
+2026-06-10,Karnataka,,0
+2026-06-11,Uttar Pradesh,,0
+2026-06-11,Bihar,,0
+2026-06-11,Karnataka,,0
+2026-06-12,Uttar Pradesh,,0
+2026-06-12,Bihar,,0
+2026-06-12,Karnataka,,0
+2026-06-13,Uttar Pradesh,,0
+2026-06-13,Bihar,,0
+2026-06-13,Karnataka,,0
+2026-06-14,Uttar Pradesh,,0
+2026-06-14,Bihar,,0
+2026-06-14,Karnataka,,0
+2026-06-15,Uttar Pradesh,,0
+2026-06-15,Bihar,,0
+2026-06-15,Karnataka,,0
+2026-06-16,Uttar Pradesh,,0
+2026-06-16,Bihar,,0
+2026-06-16,Karnataka,,0
+2026-06-17,Uttar Pradesh,,0
+2026-06-17,Bihar,,0
+2026-06-17,Karnataka,,0
+2026-06-18,Uttar Pradesh,,0
+2026-06-18,Bihar,,0
+2026-06-18,Karnataka,,0
+2026-06-19,Uttar Pradesh,,0
+2026-06-19,Bihar,,0
+2026-06-19,Karnataka,,0
+2026-06-20,Uttar Pradesh,,1
+2026-06-20,Bihar,,1
+2026-06-20,Karnataka,,0
+2026-06-21,Uttar Pradesh,,0
+2026-06-21,Bihar,,0
+2026-06-21,Karnataka,,0
+2026-06-22,Uttar Pradesh,,0
+2026-06-22,Bihar,,0
+2026-06-22,Karnataka,,0
+2026-06-23,Uttar Pradesh,,1
+2026-06-23,Bihar,,1
+2026-06-23,Karnataka,,0
+2026-06-24,Uttar Pradesh,,0
+2026-06-24,Bihar,,0
+2026-06-24,Karnataka,,0
+2026-06-25,Uttar Pradesh,,0
+2026-06-25,Bihar,,0
+2026-06-25,Karnataka,,0
+2026-06-26,Uttar Pradesh,,1
+2026-06-26,Bihar,,1
+2026-06-26,Karnataka,,0
+2026-06-27,Uttar Pradesh,,0
+2026-06-27,Bihar,,0
+2026-06-27,Karnataka,,0
+2026-06-28,Uttar Pradesh,,0
+2026-06-28,Bihar,,0
+2026-06-28,Karnataka,,0
+2026-06-29,Uttar Pradesh,,1
+2026-06-29,Bihar,,1
+2026-06-29,Karnataka,,0
+2026-06-30,Uttar Pradesh,,0
+2026-06-30,Bihar,,0
+2026-06-30,Karnataka,,0
+2026-07-01,Uttar Pradesh,,0
+2026-07-01,Bihar,,0
+2026-07-01,Karnataka,,0
+2026-07-02,Uttar Pradesh,,1
+2026-07-02,Bihar,,1
+2026-07-02,Karnataka,,0
+2026-07-03,Uttar Pradesh,,0
+2026-07-03,Bihar,,0
+2026-07-03,Karnataka,,0
+2026-07-04,Uttar Pradesh,,0
+2026-07-04,Bihar,,0
+2026-07-04,Karnataka,,0
+2026-07-05,Uttar Pradesh,,1
+2026-07-05,Bihar,,1
+2026-07-05,Karnataka,,0
+2026-07-06,Uttar Pradesh,,0
+2026-07-06,Bihar,,0
+2026-07-06,Karnataka,,0
+2026-07-07,Uttar Pradesh,,0
+2026-07-07,Bihar,,0
+2026-07-07,Karnataka,,0
+2026-07-08,Uttar Pradesh,,0
+2026-07-08,Bihar,,0
+2026-07-08,Karnataka,,0
+2026-07-09,Uttar Pradesh,,0
+2026-07-09,Bihar,,0
+2026-07-09,Karnataka,,0
+2026-07-10,Uttar Pradesh,,0
+2026-07-10,Bihar,,0
+2026-07-10,Karnataka,,0
+2026-07-11,Uttar Pradesh,,0
+2026-07-11,Bihar,,0
+2026-07-11,Karnataka,,0
+2026-07-12,Uttar Pradesh,,0
+2026-07-12,Bihar,,0
+2026-07-12,Karnataka,,0
+2026-07-13,Uttar Pradesh,,0
+2026-07-13,Bihar,,0
+2026-07-13,Karnataka,,0
+2026-07-14,Uttar Pradesh,,0
+2026-07-14,Bihar,,0
+2026-07-14,Karnataka,,0
+2026-07-15,Uttar Pradesh,,0
+2026-07-15,Bihar,,0
+2026-07-15,Karnataka,,0
+2026-07-16,Uttar Pradesh,,0
+2026-07-16,Bihar,,0
+2026-07-16,Karnataka,,0
+2026-07-17,Uttar Pradesh,,0
+2026-07-17,Bihar,,0
+2026-07-17,Karnataka,,0
+2026-07-18,Uttar Pradesh,,0
+2026-07-18,Bihar,,0
+2026-07-18,Karnataka,,0
+2026-07-19,Uttar Pradesh,,0
+2026-07-19,Bihar,,0
+2026-07-19,Karnataka,,0
+2026-07-20,Uttar Pradesh,,0
+2026-07-20,Bihar,,0
+2026-07-20,Karnataka,,0
+2026-07-21,Uttar Pradesh,,0
+2026-07-21,Bihar,,0
+2026-07-21,Karnataka,,0
+2026-07-22,Uttar Pradesh,,0
+2026-07-22,Bihar,,0
+2026-07-22,Karnataka,,0
+2026-07-23,Uttar Pradesh,,0
+2026-07-23,Bihar,,0
+2026-07-23,Karnataka,,0
+2026-07-24,Uttar Pradesh,,0
+2026-07-24,Bihar,,0
+2026-07-24,Karnataka,,0
+2026-07-25,Uttar Pradesh,,0
+2026-07-25,Bihar,,0
+2026-07-25,Karnataka,,0
+2026-07-26,Uttar Pradesh,,0
+2026-07-26,Bihar,,0
+2026-07-26,Karnataka,,0
+2026-07-27,Uttar Pradesh,,0
+2026-07-27,Bihar,,0
+2026-07-27,Karnataka,,0
+2026-07-28,Uttar Pradesh,,0
+2026-07-28,Bihar,,0
+2026-07-28,Karnataka,,0
+2026-07-29,Uttar Pradesh,,0
+2026-07-29,Bihar,,0
+2026-07-29,Karnataka,,0
+2026-07-30,Uttar Pradesh,,0
+2026-07-30,Bihar,,0
+2026-07-30,Karnataka,,0
+2026-07-31,Uttar Pradesh,,0
+2026-07-31,Bihar,,0
+2026-07-31,Karnataka,,0
+2026-08-01,Uttar Pradesh,,0
+2026-08-01,Bihar,,0
+2026-08-01,Karnataka,,0
+2026-08-02,Uttar Pradesh,,0
+2026-08-02,Bihar,,0
+2026-08-02,Karnataka,,0
+2026-08-03,Uttar Pradesh,,0
+2026-08-03,Bihar,,0
+2026-08-03,Karnataka,,0
+2026-08-04,Uttar Pradesh,,0
+2026-08-04,Bihar,,0
+2026-08-04,Karnataka,,0
+2026-08-05,Uttar Pradesh,,0
+2026-08-05,Bihar,,0
+2026-08-05,Karnataka,,0
+2026-08-06,Uttar Pradesh,,0
+2026-08-06,Bihar,,0
+2026-08-06,Karnataka,,0
+2026-08-07,Uttar Pradesh,,0
+2026-08-07,Bihar,,0
+2026-08-07,Karnataka,,0
+2026-08-08,Uttar Pradesh,,0
+2026-08-08,Bihar,,0
+2026-08-08,Karnataka,,0
+2026-08-09,Uttar Pradesh,,0
+2026-08-09,Bihar,,0
+2026-08-09,Karnataka,,0
+2026-08-10,Uttar Pradesh,,0
+2026-08-10,Bihar,,0
+2026-08-10,Karnataka,,0
+2026-08-11,Uttar Pradesh,,0
+2026-08-11,Bihar,,0
+2026-08-11,Karnataka,,0
+2026-08-12,Uttar Pradesh,,0
+2026-08-12,Bihar,,0
+2026-08-12,Karnataka,,0
+2026-08-13,Uttar Pradesh,,0
+2026-08-13,Bihar,,0
+2026-08-13,Karnataka,,0
+2026-08-14,Uttar Pradesh,,0
+2026-08-14,Bihar,,0
+2026-08-14,Karnataka,,0
+2026-08-15,Uttar Pradesh,,0
+2026-08-15,Bihar,,0
+2026-08-15,Karnataka,,0
+2026-08-16,Uttar Pradesh,,0
+2026-08-16,Bihar,,0
+2026-08-16,Karnataka,,0
+2026-08-17,Uttar Pradesh,,0
+2026-08-17,Bihar,,0
+2026-08-17,Karnataka,,0
+2026-08-18,Uttar Pradesh,,0
+2026-08-18,Bihar,,0
+2026-08-18,Karnataka,,0
+2026-08-19,Uttar Pradesh,,0
+2026-08-19,Bihar,,0
+2026-08-19,Karnataka,,0
+2026-08-20,Uttar Pradesh,,0
+2026-08-20,Bihar,,0
+2026-08-20,Karnataka,,0
+2026-08-21,Uttar Pradesh,,0
+2026-08-21,Bihar,,0
+2026-08-21,Karnataka,,0
+2026-08-22,Uttar Pradesh,,0
+2026-08-22,Bihar,,0
+2026-08-22,Karnataka,,0
+2026-08-23,Uttar Pradesh,,0
+2026-08-23,Bihar,,0
+2026-08-23,Karnataka,,0
+2026-08-24,Uttar Pradesh,,0
+2026-08-24,Bihar,,0
+2026-08-24,Karnataka,,0
+2026-08-25,Uttar Pradesh,,0
+2026-08-25,Bihar,,0
+2026-08-25,Karnataka,,0
+2026-08-26,Uttar Pradesh,,0
+2026-08-26,Bihar,,0
+2026-08-26,Karnataka,,0
+2026-08-27,Uttar Pradesh,,0
+2026-08-27,Bihar,,0
+2026-08-27,Karnataka,,0
+2026-08-28,Uttar Pradesh,Raksha Bandhan,0
+2026-08-28,Bihar,Raksha Bandhan,0
+2026-08-28,Karnataka,Raksha Bandhan,0
+2026-08-29,Uttar Pradesh,,0
+2026-08-29,Bihar,,0
+2026-08-29,Karnataka,,0
+2026-08-30,Uttar Pradesh,,0
+2026-08-30,Bihar,,0
+2026-08-30,Karnataka,,0
+2026-08-31,Uttar Pradesh,,0
+2026-08-31,Bihar,,0
+2026-08-31,Karnataka,,0
+2026-09-01,Uttar Pradesh,,0
+2026-09-01,Bihar,,0
+2026-09-01,Karnataka,,0
+2026-09-02,Uttar Pradesh,,0
+2026-09-02,Bihar,,0
+2026-09-02,Karnataka,,0
+2026-09-03,Uttar Pradesh,,0
+2026-09-03,Bihar,,0
+2026-09-03,Karnataka,,0
+2026-09-04,Uttar Pradesh,,0
+2026-09-04,Bihar,,0
+2026-09-04,Karnataka,,0
+2026-09-05,Uttar Pradesh,,0
+2026-09-05,Bihar,,0
+2026-09-05,Karnataka,,0
+2026-09-06,Uttar Pradesh,,0
+2026-09-06,Bihar,,0
+2026-09-06,Karnataka,,0
+2026-09-07,Uttar Pradesh,,0
+2026-09-07,Bihar,,0
+2026-09-07,Karnataka,,0
+2026-09-08,Uttar Pradesh,,0
+2026-09-08,Bihar,,0
+2026-09-08,Karnataka,,0
+2026-09-09,Uttar Pradesh,,0
+2026-09-09,Bihar,,0
+2026-09-09,Karnataka,,0
+2026-09-10,Uttar Pradesh,,0
+2026-09-10,Bihar,,0
+2026-09-10,Karnataka,,0
+2026-09-11,Uttar Pradesh,,0
+2026-09-11,Bihar,,0
+2026-09-11,Karnataka,,0
+2026-09-12,Uttar Pradesh,,0
+2026-09-12,Bihar,,0
+2026-09-12,Karnataka,,0
+2026-09-13,Uttar Pradesh,,0
+2026-09-13,Bihar,,0
+2026-09-13,Karnataka,,0
+2026-09-14,Uttar Pradesh,,0
+2026-09-14,Bihar,,0
+2026-09-14,Karnataka,Ganesh Chaturthi,0
+2026-09-15,Uttar Pradesh,,0
+2026-09-15,Bihar,,0
+2026-09-15,Karnataka,,0
+2026-09-16,Uttar Pradesh,,0
+2026-09-16,Bihar,,0
+2026-09-16,Karnataka,,0
+2026-09-17,Uttar Pradesh,,0
+2026-09-17,Bihar,,0
+2026-09-17,Karnataka,,0
+2026-09-18,Uttar Pradesh,,0
+2026-09-18,Bihar,,0
+2026-09-18,Karnataka,,0
+2026-09-19,Uttar Pradesh,,0
+2026-09-19,Bihar,,0
+2026-09-19,Karnataka,,0
+2026-09-20,Uttar Pradesh,,0
+2026-09-20,Bihar,,0
+2026-09-20,Karnataka,,0
+2026-09-21,Uttar Pradesh,,0
+2026-09-21,Bihar,,0
+2026-09-21,Karnataka,,0
+2026-09-22,Uttar Pradesh,,0
+2026-09-22,Bihar,,0
+2026-09-22,Karnataka,,0
+2026-09-23,Uttar Pradesh,,0
+2026-09-23,Bihar,,0
+2026-09-23,Karnataka,,0
+2026-09-24,Uttar Pradesh,,0
+2026-09-24,Bihar,,0
+2026-09-24,Karnataka,,0
+2026-09-25,Uttar Pradesh,,0
+2026-09-25,Bihar,,0
+2026-09-25,Karnataka,,0
+2026-09-26,Uttar Pradesh,,0
+2026-09-26,Bihar,,0
+2026-09-26,Karnataka,,0
+2026-09-27,Uttar Pradesh,,0
+2026-09-27,Bihar,,0
+2026-09-27,Karnataka,,0
+2026-09-28,Uttar Pradesh,,0
+2026-09-28,Bihar,,0
+2026-09-28,Karnataka,,0
+2026-09-29,Uttar Pradesh,,0
+2026-09-29,Bihar,,0
+2026-09-29,Karnataka,,0
+2026-09-30,Uttar Pradesh,,0
+2026-09-30,Bihar,,0
+2026-09-30,Karnataka,,0
+2026-10-01,Uttar Pradesh,,0
+2026-10-01,Bihar,,0
+2026-10-01,Karnataka,,0
+2026-10-02,Uttar Pradesh,,0
+2026-10-02,Bihar,,0
+2026-10-02,Karnataka,,0
+2026-10-03,Uttar Pradesh,,0
+2026-10-03,Bihar,,0
+2026-10-03,Karnataka,,0
+2026-10-04,Uttar Pradesh,,0
+2026-10-04,Bihar,,0
+2026-10-04,Karnataka,,0
+2026-10-05,Uttar Pradesh,,0
+2026-10-05,Bihar,,0
+2026-10-05,Karnataka,,0
+2026-10-06,Uttar Pradesh,,0
+2026-10-06,Bihar,,0
+2026-10-06,Karnataka,,0
+2026-10-07,Uttar Pradesh,,0
+2026-10-07,Bihar,,0
+2026-10-07,Karnataka,,0
+2026-10-08,Uttar Pradesh,,0
+2026-10-08,Bihar,,0
+2026-10-08,Karnataka,,0
+2026-10-09,Uttar Pradesh,,0
+2026-10-09,Bihar,,0
+2026-10-09,Karnataka,,0
+2026-10-10,Uttar Pradesh,,0
+2026-10-10,Bihar,,0
+2026-10-10,Karnataka,,0
+2026-10-11,Uttar Pradesh,,0
+2026-10-11,Bihar,,0
+2026-10-11,Karnataka,,0
+2026-10-12,Uttar Pradesh,,0
+2026-10-12,Bihar,,0
+2026-10-12,Karnataka,,0
+2026-10-13,Uttar Pradesh,,0
+2026-10-13,Bihar,,0
+2026-10-13,Karnataka,,0
+2026-10-14,Uttar Pradesh,,0
+2026-10-14,Bihar,,0
+2026-10-14,Karnataka,,0
+2026-10-15,Uttar Pradesh,,0
+2026-10-15,Bihar,,0
+2026-10-15,Karnataka,,0
+2026-10-16,Uttar Pradesh,,0
+2026-10-16,Bihar,,0
+2026-10-16,Karnataka,,0
+2026-10-17,Uttar Pradesh,,0
+2026-10-17,Bihar,,0
+2026-10-17,Karnataka,,0
+2026-10-18,Uttar Pradesh,,0
+2026-10-18,Bihar,,0
+2026-10-18,Karnataka,,0
+2026-10-19,Uttar Pradesh,,0
+2026-10-19,Bihar,,0
+2026-10-19,Karnataka,,0
+2026-10-20,Uttar Pradesh,Dussehra / Dasara,0
+2026-10-20,Bihar,Dussehra / Dasara,0
+2026-10-20,Karnataka,Dussehra / Dasara,0
+2026-10-21,Uttar Pradesh,,0
+2026-10-21,Bihar,,0
+2026-10-21,Karnataka,,0
+2026-10-22,Uttar Pradesh,,0
+2026-10-22,Bihar,,0
+2026-10-22,Karnataka,,0
+2026-10-23,Uttar Pradesh,,0
+2026-10-23,Bihar,,0
+2026-10-23,Karnataka,,0
+2026-10-24,Uttar Pradesh,,0
+2026-10-24,Bihar,,0
+2026-10-24,Karnataka,,0
+2026-10-25,Uttar Pradesh,,0
+2026-10-25,Bihar,,0
+2026-10-25,Karnataka,,0
+2026-10-26,Uttar Pradesh,,0
+2026-10-26,Bihar,,0
+2026-10-26,Karnataka,,0
+2026-10-27,Uttar Pradesh,,0
+2026-10-27,Bihar,,0
+2026-10-27,Karnataka,,0
+2026-10-28,Uttar Pradesh,,0
+2026-10-28,Bihar,,0
+2026-10-28,Karnataka,,0
+2026-10-29,Uttar Pradesh,,0
+2026-10-29,Bihar,,0
+2026-10-29,Karnataka,,0
+2026-10-30,Uttar Pradesh,,0
+2026-10-30,Bihar,,0
+2026-10-30,Karnataka,,0
+2026-10-31,Uttar Pradesh,,0
+2026-10-31,Bihar,,0
+2026-10-31,Karnataka,,0
+2026-11-01,Uttar Pradesh,,0
+2026-11-01,Bihar,,0
+2026-11-01,Karnataka,,0
+2026-11-02,Uttar Pradesh,,0
+2026-11-02,Bihar,,0
+2026-11-02,Karnataka,,0
+2026-11-03,Uttar Pradesh,,0
+2026-11-03,Bihar,,0
+2026-11-03,Karnataka,,0
+2026-11-04,Uttar Pradesh,,0
+2026-11-04,Bihar,,0
+2026-11-04,Karnataka,,0
+2026-11-05,Uttar Pradesh,,0
+2026-11-05,Bihar,,0
+2026-11-05,Karnataka,,0
+2026-11-06,Uttar Pradesh,,0
+2026-11-06,Bihar,,0
+2026-11-06,Karnataka,,0
+2026-11-07,Uttar Pradesh,,0
+2026-11-07,Bihar,,0
+2026-11-07,Karnataka,,0
+2026-11-08,Uttar Pradesh,Diwali,0
+2026-11-08,Bihar,Diwali,0
+2026-11-08,Karnataka,Diwali,0
+2026-11-09,Uttar Pradesh,,0
+2026-11-09,Bihar,,0
+2026-11-09,Karnataka,,0
+2026-11-10,Uttar Pradesh,,0
+2026-11-10,Bihar,,0
+2026-11-10,Karnataka,,0
+2026-11-11,Uttar Pradesh,,0
+2026-11-11,Bihar,,0
+2026-11-11,Karnataka,,0
+2026-11-12,Uttar Pradesh,,0
+2026-11-12,Bihar,,0
+2026-11-12,Karnataka,,0
+2026-11-13,Uttar Pradesh,,0
+2026-11-13,Bihar,,0
+2026-11-13,Karnataka,,0
+2026-11-14,Uttar Pradesh,,0
+2026-11-14,Bihar,,0
+2026-11-14,Karnataka,,0
+2026-11-15,Uttar Pradesh,,0
+2026-11-15,Bihar,Chhath Puja,0
+2026-11-15,Karnataka,,0
+2026-11-16,Uttar Pradesh,,0
+2026-11-16,Bihar,,0
+2026-11-16,Karnataka,,0
+2026-11-17,Uttar Pradesh,,0
+2026-11-17,Bihar,,0
+2026-11-17,Karnataka,,0
+2026-11-18,Uttar Pradesh,,0
+2026-11-18,Bihar,,0
+2026-11-18,Karnataka,,0
+2026-11-19,Uttar Pradesh,,0
+2026-11-19,Bihar,,0
+2026-11-19,Karnataka,,0
+2026-11-20,Uttar Pradesh,,1
+2026-11-20,Bihar,,1
+2026-11-20,Karnataka,,1
+2026-11-21,Uttar Pradesh,,1
+2026-11-21,Bihar,,1
+2026-11-21,Karnataka,,1
+2026-11-22,Uttar Pradesh,,1
+2026-11-22,Bihar,,1
+2026-11-22,Karnataka,,1
+2026-11-23,Uttar Pradesh,,1
+2026-11-23,Bihar,,1
+2026-11-23,Karnataka,,0
+2026-11-24,Uttar Pradesh,,1
+2026-11-24,Bihar,,1
+2026-11-24,Karnataka,,1
+2026-11-25,Uttar Pradesh,,1
+2026-11-25,Bihar,,1
+2026-11-25,Karnataka,,0
+2026-11-26,Uttar Pradesh,,1
+2026-11-26,Bihar,,1
+2026-11-26,Karnataka,,1
+2026-11-27,Uttar Pradesh,,1
+2026-11-27,Bihar,,1
+2026-11-27,Karnataka,,1
+2026-11-28,Uttar Pradesh,,1
+2026-11-28,Bihar,,1
+2026-11-28,Karnataka,,1
+2026-11-29,Uttar Pradesh,,1
+2026-11-29,Bihar,,1
+2026-11-29,Karnataka,,0
+2026-11-30,Uttar Pradesh,,1
+2026-11-30,Bihar,,1
+2026-11-30,Karnataka,,1
+2026-12-01,Uttar Pradesh,,1
+2026-12-01,Bihar,,1
+2026-12-01,Karnataka,,0
+2026-12-02,Uttar Pradesh,,1
+2026-12-02,Bihar,,1
+2026-12-02,Karnataka,,0
+2026-12-03,Uttar Pradesh,,1
+2026-12-03,Bihar,,1
+2026-12-03,Karnataka,,1
+2026-12-04,Uttar Pradesh,,1
+2026-12-04,Bihar,,1
+2026-12-04,Karnataka,,0
+2026-12-05,Uttar Pradesh,,1
+2026-12-05,Bihar,,1
+2026-12-05,Karnataka,,0
+2026-12-06,Uttar Pradesh,,1
+2026-12-06,Bihar,,1
+2026-12-06,Karnataka,,1
+2026-12-07,Uttar Pradesh,,1
+2026-12-07,Bihar,,1
+2026-12-07,Karnataka,,0
+2026-12-08,Uttar Pradesh,,1
+2026-12-08,Bihar,,1
+2026-12-08,Karnataka,,0
+2026-12-09,Uttar Pradesh,,1
+2026-12-09,Bihar,,1
+2026-12-09,Karnataka,,1
+2026-12-10,Uttar Pradesh,,1
+2026-12-10,Bihar,,1
+2026-12-10,Karnataka,,0
+2026-12-11,Uttar Pradesh,,1
+2026-12-11,Bihar,,1
+2026-12-11,Karnataka,,0
+2026-12-12,Uttar Pradesh,,1
+2026-12-12,Bihar,,1
+2026-12-12,Karnataka,,1
+2026-12-13,Uttar Pradesh,,0
+2026-12-13,Bihar,,0
+2026-12-13,Karnataka,,0
+2026-12-14,Uttar Pradesh,,0
+2026-12-14,Bihar,,0
+2026-12-14,Karnataka,,0
+2026-12-15,Uttar Pradesh,,0
+2026-12-15,Bihar,,0
+2026-12-15,Karnataka,,0
+2026-12-16,Uttar Pradesh,,0
+2026-12-16,Bihar,,0
+2026-12-16,Karnataka,,0
+2026-12-17,Uttar Pradesh,,0
+2026-12-17,Bihar,,0
+2026-12-17,Karnataka,,0
+2026-12-18,Uttar Pradesh,,0
+2026-12-18,Bihar,,0
+2026-12-18,Karnataka,,0
+2026-12-19,Uttar Pradesh,,0
+2026-12-19,Bihar,,0
+2026-12-19,Karnataka,,0
+2026-12-20,Uttar Pradesh,,0
+2026-12-20,Bihar,,0
+2026-12-20,Karnataka,,0
+2026-12-21,Uttar Pradesh,,0
+2026-12-21,Bihar,,0
+2026-12-21,Karnataka,,0
+2026-12-22,Uttar Pradesh,,0
+2026-12-22,Bihar,,0
+2026-12-22,Karnataka,,0
+2026-12-23,Uttar Pradesh,,0
+2026-12-23,Bihar,,0
+2026-12-23,Karnataka,,0
+2026-12-24,Uttar Pradesh,,0
+2026-12-24,Bihar,,0
+2026-12-24,Karnataka,,0
+2026-12-25,Uttar Pradesh,,0
+2026-12-25,Bihar,,0
+2026-12-25,Karnataka,,0
+2026-12-26,Uttar Pradesh,,0
+2026-12-26,Bihar,,0
+2026-12-26,Karnataka,,0
+2026-12-27,Uttar Pradesh,,0
+2026-12-27,Bihar,,0
+2026-12-27,Karnataka,,0
+2026-12-28,Uttar Pradesh,,0
+2026-12-28,Bihar,,0
+2026-12-28,Karnataka,,0
+2026-12-29,Uttar Pradesh,,0
+2026-12-29,Bihar,,0
+2026-12-29,Karnataka,,0
+2026-12-30,Uttar Pradesh,,0
+2026-12-30,Bihar,,0
+2026-12-30,Karnataka,,0
+2026-12-31,Uttar Pradesh,,0
+2026-12-31,Bihar,,0
+2026-12-31,Karnataka,,0

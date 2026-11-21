@@ -1,0 +1,781 @@
+{
+ "run_id": "SAMPLE",
+ "as_of": "2026-10-31",
+ "generated_at": "2026-11-21T07:00:00+05:30",
+ "trigger": "schedule",
+ "summary": {
+  "n_groups": 8,
+  "n_moves": 24,
+  "units": 334,
+  "mrp_value": 7654116,
+  "revenue_protected": 363500,
+  "needs_approval": 3,
+  "by_type": {
+   "WH_TO_STORE": 4,
+   "STORE_TO_STORE": 2,
+   "PULL_BACK": 2
+  },
+  "stores_touched": 8
+ },
+ "problems": [
+  {
+   "problem_id": "P-CAP-KNP-03",
+   "kind": "CAPACITY",
+   "title": "KNP-03 is at 208% of capacity",
+   "detail": "300 × SHW-02-L arrived 3 Sep; the chain sells ~40 of this SKU in 90 days.",
+   "group_ids": [
+    "G001",
+    "G002"
+   ]
+  },
+  {
+   "problem_id": "P-NEW-KUR-04",
+   "kind": "NEW_LAUNCH",
+   "title": "New launch KUR-04 missing at LKO-01 and MZF-01",
+   "detail": "808 sold in October; 4,378 arriving Nov–Dec.",
+   "group_ids": [
+    "G003"
+   ]
+  },
+  {
+   "problem_id": "P-UND-MZF-01",
+   "kind": "UNDERSTOCK",
+   "title": "MZF-01 is starved",
+   "detail": "37% of capacity, 29 days cover, Mojari below minimum display.",
+   "group_ids": [
+    "G004"
+   ]
+  },
+  {
+   "problem_id": "P-SCA-KUR-01",
+   "kind": "SCARCITY",
+   "title": "KUR-01 bestseller can't cover everyone in November",
+   "detail": "Stores hold 1–8 per size; November need is about 3× supply.",
+   "group_ids": [
+    "G005"
+   ]
+  },
+  {
+   "problem_id": "P-OTHER",
+   "kind": "AGEING",
+   "title": "Other moves",
+   "detail": "Consolidation, ageing and min-display fills.",
+   "group_ids": [
+    "G006",
+    "G007",
+    "G008"
+   ]
+  }
+ ],
+ "groups": [
+  {
+   "group_id": "G001",
+   "type": "STORE_TO_STORE",
+   "problem_kind": "CAPACITY",
+   "style_id": "SHW-02",
+   "style_name": "Mint Brocade Sherwani",
+   "category": "Sherwani",
+   "from": "KNP-03",
+   "to": "PAT-01",
+   "ship_on": "2026-11-01",
+   "arrives_on": "2026-11-08",
+   "lead_days": 7,
+   "sizes": {
+    "L": 12
+   },
+   "qty": 12,
+   "mrp_value": 332388,
+   "revenue_at_risk": 180000,
+   "priority": 180000,
+   "needs_approval": true,
+   "explanation": "KNP-03 → PAT-01 · 12 × SHW-02 (L): KNP-03 holds 300 L (store at 208% capacity); PAT-01 has 4, sells 0.33/day ×2.4 festive lift.",
+   "evidence": {
+    "from_cover_before": 2700,
+    "from_cover_after": 2590,
+    "to_cover_before": 5,
+    "to_cover_after": 20,
+    "to_vel_daily": 0.8,
+    "from_vel_daily": 0.11,
+    "lift": 2.4,
+    "age_days": 58,
+    "to_capacity_after": 0.78
+   },
+   "lines": [
+    {
+     "sku_id": "SHW-02-L",
+     "size": "L",
+     "qty": 12
+    }
+   ]
+  },
+  {
+   "group_id": "G002",
+   "type": "PULL_BACK",
+   "problem_kind": "CAPACITY",
+   "style_id": "SHW-02",
+   "style_name": "Mint Brocade Sherwani",
+   "category": "Sherwani",
+   "from": "KNP-03",
+   "to": "WH-KOL",
+   "ship_on": "2026-11-01",
+   "arrives_on": "2026-11-05",
+   "lead_days": 4,
+   "sizes": {
+    "L": 250
+   },
+   "qty": 250,
+   "mrp_value": 6924750,
+   "revenue_at_risk": 0,
+   "priority": 692475.0,
+   "needs_approval": true,
+   "explanation": "KNP-03 → WH-KOL · 250 × SHW-02 (L): no store needs them before 12 Dec; takes KNP-03 from 208% to 108% of capacity.",
+   "evidence": {
+    "from_cover_before": 2700,
+    "from_cover_after": 300,
+    "to_cover_before": null,
+    "to_cover_after": null,
+    "to_vel_daily": null,
+    "from_vel_daily": 0.11,
+    "lift": 2.4,
+    "age_days": 58,
+    "to_capacity_after": null
+   },
+   "lines": [
+    {
+     "sku_id": "SHW-02-L",
+     "size": "L",
+     "qty": 250
+    }
+   ]
+  },
+  {
+   "group_id": "G003",
+   "type": "WH_TO_STORE",
+   "problem_kind": "NEW_LAUNCH",
+   "style_id": "KUR-04",
+   "style_name": "Ivory Chikankari Kurta Set",
+   "category": "Kurta Set",
+   "from": "WH-KOL",
+   "to": "LKO-01",
+   "ship_on": "2026-11-01",
+   "arrives_on": "2026-11-05",
+   "lead_days": 4,
+   "sizes": {
+    "M": 5,
+    "L": 9,
+    "XL": 8,
+    "XXL": 4,
+    "XXXL": 1
+   },
+   "qty": 27,
+   "mrp_value": 194373,
+   "revenue_at_risk": 96000,
+   "priority": 96000,
+   "needs_approval": true,
+   "explanation": "WH → LKO-01 · 27 × KUR-04: new launch selling 38/day chain-wide; LKO-01 (S++) holds none; S++ peers sell 1.6/day.",
+   "evidence": {
+    "from_cover_before": null,
+    "from_cover_after": null,
+    "to_cover_before": 0,
+    "to_cover_after": 17,
+    "to_vel_daily": 1.6,
+    "from_vel_daily": null,
+    "lift": 2.2,
+    "age_days": null,
+    "to_capacity_after": 0.8
+   },
+   "lines": [
+    {
+     "sku_id": "KUR-04-M",
+     "size": "M",
+     "qty": 5
+    },
+    {
+     "sku_id": "KUR-04-L",
+     "size": "L",
+     "qty": 9
+    },
+    {
+     "sku_id": "KUR-04-XL",
+     "size": "XL",
+     "qty": 8
+    },
+    {
+     "sku_id": "KUR-04-XXL",
+     "size": "XXL",
+     "qty": 4
+    },
+    {
+     "sku_id": "KUR-04-XXXL",
+     "size": "XXXL",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "group_id": "G004",
+   "type": "WH_TO_STORE",
+   "problem_kind": "UNDERSTOCK",
+   "style_id": "MOJ-01",
+   "style_name": "Peach Leather Mojari",
+   "category": "Mojari",
+   "from": "WH-KOL",
+   "to": "MZF-01",
+   "ship_on": "2026-11-01",
+   "arrives_on": "2026-11-04",
+   "lead_days": 3,
+   "sizes": {
+    "7": 1,
+    "8": 2,
+    "9": 2,
+    "10": 1
+   },
+   "qty": 6,
+   "mrp_value": 13194,
+   "revenue_at_risk": 14000,
+   "priority": 14000,
+   "needs_approval": false,
+   "explanation": "WH → MZF-01 · 6 × MOJ-01: Mojari at 5 vs min display 8; MZF-01 at 37% capacity with 29 days cover.",
+   "evidence": {
+    "from_cover_before": null,
+    "from_cover_after": null,
+    "to_cover_before": 9,
+    "to_cover_after": 21,
+    "to_vel_daily": 0.3,
+    "from_vel_daily": null,
+    "lift": 2.6,
+    "age_days": null,
+    "to_capacity_after": 0.39
+   },
+   "lines": [
+    {
+     "sku_id": "MOJ-01-7",
+     "size": "7",
+     "qty": 1
+    },
+    {
+     "sku_id": "MOJ-01-8",
+     "size": "8",
+     "qty": 2
+    },
+    {
+     "sku_id": "MOJ-01-9",
+     "size": "9",
+     "qty": 2
+    },
+    {
+     "sku_id": "MOJ-01-10",
+     "size": "10",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "group_id": "G005",
+   "type": "WH_TO_STORE",
+   "problem_kind": "SCARCITY",
+   "style_id": "KUR-01",
+   "style_name": "Teal Embroidered Yoke Kurta Set",
+   "category": "Kurta Set",
+   "from": "WH-KOL",
+   "to": "PAT-01",
+   "ship_on": "2026-11-01",
+   "arrives_on": "2026-11-04",
+   "lead_days": 3,
+   "sizes": {
+    "L": 10,
+    "XL": 12,
+    "XXL": 4
+   },
+   "qty": 26,
+   "mrp_value": 68224,
+   "revenue_at_risk": 62000,
+   "priority": 62000,
+   "needs_approval": false,
+   "explanation": "WH → PAT-01 · 26 × KUR-01: core bestseller, PAT-01 down to 2 units; only 190 arrive 1 Nov for 20 stores, PAT-01 gets its share by revenue at risk.",
+   "evidence": {
+    "from_cover_before": null,
+    "from_cover_after": null,
+    "to_cover_before": 1,
+    "to_cover_after": 12,
+    "to_vel_daily": 2.1,
+    "from_vel_daily": null,
+    "lift": 2.7,
+    "age_days": null,
+    "to_capacity_after": 0.79
+   },
+   "lines": [
+    {
+     "sku_id": "KUR-01-L",
+     "size": "L",
+     "qty": 10
+    },
+    {
+     "sku_id": "KUR-01-XL",
+     "size": "XL",
+     "qty": 12
+    },
+    {
+     "sku_id": "KUR-01-XXL",
+     "size": "XXL",
+     "qty": 4
+    }
+   ]
+  },
+  {
+   "group_id": "G006",
+   "type": "STORE_TO_STORE",
+   "problem_kind": "SOLD_OUT_CONSOLIDATION",
+   "style_id": "KUR-15",
+   "style_name": "Ivory Cotton Silk Kurta Set",
+   "category": "Kurta Set",
+   "from": "KNP-02",
+   "to": "LKO-02",
+   "ship_on": "2026-11-01",
+   "arrives_on": "2026-11-05",
+   "lead_days": 4,
+   "sizes": {
+    "M": 1,
+    "XXXL": 1
+   },
+   "qty": 2,
+   "mrp_value": 12998,
+   "revenue_at_risk": 3500,
+   "priority": 3500,
+   "needs_approval": false,
+   "explanation": "KNP-02 → LKO-02 · 2 × KUR-15: style sold out chain-wide (nothing inbound); KNP-02's units unsold for 84 days, LKO-02 sold 59 last year.",
+   "evidence": {
+    "from_cover_before": null,
+    "from_cover_after": null,
+    "to_cover_before": 0,
+    "to_cover_after": 6,
+    "to_vel_daily": 0.3,
+    "from_vel_daily": 0.0,
+    "lift": 2.0,
+    "age_days": 200,
+    "to_capacity_after": 0.8
+   },
+   "lines": [
+    {
+     "sku_id": "KUR-15-M",
+     "size": "M",
+     "qty": 1
+    },
+    {
+     "sku_id": "KUR-15-XXXL",
+     "size": "XXXL",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "group_id": "G007",
+   "type": "PULL_BACK",
+   "problem_kind": "AGEING",
+   "style_id": "JKT-08",
+   "style_name": "Neon Lime Printed Nehru Jacket",
+   "category": "Jacket",
+   "from": "LKO-03",
+   "to": "WH-KOL",
+   "ship_on": "2026-11-01",
+   "arrives_on": "2026-11-05",
+   "lead_days": 4,
+   "sizes": {
+    "S": 1,
+    "M": 2,
+    "L": 2,
+    "XL": 2,
+    "XXL": 1
+   },
+   "qty": 8,
+   "mrp_value": 34392,
+   "revenue_at_risk": 0,
+   "priority": 3439.2,
+   "needs_approval": false,
+   "explanation": "LKO-03 → WH-KOL · 8 × JKT-08: Neon Lime jacket, 36 sold chain-wide ever; 240+ days old; no store sells it.",
+   "evidence": {
+    "from_cover_before": null,
+    "from_cover_after": null,
+    "to_cover_before": null,
+    "to_cover_after": null,
+    "to_vel_daily": null,
+    "from_vel_daily": 0.0,
+    "lift": 1.0,
+    "age_days": 244,
+    "to_capacity_after": null
+   },
+   "lines": [
+    {
+     "sku_id": "JKT-08-S",
+     "size": "S",
+     "qty": 1
+    },
+    {
+     "sku_id": "JKT-08-M",
+     "size": "M",
+     "qty": 2
+    },
+    {
+     "sku_id": "JKT-08-L",
+     "size": "L",
+     "qty": 2
+    },
+    {
+     "sku_id": "JKT-08-XL",
+     "size": "XL",
+     "qty": 2
+    },
+    {
+     "sku_id": "JKT-08-XXL",
+     "size": "XXL",
+     "qty": 1
+    }
+   ]
+  },
+  {
+   "group_id": "G008",
+   "type": "WH_TO_STORE",
+   "problem_kind": "MIN_DISPLAY",
+   "style_id": "SHW-01",
+   "style_name": "Wine Velvet Embroidered Sherwani",
+   "category": "Sherwani",
+   "from": "WH-KOL",
+   "to": "BLR-05",
+   "ship_on": "2026-11-01",
+   "arrives_on": "2026-11-07",
+   "lead_days": 6,
+   "sizes": {
+    "M": 1,
+    "L": 1,
+    "XL": 1
+   },
+   "qty": 3,
+   "mrp_value": 73797,
+   "revenue_at_risk": 8000,
+   "priority": 8000,
+   "needs_approval": false,
+   "explanation": "WH → BLR-05 · 3 × SHW-01: new store (opened 10 Oct) has 2 Sherwanis vs min display 5; velocity from peer B stores.",
+   "evidence": {
+    "from_cover_before": null,
+    "from_cover_after": null,
+    "to_cover_before": 12,
+    "to_cover_after": 30,
+    "to_vel_daily": 0.1,
+    "from_vel_daily": null,
+    "lift": 2.0,
+    "age_days": null,
+    "to_capacity_after": 0.87
+   },
+   "lines": [
+    {
+     "sku_id": "SHW-01-M",
+     "size": "M",
+     "qty": 1
+    },
+    {
+     "sku_id": "SHW-01-L",
+     "size": "L",
+     "qty": 1
+    },
+    {
+     "sku_id": "SHW-01-XL",
+     "size": "XL",
+     "qty": 1
+    }
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "flag_id": "F001",
+   "kind": "DATA_QUALITY",
+   "location_id": "MYS-02",
+   "sku_id": "KUR-02-M",
+   "style_id": "KUR-02",
+   "message": "On hand is -4 in the snapshot; treated as 0. Stock count needed."
+  },
+  {
+   "flag_id": "F002",
+   "kind": "REORDER",
+   "location_id": null,
+   "sku_id": null,
+   "style_id": "KUR-18",
+   "message": "Sold out chain-wide, nothing inbound. Zero recent sales means sold out, not slow. Buyer to re-order."
+  },
+  {
+   "flag_id": "F003",
+   "kind": "DEAD_STOCK",
+   "location_id": null,
+   "sku_id": null,
+   "style_id": "JKT-08",
+   "message": "In stock at 15 locations for 12 weeks; 36 sold ever. Consolidate and mark down."
+  },
+  {
+   "flag_id": "F004",
+   "kind": "NEW_STORE",
+   "location_id": "BLR-05",
+   "sku_id": null,
+   "style_id": null,
+   "message": "Opened 10 Oct 2026; velocity borrowed from peer B stores."
+  },
+  {
+   "flag_id": "F005",
+   "kind": "CAPACITY",
+   "location_id": "KNP-03",
+   "sku_id": null,
+   "style_id": null,
+   "message": "520 units in a 250-unit store (208%)."
+  }
+ ],
+ "stores": [
+  {
+   "store_id": "LKO-01",
+   "tier": "S++",
+   "city": "Lucknow",
+   "zone": "North",
+   "capacity": 1200,
+   "units": 934,
+   "utilisation": 0.778,
+   "vel_daily": 20.298,
+   "cover_days": 46.015,
+   "below_min": []
+  },
+  {
+   "store_id": "LKO-02",
+   "tier": "S+",
+   "city": "Lucknow",
+   "zone": "North",
+   "capacity": 800,
+   "units": 641,
+   "utilisation": 0.801,
+   "vel_daily": 9.345,
+   "cover_days": 68.591,
+   "below_min": []
+  },
+  {
+   "store_id": "LKO-03",
+   "tier": "A",
+   "city": "Lucknow",
+   "zone": "North",
+   "capacity": 350,
+   "units": 275,
+   "utilisation": 0.786,
+   "vel_daily": 3.048,
+   "cover_days": 90.234,
+   "below_min": []
+  },
+  {
+   "store_id": "LKO-04",
+   "tier": "S+",
+   "city": "Lucknow",
+   "zone": "North",
+   "capacity": 700,
+   "units": 548,
+   "utilisation": 0.783,
+   "vel_daily": 9.333,
+   "cover_days": 58.714,
+   "below_min": []
+  },
+  {
+   "store_id": "KNP-01",
+   "tier": "S+",
+   "city": "Kanpur",
+   "zone": "North",
+   "capacity": 850,
+   "units": 704,
+   "utilisation": 0.828,
+   "vel_daily": 8.976,
+   "cover_days": 78.43,
+   "below_min": []
+  },
+  {
+   "store_id": "KNP-02",
+   "tier": "A",
+   "city": "Kanpur",
+   "zone": "North",
+   "capacity": 350,
+   "units": 272,
+   "utilisation": 0.777,
+   "vel_daily": 2.667,
+   "cover_days": 102.0,
+   "below_min": []
+  },
+  {
+   "store_id": "KNP-03",
+   "tier": "B",
+   "city": "Kanpur",
+   "zone": "North",
+   "capacity": 250,
+   "units": 520,
+   "utilisation": 2.08,
+   "vel_daily": 1.702,
+   "cover_days": 305.455,
+   "below_min": []
+  },
+  {
+   "store_id": "PAT-01",
+   "tier": "S++",
+   "city": "Patna",
+   "zone": "East",
+   "capacity": 1250,
+   "units": 963,
+   "utilisation": 0.77,
+   "vel_daily": 19.381,
+   "cover_days": 49.688,
+   "below_min": []
+  },
+  {
+   "store_id": "PAT-02",
+   "tier": "S+",
+   "city": "Patna",
+   "zone": "East",
+   "capacity": 850,
+   "units": 661,
+   "utilisation": 0.778,
+   "vel_daily": 9.976,
+   "cover_days": 66.258,
+   "below_min": []
+  },
+  {
+   "store_id": "PAT-03",
+   "tier": "A",
+   "city": "Patna",
+   "zone": "East",
+   "capacity": 350,
+   "units": 278,
+   "utilisation": 0.794,
+   "vel_daily": 2.988,
+   "cover_days": 93.036,
+   "below_min": []
+  },
+  {
+   "store_id": "PAT-04",
+   "tier": "B",
+   "city": "Patna",
+   "zone": "East",
+   "capacity": 250,
+   "units": 205,
+   "utilisation": 0.82,
+   "vel_daily": 1.762,
+   "cover_days": 116.351,
+   "below_min": []
+  },
+  {
+   "store_id": "MZF-01",
+   "tier": "A",
+   "city": "Muzaffarpur",
+   "zone": "East",
+   "capacity": 350,
+   "units": 128,
+   "utilisation": 0.366,
+   "vel_daily": 4.476,
+   "cover_days": 28.596,
+   "below_min": [
+    "Mojari"
+   ]
+  },
+  {
+   "store_id": "MZF-02",
+   "tier": "B",
+   "city": "Muzaffarpur",
+   "zone": "East",
+   "capacity": 250,
+   "units": 208,
+   "utilisation": 0.832,
+   "vel_daily": 2.048,
+   "cover_days": 101.581,
+   "below_min": []
+  },
+  {
+   "store_id": "BLR-01",
+   "tier": "S++",
+   "city": "Bengaluru",
+   "zone": "South",
+   "capacity": 1250,
+   "units": 1101,
+   "utilisation": 0.881,
+   "vel_daily": 20.5,
+   "cover_days": 53.707,
+   "below_min": []
+  },
+  {
+   "store_id": "BLR-02",
+   "tier": "S++",
+   "city": "Bengaluru",
+   "zone": "South",
+   "capacity": 1150,
+   "units": 972,
+   "utilisation": 0.845,
+   "vel_daily": 20.155,
+   "cover_days": 48.227,
+   "below_min": []
+  },
+  {
+   "store_id": "BLR-03",
+   "tier": "S+",
+   "city": "Bengaluru",
+   "zone": "South",
+   "capacity": 800,
+   "units": 719,
+   "utilisation": 0.899,
+   "vel_daily": 10.0,
+   "cover_days": 71.9,
+   "below_min": []
+  },
+  {
+   "store_id": "BLR-04",
+   "tier": "S+",
+   "city": "Bengaluru",
+   "zone": "South",
+   "capacity": 750,
+   "units": 619,
+   "utilisation": 0.825,
+   "vel_daily": 11.738,
+   "cover_days": 52.734,
+   "below_min": []
+  },
+  {
+   "store_id": "BLR-05",
+   "tier": "B",
+   "city": "Bengaluru",
+   "zone": "South",
+   "capacity": 250,
+   "units": 214,
+   "utilisation": 0.856,
+   "vel_daily": 0.75,
+   "cover_days": 285.333,
+   "below_min": [
+    "Sherwani"
+   ]
+  },
+  {
+   "store_id": "MYS-01",
+   "tier": "A",
+   "city": "Mysuru",
+   "zone": "South",
+   "capacity": 350,
+   "units": 278,
+   "utilisation": 0.794,
+   "vel_daily": 3.036,
+   "cover_days": 91.576,
+   "below_min": []
+  },
+  {
+   "store_id": "MYS-02",
+   "tier": "B",
+   "city": "Mysuru",
+   "zone": "South",
+   "capacity": 250,
+   "units": 227,
+   "utilisation": 0.908,
+   "vel_daily": 1.786,
+   "cover_days": 127.12,
+   "below_min": []
+  }
+ ],
+ "validation": {
+  "passed": true,
+  "checked_moves": 24,
+  "violations": []
+ }
+}

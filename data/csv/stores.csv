@@ -1,0 +1,21 @@
+store_id,city,state,zone,tier,size_sqft,stock_capacity_units,opened_on,area_manager_id
+LKO-01,Lucknow,Uttar Pradesh,North,S++,6150,1200,2014-05-01,AM-01
+LKO-02,Lucknow,Uttar Pradesh,North,S+,3300,800,2017-07-01,AM-01
+LKO-03,Lucknow,Uttar Pradesh,North,A,1650,350,2022-01-01,AM-01
+LKO-04,Lucknow,Uttar Pradesh,North,S+,3800,700,2022-05-01,AM-01
+KNP-01,Kanpur,Uttar Pradesh,North,S+,3300,850,2017-09-01,AM-02
+KNP-02,Kanpur,Uttar Pradesh,North,A,1750,350,2014-01-01,AM-02
+KNP-03,Kanpur,Uttar Pradesh,North,B,1200,250,2018-12-01,AM-02
+PAT-01,Patna,Bihar,East,S++,6900,1250,2019-07-01,AM-03
+PAT-02,Patna,Bihar,East,S+,3300,850,2015-06-01,AM-03
+PAT-03,Patna,Bihar,East,A,1800,350,2014-02-01,AM-03
+PAT-04,Patna,Bihar,East,B,1000,250,2015-01-01,AM-03
+MZF-01,Muzaffarpur,Bihar,East,A,1900,350,2017-11-01,AM-04
+MZF-02,Muzaffarpur,Bihar,East,B,1250,250,2019-08-01,AM-04
+BLR-01,Bengaluru,Karnataka,South,S++,5300,1250,2014-10-01,AM-05
+BLR-02,Bengaluru,Karnataka,South,S++,6400,1150,2021-05-01,AM-05
+BLR-03,Bengaluru,Karnataka,South,S+,3450,800,2020-01-01,AM-05
+BLR-04,Bengaluru,Karnataka,South,S+,3100,750,2022-03-01,AM-05
+BLR-05,Bengaluru,Karnataka,South,B,1300,250,2026-10-10,AM-05
+MYS-01,Mysuru,Karnataka,South,A,1850,350,2019-08-01,AM-06
+MYS-02,Mysuru,Karnataka,South,B,1100,250,2022-11-01,AM-06

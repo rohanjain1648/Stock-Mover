@@ -1,0 +1,40 @@
+{
+ "digest": {
+  "subject": "Stock Mover · 31 Oct 2026 · 8 moves to approve (2 need sign-off)",
+  "text": "8 moves, 315 units. Top: KNP-03 at 208% capacity (release 262 SHW-02-L); new launch KUR-04 to LKO-01; MZF-01 Mojari below min. 0 rule breaks. Approve: https://stock-mover.vercel.app/",
+  "html": "<h2>8 moves to approve</h2><p>0 rule breaks.</p>",
+  "link": "https://stock-mover.vercel.app/"
+ },
+ "am_alerts": [
+  {
+   "am_id": "AM-02",
+   "am_name": "Alok Tiwari",
+   "city": "Kanpur",
+   "stores": [
+    "KNP-01",
+    "KNP-02",
+    "KNP-03"
+   ],
+   "week": "2026-W44",
+   "sent_this_week": 1,
+   "items": [
+    {
+     "group_id": "G001",
+     "text": "KNP-03 → PAT-01 · 12 × SHW-02 (L)"
+    },
+    {
+     "group_id": "G002",
+     "text": "KNP-03 → WH-KOL · 250 × SHW-02 (L)"
+    }
+   ],
+   "text": "KNP-03 is at 208% capacity. Please release 262 SHW-02-L: 12 to PAT-01, 250 back to WH-KOL."
+  }
+ ],
+ "approval_requests": [
+  {
+   "group_id": "G001",
+   "mrp_value": 332388,
+   "text": "Approve 12 × SHW-02-L KNP-03 → PAT-01?"
+  }
+ ]
+}

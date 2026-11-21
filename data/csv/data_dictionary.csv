@@ -1,0 +1,37 @@
+tab,column,what_it_means,example
+stores,store_id,Store code: city + number. Joins to every tab that has store_id.,LKO-01
+stores,city / state / zone,"Six cities in three states. Zone: North = Uttar Pradesh, East = Bihar, South = Karnataka.",Lucknow · Uttar Pradesh · North
+stores,tier,"Store grade. S++ = super flagship, S+ = flagship, A and B = smaller stores (A better than B).",S++
+stores,size_sqft,Floor area.,6150
+stores,stock_capacity_units,The most units the store can physically hold.,1200
+stores,opened_on,Opening date. One store is brand new.,2014-05-01
+stores,area_manager_id,The area manager responsible. Joins to area_managers.,AM-01
+area_managers,area_manager_id / name / city,One area manager per city.,AM-01 · Rakesh Srivastava · Lucknow
+area_managers,stores,The stores they look after.,"LKO-01, LKO-02, LKO-03, LKO-04"
+area_managers,max_alerts_per_week,How many alerts they will actually read in a week.,5
+items,sku_id,"One style in one size. Joins to bill_lines, stock and inbound.",KUR-12-XL
+items,style_id / style_name,"The design, across all its sizes.",KUR-12 · Teal Cotton Silk Kurta Set
+items,category,"Sherwani, Indo-Western, Kurta Set, Jacket, Mojari (footwear), Safa, Mala, Stole, Packaging.",Kurta Set
+items,size,"Apparel S, M, L, XL, XXL, XXXL. Mojari 6–11. FS = free size.",XL
+items,mrp / cost_price,Tag price in ₹ (GST included) and an illustrative cost.,6799 · 2474
+items,launch_date,When the style went on sale.,2025-08-01
+items,is_core_style,1 = replenished all year. 0 = fashion style with a limited run.,1
+items,is_packaging,"1 = carry bag, garment cover or gift box (₹0). Not a product.",0
+salespeople,salesperson_id / store_id / name / join_date,"Everyone who has worked in these stores since Nov 2024, including people who have left. No exit date is recorded.",SP1002 · LKO-01 · Shahid K. · 2023-10-19
+roster_daily,date / store_id / salesperson_id,"One row per salesperson per day, 1 May – 31 Oct 2026.",2026-09-05 · LKO-03 · SP1030
+roster_daily,status,Present or Off.,Present
+footfall_daily,date / store_id / footfall,Walk-ins counted by the store's door camera. Families often walk in together.,2026-10-10 · LKO-03 · 41
+bills,bill_id / bill_date / store_id,One row per bill.,B0081234 · 2026-10-10 · LKO-03
+bills,salesperson_id,Who made the sale. Joins to salespeople.,SP1030
+bills,customer_id,"The customer's mobile number, hashed. The same customer has the same ID across visits and stores.",C36943703
+bill_lines,bill_id / sku_id / qty,One row per item on a bill. Joins to bills (bill_id) and items (sku_id).,B0081234 · MOJ-01-9 · 2
+bill_lines,mrp / selling_price,"₹ per unit. selling_price is after any discount, so discount = mrp − selling_price.",2199 · 2199
+stock_snapshot,as_of_date / location_id / sku_id,Stock at close on 31 Oct 2026. location_id is a store or WH-KOL (the warehouse).,2026-10-31 · LKO-03 · KUR-05-L
+stock_snapshot,on_hand / in_transit / in_transit_arrives_on,"Units in the store now; units dispatched but not yet arrived, and when they arrive.",3 · 2 · 2026-11-01
+stock_snapshot,oldest_stock_received_on,When the oldest unit on hand arrived. Use it to work out stock age.,2026-09-14
+stock_weekly,week_ending / store_id / sku_id,Last 12 weeks (week ending 15 Aug – 31 Oct 2026). Weeks run Sunday to Saturday.,2026-10-31 · LKO-03 · KUR-05-L
+stock_weekly,closing_on_hand / days_in_stock,"Units at Saturday close, and how many days that week had at least one unit (0–7).",2 · 7
+warehouse_inbound,expected_date / sku_id / qty / status,Deliveries due into the warehouse from 1 Nov 2026.,2026-11-01 · KUR-05-L · 62 · Planned
+calendar,date / state / festival / is_wedding_date,"Festivals by state, and auspicious wedding dates (1 = yes), Nov 2024 – Dec 2026.",2026-11-08 · Bihar · Diwali · 0
+"rules, min_display, lead_times",—,"The stock rules, the minimum display per tier and category, and how many days a move takes.",S++ · Kurta Set · 120
+flagship_protected,store_id / rank / style_id,The top-20 styles of each S++ store (last 90 days). These are never transferred out.,LKO-01 · 1 · KUR-02
