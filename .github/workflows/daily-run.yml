@@ -1,0 +1,54 @@
+name: daily-run
+
+on:
+  schedule:
+    - cron: "30 1 * * *"     # 07:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  engine:
+    name: Run engine unattended
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m engine.run --trigger github
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: run-${{ github.run_id }}
+          path: outputs/latest.json
+          if-no-files-found: warn
+
+  api:
+    name: Trigger live API run
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      API_URL: ${{ secrets.API_URL }}
+      RUN_TOKEN: ${{ secrets.RUN_TOKEN }}
+    steps:
+      - name: Wake the API and wait for any boot-time run to finish
+        run: |
+          if [ -z "$API_URL" ] || [ -z "$RUN_TOKEN" ]; then
+            echo "::warning::API_URL / RUN_TOKEN secrets not set; skipping the live trigger"; exit 0
+          fi
+          for i in $(seq 1 20); do
+            h=$(curl -fsS --max-time 90 "$API_URL/api/health" || true)
+            echo "health: $h"
+            case "$h" in *'"run_in_progress":false'*) exit 0 ;; esac
+            sleep 15
+          done
+          echo "::error::API never became idle"; exit 1
+      - name: POST /api/runs
+        if: env.API_URL != '' && env.RUN_TOKEN != ''
+        run: |
+          curl -fsS --max-time 300 -X POST -H "X-Run-Token: $RUN_TOKEN" "$API_URL/api/runs?trigger=github"

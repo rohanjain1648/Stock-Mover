@@ -1,0 +1,31 @@
+# Render Blueprint: New -> Blueprint -> connect this repo -> Apply.
+services:
+  - type: web
+    name: stock-mover-api
+    runtime: docker
+    plan: free
+    region: singapore          # closest Render region to India
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    buildFilter:               # frontend/docs pushes don't redeploy the API
+      paths:
+        - backend/**
+        - engine/**
+        - data/**
+        - contracts/**
+        - requirements.txt
+        - Dockerfile
+    envVars:
+      - key: RUN_TOKEN           # shared secret for POST /api/runs (same value as the GitHub secret)
+        sync: false
+      - key: FRONTEND_ORIGIN     # Vercel URL (comma-separated list allowed, or *)
+        sync: false
+      - key: PUBLIC_APP_URL      # link used in the email digest
+        sync: false
+      - key: SMTP_USER           # optional: Gmail address that sends the digest
+        sync: false
+      - key: SMTP_APP_PASSWORD   # optional: Gmail app password
+        sync: false
+      - key: DIGEST_TO           # optional: digest recipients (comma-separated)
+        sync: false

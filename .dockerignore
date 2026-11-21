@@ -1,0 +1,16 @@
+frontend
+node_modules
+.git
+.github
+outputs
+**/__pycache__
+**/*.pyc
+docs
+.pytest_cache
+.superpowers
+.remember
+.env
+backend/state.db
+backend/tests
+tests
+scripts
