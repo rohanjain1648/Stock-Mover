@@ -73,12 +73,14 @@ def run_engine(trigger: str = "manual", strict: bool = True, out_dir: Path = C.O
 
     touched = {g["from"] for g in groups} | {g["to"] for g in groups}
     touched.discard(C.WH_ID)
+    summary = _summary(groups, touched)
+    summary["deferred"] = moves.get("deferred", {"groups": 0, "units": 0, "revenue_at_risk": 0})
     run = _clean({
         "run_id": started.strftime("%Y%m%dT%H%M%SZ"),
         "as_of": data.as_of,
         "generated_at": started.isoformat(timespec="seconds"),
         "trigger": trigger,
-        "summary": _summary(groups, touched),
+        "summary": summary,
         "problems": problems,
         "groups": sorted(groups, key=lambda g: -g.get("priority", 0)),
         "flags": flags,

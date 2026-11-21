@@ -28,7 +28,7 @@ Semantics: `vel_daily` = forecast units/day for the next ~30 days (season-adjust
 ## C2 — run JSON (engine/run.py writes `outputs/latest.json`; example `contracts/sample_run.json`)
 Top level: `run_id, as_of, generated_at, trigger, summary, problems[], groups[], flags[], stores[], validation`.
 
-- `summary`: `n_groups, n_moves, units, mrp_value, revenue_protected, needs_approval, by_type{WH_TO_STORE, STORE_TO_STORE, PULL_BACK}, stores_touched`
+- `summary`: `n_groups, n_moves, units, mrp_value, revenue_protected, needs_approval, by_type{WH_TO_STORE, STORE_TO_STORE, PULL_BACK}, stores_touched, deferred{groups, units, revenue_at_risk}` — `deferred` = small moves (< ₹10,000 revenue at risk) held back for the next daily run; UI shows "N small moves deferred to tomorrow".
 - `problems[]`: `problem_id, kind, title, detail, group_ids[]` — one card per headline finding.
 - `groups[]` (the approvable unit = one style × from × to × type):
   `group_id, type (WH_TO_STORE|STORE_TO_STORE|PULL_BACK), problem_kind (CAPACITY|OVERSTOCK|UNDERSTOCK|SCARCITY|NEW_LAUNCH|MIN_DISPLAY|AGEING|SOLD_OUT_CONSOLIDATION), style_id, style_name, category, from, to, ship_on, arrives_on, lead_days, sizes{size: qty}, qty, mrp_value, revenue_at_risk, priority, needs_approval, explanation, evidence{from_cover_before, from_cover_after, to_cover_before, to_cover_after, to_vel_daily, from_vel_daily, lift, age_days, to_capacity_after}, lines[{sku_id, size, qty}]`
