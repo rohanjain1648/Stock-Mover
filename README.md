@@ -9,7 +9,8 @@ explained in one line, checked against every rule, and delivered to the people w
 
 | | |
 |---|---|
-| **Live app** | https://stock-mover-teal.vercel.app |
+| **Live app** | https://stock-mover-teal.vercel.app · landing page: https://stock-mover-teal.vercel.app/home |
+| **Demo video** | https://youtu.be/47XpvHJ0fFg |
 | **API** | https://stock-mover-api.onrender.com/api/health |
 | **Design spec** | [docs/superpowers/specs/2026-11-21-stock-mover-design.md](docs/superpowers/specs/2026-11-21-stock-mover-design.md) |
 | **Interfaces** | [contracts/CONTRACTS.md](contracts/CONTRACTS.md) |

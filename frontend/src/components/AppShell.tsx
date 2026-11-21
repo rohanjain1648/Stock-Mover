@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { ArrowLeftRight, ClipboardList, History, SearchCheck, Store } from "lucide-react";
+import { ArrowLeftRight, ClipboardList, History, SearchCheck, Sparkles, Store } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 
@@ -8,6 +8,7 @@ const NAV = [
   { to: "/stores", label: "Stores", icon: Store, end: false },
   { to: "/findings", label: "Findings", icon: SearchCheck, end: false },
   { to: "/runs", label: "Runs", icon: History, end: false },
+  { to: "/home", label: "About", icon: Sparkles, end: false },
 ];
 
 export function AppShell() {
