@@ -26,6 +26,8 @@ Semantics: `vel_daily` = forecast units/day for the next ~30 days (season-adjust
 30 days of cover (0 for protected styles at S++). `basis` ∈ {`instock`, `shrunk`, `peer`, `history`, `new_store_peer`, `not_ranged`, `naive_84d`}.
 
 ## C2 — run JSON (engine/run.py writes `outputs/latest.json`; example `contracts/sample_run.json`)
+Real validated run for UI work: `contracts/real_run.json` (278 groups, 28 problems). `sample_run.json` stays the small hand-made fixture that backend tests pin.
+
 Top level: `run_id, as_of, generated_at, trigger, summary, problems[], groups[], flags[], stores[], validation`.
 
 - `summary`: `n_groups, n_moves, units, mrp_value, revenue_protected, needs_approval, by_type{WH_TO_STORE, STORE_TO_STORE, PULL_BACK}, stores_touched, deferred{groups, units, revenue_at_risk}` — `deferred` = small moves (< ₹10,000 revenue at risk) held back for the next daily run; UI shows "N small moves deferred to tomorrow".
