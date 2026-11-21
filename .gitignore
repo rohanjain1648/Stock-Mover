@@ -10,3 +10,5 @@ node_modules/
 frontend/dist/
 .DS_Store
 .remember/
+.claude/skills/dispatch-alerts/recipients.json
+.superpowers/
