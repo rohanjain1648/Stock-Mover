@@ -75,3 +75,21 @@ def test_problems_cover_every_group_once(ctx):
     _, _, res = ctx
     ids = [gid for p in res["problems"] for gid in p["group_ids"]]
     assert sorted(ids) == sorted(g["group_id"] for g in res["groups"])
+
+def test_materiality_cap_and_deferred(ctx):
+    _, _, res = ctx
+    assert len(res["groups"]) <= 320
+    assert res["deferred"]["groups"] > 0 and res["deferred"]["units"] > 0
+
+def test_explanations_are_one_line_with_numbers(ctx):
+    pytest.importorskip("engine.explain")
+    import re
+    _, _, res = ctx
+    for g in res["groups"]:
+        e = g["explanation"]
+        frm = "WH" if g["from"] == "WH-KOL" else g["from"]
+        to = "WH" if g["to"] == "WH-KOL" else g["to"]
+        assert "\n" not in e and len(e) <= 220, e
+        assert e.startswith(f"{frm} → {to} · {g['qty']} × {g['style_id']} ("), e
+        reason = e.split("): ", 1)[1]
+        assert len(re.findall(r"\d+(?:\.\d+)?", reason)) >= 2, e

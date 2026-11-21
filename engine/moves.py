@@ -20,6 +20,7 @@ from engine.interfaces import Features
 
 INF = float("inf")
 TARGET_EXTRA = C.REVIEW_DAYS + C.SAFETY_DAYS
+ALWAYS_MATERIAL = ("NEW_LAUNCH", "MIN_DISPLAY")   # kinds shown whatever their revenue at risk (plus all pull-backs)
 
 
 def _cover(stock: float, vel: float) -> float:
@@ -66,6 +67,7 @@ class Ledger:
         self.style_vel = p.groupby(["location_id", "style_id"])["vel_daily"].sum().astype(float).to_dict()
         self.chain_vel_sku = p.groupby("sku_id")["vel_daily"].sum().astype(float).to_dict()
         self.chain_vel_style = p.groupby("style_id")["vel_daily"].sum().astype(float).to_dict()
+        self.chain_sold84_style = p.groupby("style_id")["sold_84"].sum().astype(int).to_dict()
 
         self.given = defaultdict(int)       # (loc, sku) -> units out
         self.recv = defaultdict(int)        # (loc, sku) -> units in
@@ -90,7 +92,9 @@ class Ledger:
         self.wh_alloc = defaultdict(lambda: defaultdict(int))   # sku -> ship date -> qty
         self.wh_start = dict(zip(feats.wh["sku_id"], feats.wh["on_hand"].astype(int)))
         self.lines: list[dict] = []
+        self.banned: set[tuple] = set()      # ban_key()s the materiality loop held back
         self._lead: dict[tuple[str, str], int] = {}
+        self._wh_style: dict[str, bool] = {}
 
     # ---------- lookups ----------
     def lead(self, src: str, dst: str) -> int:
@@ -191,6 +195,14 @@ class Ledger:
             head = head - other if head >= other + own else min(own, head - other)
         return max(0, int(head))
 
+    def can_pull_back(self, sku: str) -> bool:
+        """Never pull back a style the WH holds none of (sold out: nothing to redeploy; stores consolidate)."""
+        style = self.items.at[sku, "style_id"]
+        if style not in self._wh_style:
+            self._wh_style[style] = any(self.wh_points.get(k) and self.wh_points[k][-1][1] > 0
+                                        for k in self.style_skus[style])
+        return self._wh_style[style]
+
     def can_receive(self, store: str, sku: str) -> bool:
         return store != C.WH_ID and self.given[(store, sku)] == 0 and \
             self.store_start.get(store, 0) <= self.capacity[store]
@@ -262,7 +274,9 @@ class Ledger:
                     break
                 a = min(qd, self.receive_limit(store, day, cat, reserve))
                 if a > 0:
-                    self.record("WH_TO_STORE", kind, C.WH_ID, store, sku, a, day, ctx)
+                    a = self.record("WH_TO_STORE", kind, C.WH_ID, store, sku, a, day, ctx)
+                    if a == 0:
+                        break
                     qd -= a
                     sent += a
         return sent
@@ -271,9 +285,12 @@ class Ledger:
     def record(self, typ: str, kind: str, frm: str, to: str, sku: str, qty: int, ship_on, ctx: dict | None = None):
         qty = int(qty)
         if qty <= 0:
-            return
+            return 0
         it = self.items.loc[sku]
         style, cat = it["style_id"], it["cat_group"]
+        banned = self.banned and typ != "PULL_BACK" and kind not in ALWAYS_MATERIAL
+        if banned and ban_key(typ, kind, frm, to, style, ship_on) in self.banned:   # immaterial earlier
+            return 0
         ship_on = pd.Timestamp(ship_on)
         lead = self.lead(frm, to)
         to_before = self.stock(to, sku) if to != C.WH_ID else None
@@ -305,6 +322,7 @@ class Ledger:
             "arrives_on": ship_on + pd.Timedelta(days=lead), "lead_days": lead,
             "to_before": to_before, "revenue_at_risk": rar, "ctx": dict(ctx or {}),
         })
+        return qty
 
 
 # ---------------------------------------------------------------- groups
@@ -343,8 +361,6 @@ def assemble_groups(L: Ledger) -> list[dict]:
                                                          for s in skus],
             "_lines": lns,
         }
-        g["evidence"] = _evidence(L, g)
-        g["explanation"] = _explain(L, g)
         groups.append(g)
     groups.sort(key=lambda g: (-g["priority"], -g["mrp_value"], g["style_id"], g["from"], g["to"]))
     for i, g in enumerate(groups, 1):
@@ -353,18 +369,33 @@ def assemble_groups(L: Ledger) -> list[dict]:
     return groups
 
 
-def _evidence(L: Ledger, g: dict) -> dict:
-    frm, to, style, qty = g["from"], g["to"], g["style_id"], g["qty"]
-    ev = dict.fromkeys(["from_cover_before", "from_cover_after", "to_cover_before", "to_cover_after",
-                        "to_vel_daily", "from_vel_daily", "lift", "age_days", "to_capacity_after"])
-    return ev
+EVIDENCE_KEYS = ("from_cover_before", "from_cover_after", "to_cover_before", "to_cover_after",
+                 "to_vel_daily", "from_vel_daily", "lift", "age_days", "to_capacity_after")
 
 
-def _explain(L: Ledger, g: dict) -> str:
+def _placeholder_explanation(g: dict) -> str:
     frm = "WH" if g["from"] == C.WH_ID else g["from"]
     to = "WH" if g["to"] == C.WH_ID else g["to"]
     sizes = " ".join(f"{s}{q}" for s, q in g["sizes"].items())
-    return f"{frm} → {to} · {g['qty']} × {g['style_id']} ({sizes}): {g['problem_kind'].lower()}"
+    return f"{frm} → {to} · {g['qty']} × {g['style_id']} ({sizes}): {g['problem_kind'].lower().replace('_', ' ')}"
+
+
+def explain_groups(groups: list[dict], data: Data, feats: Features) -> None:
+    """Evidence + one-line explanation per group from S1's engine/explain.py (start-state numbers).
+    Falls back to a placeholder when explain.py is missing or fails on a group, so a run never breaks."""
+    try:
+        from engine.explain import evidence_for, explain_group
+    except ImportError:
+        evidence_for = explain_group = None
+    for g in groups:
+        g["evidence"], g["explanation"] = dict.fromkeys(EVIDENCE_KEYS), _placeholder_explanation(g)
+        if explain_group is None:
+            continue
+        try:
+            g["evidence"] = evidence_for(g, data, feats)
+            g["explanation"] = explain_group(g, data, feats)
+        except Exception:                                      # keep the placeholder for this group only
+            pass
 
 
 # ---------------------------------------------------------------- pass helpers
@@ -398,8 +429,7 @@ def _s2s_to_needs(L: Ledger, kind: str, giver: str, sku: str, max_qty: int) -> i
         q = min(max_qty - sent, L.vel_need(r, sku), L.receive_limit(r, None, cat, True),
                 L.give_limit(giver, sku, True))
         if q > 0:
-            L.record("STORE_TO_STORE", kind, giver, r, sku, q, L.ship0)
-            sent += q
+            sent += L.record("STORE_TO_STORE", kind, giver, r, sku, q, L.ship0)
     return sent
 
 
@@ -455,9 +485,8 @@ def pass1_capacity_overstock(L: Ledger) -> None:
             moved = _s2s_to_needs(L, "CAPACITY", store, sku, sur)
             release -= moved
             q = min(sur - moved, release, L.give_limit(store, sku, False))
-            if q > 0:
-                L.record("PULL_BACK", "CAPACITY", store, C.WH_ID, sku, q, L.ship0)
-                release -= q
+            if q > 0 and L.can_pull_back(sku):
+                release -= L.record("PULL_BACK", "CAPACITY", store, C.WH_ID, sku, q, L.ship0)
 
     rows = []
     for store in L.store_ids:
@@ -469,7 +498,7 @@ def pass1_capacity_overstock(L: Ledger) -> None:
     for store, sku in rows:
         _s2s_to_needs(L, "OVERSTOCK", store, sku, _surplus(L, store, sku))
         q = min(_surplus(L, store, sku, 120), L.give_limit(store, sku, False))
-        if q > 0:
+        if q > 0 and L.can_pull_back(sku):
             L.record("PULL_BACK", "OVERSTOCK", store, C.WH_ID, sku, q, L.ship0)
 
 
@@ -501,7 +530,7 @@ def pass2_store_to_store(L: Ledger) -> None:
                     break
                 q = min(want, _surplus(L, d, sku), L.give_limit(d, sku, True), L.receive_limit(r, None, cat, True))
                 if q > 0:
-                    L.record("STORE_TO_STORE", kind, d, r, sku, q, L.ship0)
+                    q = L.record("STORE_TO_STORE", kind, d, r, sku, q, L.ship0)
                     want -= q
                     shortage -= q
 
@@ -562,8 +591,7 @@ def _s2s_one(L: Ledger, kind: str, store: str, sku: str, qty: int) -> int:
             break
         q = min(qty - sent, _surplus(L, d, sku), L.give_limit(d, sku, True), L.receive_limit(store, None, cat, True))
         if q > 0:
-            L.record("STORE_TO_STORE", kind, d, store, sku, q, L.ship0)
-            sent += q
+            sent += L.record("STORE_TO_STORE", kind, d, store, sku, q, L.ship0)
     return sent
 
 
@@ -612,6 +640,7 @@ def _aged(L: Ledger, store: str, sku: str) -> bool:
     return age > (C.AGEING_DAYS_CORE if core else C.AGEING_DAYS_FASHION)
 
 
+DEAD_MAX_SOLD_84 = 10  # chain-wide 12-week sales at or below which a style is dead (S3 DEAD_STOCK bar)
 AGEING_SLOW = 0.02     # units/day at or below which aged stock "does not sell" where it sits
 
 
@@ -649,10 +678,14 @@ def pass5a_ageing_to_sellers(L: Ledger) -> None:
 def pass5b_ageing_pull_back(L: Ledger) -> None:
     """Aged stock still in place goes back to the WH when the whole style is dead at that store
     (style-level vel_daily <= 0.02) and the store receives nothing of that style in this run
-    (fringe sizes of a style that sells stay, so size runs are not broken)."""
+    (fringe sizes of a style that sells stay, so size runs are not broken). Chain-dead styles (<= 10 sold
+    chain-wide in 12 weeks, S3's DEAD_STOCK bar) stay for markdown in place: freight to the WH frees no
+    sale anywhere."""
     for store, sku in _aged_rows(L):
         style = L.items.at[sku, "style_id"]
         if L.style_vel.get((store, style), 0.0) > AGEING_SLOW or L.style_in[(store, style)] > 0:
+            continue
+        if L.chain_sold84_style.get(style, 0) <= DEAD_MAX_SOLD_84 or not L.can_pull_back(sku):
             continue
         q = L.give_limit(store, sku, False)
         if q > 0:
@@ -664,6 +697,11 @@ def _fmt_units(n) -> str:
     return f"{int(n):,}"
 
 
+def _units(n) -> str:
+    n = int(n)
+    return f"{n:,} unit" if n == 1 else f"{n:,} units"
+
+
 def _inr(v) -> str:
     v = float(v)
     if v >= 1e7:
@@ -673,13 +711,20 @@ def _inr(v) -> str:
     return f"Rs {v:,.0f}"
 
 
+STARVED_UTILISATION = 0.5   # a store holding < 50% of its capacity is starved (its top-ups get a headline card)
+CARD_ORDER = ("CAPACITY", "NEW_LAUNCH", "SCARCITY", "STARVED", "MIN_DISPLAY", "AGEING",
+              "SOLD_OUT_CONSOLIDATION", "OVERSTOCK", "ROUTINE")
+
+
 def build_problems(groups: list[dict], data: Data, feats: Features) -> list[dict]:
-    """C2 problem cards. One per CAPACITY store, NEW_LAUNCH style, SCARCITY style, UNDERSTOCK store and
-    MIN_DISPLAY store; one combined card each for OVERSTOCK, AGEING and SOLD_OUT_CONSOLIDATION. Every
-    group sits in exactly one card."""
+    """C2 problem cards, in CARD_ORDER. One per CAPACITY store, NEW_LAUNCH style, SCARCITY style,
+    starved store (UNDERSTOCK into a store < 50% full) and MIN_DISPLAY store; one combined card each for
+    AGEING, SOLD_OUT_CONSOLIDATION and OVERSTOCK; then one "Routine top-up" card per receiving store for
+    the remaining UNDERSTOCK groups. Every group sits in exactly one card."""
     st = data.stores.set_index("store_id")
     sp = feats.sku_pos
     start_units = sp.groupby("location_id")["available"].sum()
+    starved = {s for s in st.index if start_units.get(s, 0) < STARVED_UTILISATION * int(st.at[s, "capacity"])}
     style_name = data.items.groupby("style_id")["style_name"].first()
     buckets: dict[tuple, list[dict]] = defaultdict(list)
     for g in groups:
@@ -688,14 +733,17 @@ def build_problems(groups: list[dict], data: Data, feats: Features) -> list[dict
             key = (k, g["from"])
         elif k in ("NEW_LAUNCH", "SCARCITY"):
             key = (k, g["style_id"])
-        elif k in ("UNDERSTOCK", "MIN_DISPLAY"):
+        elif k == "MIN_DISPLAY":
             key = (k, g["to"])
+        elif k == "UNDERSTOCK":
+            key = ("STARVED" if g["to"] in starved else "ROUTINE", g["to"])
         else:
             key = (k, None)
         buckets[key].append(g)
 
     cards = []
-    for (kind, ref), gs in buckets.items():
+    for (bucket, ref), gs in buckets.items():
+        kind = "UNDERSTOCK" if bucket in ("STARVED", "ROUTINE") else bucket
         units = sum(g["qty"] for g in gs)
         mrp = sum(g["mrp_value"] for g in gs)
         stores = sorted({g["to"] for g in gs if g["to"] != C.WH_ID} | {g["from"] for g in gs if g["from"] != C.WH_ID})
@@ -703,58 +751,126 @@ def build_problems(groups: list[dict], data: Data, feats: Features) -> list[dict
         if kind == "CAPACITY":
             u, cap = int(start_units.get(ref, 0)), int(st.at[ref, "capacity"])
             title = f"{ref} is at {u / cap:.0%} of capacity"
-            detail = (f"{ref} holds {_fmt_units(u)} units against capacity {_fmt_units(cap)}. Release {_fmt_units(units)} "
+            detail = (f"{ref} holds {_units(u)} against capacity {_fmt_units(cap)}. Release {_fmt_units(units)} "
                       f"units ({_fmt_units(units - back)} to stores that need them, {_fmt_units(back)} back to WH).")
         elif kind == "NEW_LAUNCH":
             ld = data.items.loc[data.items.style_id == ref, "launch_date"].min()
             days = (data.as_of - ld).days if pd.notna(ld) else None
-            title = f"{ref} {style_name.get(ref, '')} launched {days} days ago: {_fmt_units(units)} units to {len(stores)} stores"
-            detail = f"New launch: send {_fmt_units(units)} units ({_inr(mrp)} at MRP) to the {len(stores)} stores selling it, sized by need."
+            title = f"{ref} {style_name.get(ref, '')} launched {days} days ago: {_units(units)} to {len(stores)} stores"
+            detail = f"New launch: send {_units(units)} ({_inr(mrp)} at MRP) to the {len(stores)} stores selling it, sized by need."
         elif kind == "SCARCITY":
             need = int(sum(sp.loc[(sp.style_id == ref) & (sp.location_id != C.WH_ID), "need_units"]))
-            title = f"{ref} {style_name.get(ref, '')}: {_fmt_units(units)} units for {_fmt_units(need)} units of need"
+            title = f"{ref} {style_name.get(ref, '')}: {_units(units)} for {_units(need)} of need"
             detail = (f"Warehouse supply is short of demand, so {len(stores)} selling stores each get a presentation "
                       f"minimum first and the rest is split by need x velocity.")
-        elif kind == "UNDERSTOCK":
-            title = f"{ref} is short: {_fmt_units(units)} units across {len(gs)} styles"
-            detail = f"Top up {ref} to {L_TARGET_TEXT}: {_fmt_units(units)} units worth {_inr(mrp)} at MRP."
+        elif bucket == "STARVED":
+            u, cap = int(start_units.get(ref, 0)), int(st.at[ref, "capacity"])
+            n_styles = len({g["style_id"] for g in gs})
+            title = f"{ref} is starved: {_units(u)} at {u / cap:.0%} of capacity"
+            detail = (f"{ref} holds {_units(u)} against capacity {_fmt_units(cap)}. Send {_units(units)} "
+                      f"across {n_styles} styles ({_inr(mrp)} at MRP) to cover {L_TARGET_TEXT}.")
+        elif bucket == "ROUTINE":
+            n_styles = len({g["style_id"] for g in gs})
+            title = f"Routine top-up · {ref} · {n_styles} styles, {_units(units)}"
+            detail = f"Top up {ref} to {L_TARGET_TEXT}: {_units(units)} worth {_inr(mrp)} at MRP."
         elif kind == "MIN_DISPLAY":
             cats = sorted({g["category"] for g in gs})
-            title = f"{ref} is below minimum display in {', '.join(cats)}: {_fmt_units(units)} units"
-            detail = f"Bring {ref} back to its tier minimum display ({st.at[ref, 'tier']} tier) with {_fmt_units(units)} units."
+            title = f"{ref} is below minimum display in {', '.join(cats)}: {_units(units)}"
+            detail = f"Bring {ref} back to its tier minimum display ({st.at[ref, 'tier']} tier) with {_units(units)}."
         elif kind == "AGEING":
             title = f"{_fmt_units(units)} aged units are not selling where they sit"
             detail = (f"Stock older than {C.AGEING_DAYS_CORE} days (core) / {C.AGEING_DAYS_FASHION} days (fashion) selling "
-                      f"<= 0.02/day: {_fmt_units(units - back)} units move to stores that sell them, {_fmt_units(back)} go back to WH.")
+                      f"<= 0.02/day: {_units(units - back)} move to stores that sell them, {_fmt_units(back)} go back to WH.")
         elif kind == "SOLD_OUT_CONSOLIDATION":
             styles = len({g["style_id"] for g in gs})
-            title = f"{styles} styles sold out at the WH: {_fmt_units(units)} units consolidated between stores"
-            detail = f"No warehouse stock for these styles, so slow stores' surplus ({_fmt_units(units)} units, {_inr(mrp)}) moves to stores that sell them."
+            title = f"{styles} styles sold out at the WH: {_units(units)} consolidated between stores"
+            detail = f"No warehouse stock for these styles, so slow stores' surplus ({_units(units)}, {_inr(mrp)}) moves to stores that sell them."
         else:  # OVERSTOCK
-            title = f"{_fmt_units(units)} units are overstocked (> 120 days of cover)"
-            detail = (f"Deep cover rows: {_fmt_units(units - back)} units go to stores that need them, "
+            title = f"{_units(units)} are overstocked (> 120 days of cover)"
+            detail = (f"Deep cover rows: {_units(units - back)} go to stores that need them, "
                       f"{_fmt_units(back)} go back to WH.")
         cards.append({"problem_id": None, "kind": kind, "title": title, "detail": detail,
                       "group_ids": [g["group_id"] for g in gs],
-                      "_rank": sum(g["priority"] for g in gs)})
-    cards.sort(key=lambda c: (-c["_rank"], c["kind"], c["title"]))
+                      "_order": CARD_ORDER.index(bucket), "_rank": sum(g["priority"] for g in gs)})
+    cards.sort(key=lambda c: (c["_order"], -c["_rank"], c["title"]))
     for i, c in enumerate(cards, 1):
         c["problem_id"] = f"P{i:02d}"
         c.pop("_rank")
+        c.pop("_order")
     return cards
 
 
 L_TARGET_TEXT = f"lead time + {C.REVIEW_DAYS} review + {C.SAFETY_DAYS} safety days of cover"
 
 
-# ---------------------------------------------------------------- entry
-def generate_moves(data: Data, feats: Features) -> dict:
+# ---------------------------------------------------------------- materiality
+MATERIAL_RAR = 10_000                   # Rs revenue at risk a routine group must protect to be shown today
+MAX_ITERATIONS = 4      # retained revenue at risk plateaus by the 3rd re-run (~1.5 s each)
+
+
+def ban_key(typ: str, kind: str, frm: str, to: str, style: str, ship_on) -> tuple:
+    """The group key with any donor for store->store (banning one donor only makes the next donor's small
+    group). Kind, route and ship date stay in the key so a big WH send is never banned for a small
+    store->store or later-dated group of the same style."""
+    return (typ, kind, frm if frm == C.WH_ID else "*", to, style, pd.Timestamp(ship_on))
+
+
+def _group_key(g: dict) -> tuple:
+    return ban_key(g["type"], g["problem_kind"], g["from"], g["to"], g["style_id"], g["ship_on"])
+
+
+def is_material(g: dict) -> bool:
+    """Shown today if it protects >= Rs 10,000, or is a new launch / min display move, or is a pull-back.
+    Rulings (S0's list kept every CAPACITY and AGEING group, which gave ~480 groups): AGEING and CAPACITY
+    store->store moves face the revenue bar like routine moves. A held-back CAPACITY unit joins the store's
+    CAPACITY pull-back for that style, so the over-capacity store still releases every unit, in fewer groups."""
+    return (g["revenue_at_risk"] >= MATERIAL_RAR or g["type"] == "PULL_BACK"
+            or g["problem_kind"] in ALWAYS_MATERIAL)
+
+
+def _safe_to_drop(L: Ledger, g: dict) -> bool:
+    """A small group left after the last re-run may be dropped only if no rule can break: WH sends (less
+    stock at the receiver, less WH supply used), or a store->store give whose giver started within
+    capacity and fits capacity even if every receipt lands before every give (S3 replays by date, then
+    group order). Pull-backs are always material, so they never get here."""
+    if g["from"] == C.WH_ID:
+        return True
+    giver = g["from"]
+    start = L.store_start.get(giver, 0)
+    return start <= L.capacity[giver] and start + L.store_in[giver] <= L.capacity[giver]
+
+
+def _run_passes(data: Data, feats: Features, banned: set) -> tuple[Ledger, list[dict]]:
     L = Ledger(data, feats)
+    L.banned = banned
     pass1_capacity_overstock(L)
     pass5a_ageing_to_sellers(L)
     pass2_store_to_store(L)
     pass3_wh_to_store(L)
     pass4_min_display(L)
     pass5b_ageing_pull_back(L)
-    groups = assemble_groups(L)
-    return {"groups": groups, "problems": build_problems(groups, data, feats)}
+    return L, assemble_groups(L)
+
+
+# ---------------------------------------------------------------- entry
+def generate_moves(data: Data, feats: Features) -> dict:
+    """Run all passes; hold back immaterial groups by banning their ban_key() and re-running (up to
+    MAX_ITERATIONS), so freed stock and capacity flow to material moves and the ledger re-checks every
+    rule. Small groups still left are dropped only when _safe_to_drop() proves no rule can break.
+    `deferred` = the small groups of the first run (what the full plan would have shown)."""
+    banned: set[tuple] = set()
+    deferred = {"groups": 0, "units": 0, "revenue_at_risk": 0.0}
+    for it in range(MAX_ITERATIONS):
+        L, groups = _run_passes(data, feats, banned)
+        small = [g for g in groups if not is_material(g)]
+        if it == 0:
+            deferred = {"groups": len(small), "units": int(sum(g["qty"] for g in small)),
+                        "revenue_at_risk": round(float(sum(g["revenue_at_risk"] for g in small)), 2)}
+        if not small or it == MAX_ITERATIONS - 1:
+            break
+        banned |= {_group_key(g) for g in small}
+    groups = [g for g in groups if is_material(g) or not _safe_to_drop(L, g)]
+    for i, g in enumerate(groups, 1):
+        g["group_id"] = f"G{i:03d}"
+    explain_groups(groups, data, feats)
+    return {"groups": groups, "problems": build_problems(groups, data, feats), "deferred": deferred}
