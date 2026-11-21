@@ -1,7 +1,8 @@
 """Independent rule validator. Owned by S3.
 
 Re-derives start stock from raw `Data` (never from the move generator's ledger), replays every
-move line in `ship_on` order (ties: group order, then line order) and checks every rule in
+move line in `ship_on` order (same day: every give before every receipt, then group/line order)
+and checks every rule in
 spec §2 / §5.6. Written without reading engine/moves.py — independence is the point.
 
     validate(data, feats, groups) -> {"passed", "checked_moves", "violations": [{rule, group_id, detail}]}
@@ -127,61 +128,66 @@ def validate(data: Data, feats, groups: list[dict]) -> dict:
         flag("ROUND_TRIP", gets[key][0], f"{loc} {sku} is sent stock (groups {', '.join(map(str, gets[key]))}) "
                                          f"and gives stock (groups {', '.join(map(str, gives[key]))}) in the same run")
 
-    # ---- replay ----
+    # ---- replay: per ship day, every give (debit) before every receipt (credit) ----
+    # A receipt shipped on day D lands at D + lead (>= 2 days), so it can never fund a give on D;
+    # this also makes the verdict independent of the order groups are listed in.
+    replay = sorted(((e[0], phase, e[1], e[2], e[3], e[4]) for e in events for phase in (0, 1)),
+                    key=lambda r: r[:4])
     wh_sent: dict[str, int] = defaultdict(int)
-    for ship, _, _, g, ln in events:
+    for ship, phase, _, _, g, ln in replay:
         gid, frm, to, kind = g.get("group_id"), g.get("from"), g.get("to"), g.get("problem_kind")
         sku, qty = ln.get("sku_id"), int(ln.get("qty", 0))
         style, cat = sku_style.get(sku, g.get("style_id")), sku_cat.get(sku)
         if qty <= 0:
-            flag("NON_POSITIVE_QTY", gid, f"{frm} -> {to} {sku}: qty {qty}")
+            if phase == 0:
+                flag("NON_POSITIVE_QTY", gid, f"{frm} -> {to} {sku}: qty {qty}")
             continue
 
-        # receiver side, judged before this line lands
-        if frm == WH and to in store_ids and in_transit.get((to, sku), 0) > 0 and kind != "MIN_DISPLAY":
+        if phase == 0:   # giver side
+            if frm in store_ids:
+                tier = stores.at[frm, "tier"]
+                if tier == C.S_PLUS_PLUS and (frm, style) in protected:
+                    flag("FLAGSHIP_PROTECTED", gid, f"{frm} (S++) gives {qty} x {sku}; {style} is in its top-20 protected styles")
+                stock[(frm, sku)] -= qty
+                store_total[frm] -= qty
+                cat_total[(frm, cat)] -= qty
+                style_total[(frm, style)] -= qty
+                if stock[(frm, sku)] < 0:
+                    flag("NEGATIVE_STOCK", gid, f"{frm} {sku}: gives {qty}, leaves {stock[(frm, sku)]} on {_fmt(ship)}")
+                need = min_units.get((tier, cat))
+                if need is not None and cat_total[(frm, cat)] < need:
+                    flag("MIN_DISPLAY", gid, f"{frm} ({tier}) {cat}: gives {qty} x {sku}, leaves {cat_total[(frm, cat)]} "
+                                             f"units vs min display {need}")
+                if to in store_ids:
+                    v = style_vel.get((frm, style), 0.0)
+                    cover = style_total[(frm, style)] / v if v > 0 else math.inf
+                    if cover < C.DONOR_MIN_COVER_DAYS:
+                        flag("DONOR_COVER", gid, f"{frm} -> {to} {sku}: {frm} keeps {style_total[(frm, style)]} of {style} "
+                                                 f"at {v:.3g}/day = {_num(cover)} days cover (< {C.DONOR_MIN_COVER_DAYS})")
+            elif frm == WH:
+                wh_sent[sku] += qty
+                supply = wh_supply(sku, ship)
+                if wh_sent[sku] > supply:
+                    flag("WH_NEGATIVE", gid, f"WH -> {to} {sku}: {wh_sent[sku]} sent by {_fmt(ship)} but only {supply} "
+                                             f"available at WH-KOL by then")
+            continue
+
+        # phase 1: receiver side
+        if to not in store_ids:
+            continue
+        if frm == WH and in_transit.get((to, sku), 0) > 0 and kind != "MIN_DISPLAY":
             have = stock[(to, sku)]
             target = math.ceil(vel.get((to, sku), 0.0) * (C.LEAD_WH[stores.at[to, "zone"]] + C.REVIEW_DAYS + C.SAFETY_DAYS))
             if have >= target:
                 flag("IN_TRANSIT", gid, f"WH -> {to} {sku}: store already has {have} incl. {in_transit[(to, sku)]} "
                                         f"in transit vs target {target}; sending {qty} more")
-
-        # giver side
-        if frm in store_ids:
-            tier = stores.at[frm, "tier"]
-            if tier == C.S_PLUS_PLUS and (frm, style) in protected:
-                flag("FLAGSHIP_PROTECTED", gid, f"{frm} (S++) gives {qty} x {sku}; {style} is in its top-20 protected styles")
-            stock[(frm, sku)] -= qty
-            store_total[frm] -= qty
-            cat_total[(frm, cat)] -= qty
-            style_total[(frm, style)] -= qty
-            if stock[(frm, sku)] < 0:
-                flag("NEGATIVE_STOCK", gid, f"{frm} {sku}: gives {qty}, leaves {stock[(frm, sku)]} on {_fmt(ship)}")
-            need = min_units.get((tier, cat))
-            if need is not None and cat_total[(frm, cat)] < need:
-                flag("MIN_DISPLAY", gid, f"{frm} ({tier}) {cat}: gives {qty} x {sku}, leaves {cat_total[(frm, cat)]} "
-                                         f"units vs min display {need}")
-            if to in store_ids:
-                v = style_vel.get((frm, style), 0.0)
-                cover = style_total[(frm, style)] / v if v > 0 else math.inf
-                if cover < C.DONOR_MIN_COVER_DAYS:
-                    flag("DONOR_COVER", gid, f"{frm} -> {to} {sku}: {frm} keeps {style_total[(frm, style)]} of {style} "
-                                             f"at {v:.3g}/day = {_num(cover)} days cover (< {C.DONOR_MIN_COVER_DAYS})")
-        elif frm == WH:
-            wh_sent[sku] += qty
-            supply = wh_supply(sku, ship)
-            if wh_sent[sku] > supply:
-                flag("WH_NEGATIVE", gid, f"WH -> {to} {sku}: {wh_sent[sku]} sent by {_fmt(ship)} but only {supply} "
-                                         f"available at WH-KOL by then")
-
-        # receiver side, after this line lands
-        if to in store_ids:
-            stock[(to, sku)] += qty
-            store_total[to] += qty
-            cat_total[(to, cat)] += qty
-            style_total[(to, style)] += qty
-            cap = int(stores.at[to, "capacity"])
-            if store_total[to] > cap:
-                flag("CAPACITY", gid, f"{frm} -> {to} {qty} x {sku}: {to} would hold {store_total[to]} units vs "
-                                      f"capacity {cap} ({store_total[to] / cap:.0%})")
+        stock[(to, sku)] += qty
+        store_total[to] += qty
+        cat_total[(to, cat)] += qty
+        style_total[(to, style)] += qty
+        cap = int(stores.at[to, "capacity"])
+        if store_total[to] > cap:
+            flag("CAPACITY", gid, f"{frm} -> {to} {qty} x {sku}: {to} would hold {store_total[to]} units vs "
+                                  f"capacity {cap} ({store_total[to] / cap:.0%})")
 
     return {"passed": len(violations) == 0, "checked_moves": len(events), "violations": violations}

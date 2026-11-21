@@ -153,3 +153,12 @@ def test_violation_shape_and_checked_moves(df):
     assert out["checked_moves"] == 2 and out["passed"] is False
     for v in out["violations"]:
         assert set(v) == {"rule", "group_id", "detail"} and "\n" not in v["detail"]
+
+
+def test_same_day_order_independent(df):
+    # A receipt shipped the same day lands >= 2 days later, so it cannot fund a same-day give:
+    # MZF-01 Mojari 5 (< min 8) gives 1 while WH sends it 10 the same day -> MIN_DISPLAY in either list order.
+    recv = grp("G1", "WH_TO_STORE", "WH-KOL", "MZF-01", "MOJ-01-9", 10, kind="MIN_DISPLAY")
+    give = grp("G2", "STORE_TO_STORE", "MZF-01", "PAT-03", "MOJ-01-6", 1)
+    a, b = rules_hit(df, [recv, give]), rules_hit(df, [give, recv])
+    assert a == b and "MIN_DISPLAY" in a
