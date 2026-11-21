@@ -182,7 +182,7 @@ sequenceDiagram
     UI->>API: POST /api/groups/{id}/decision
     M->>UI: Export approved CSV
     API-->>FO: /api/notifications/today (via Claude Code skill)
-    FO-->>M: email, text or call; area managers get ≤ 5 alerts a week
+    FO-->>M: email, text or call (area managers get at most 5 alerts a week)
 ```
 
 ---
