@@ -28,7 +28,7 @@ AGEING_DAYS_CORE = 180
 AGEING_DAYS_FASHION = 90
 LIFT_MIN, LIFT_MAX = 1.0, 3.5
 SEASON_END = "2026-12-12"          # last wedding date in the calendar for 2026
-CHAIN_DAILY_SANITY = (300, 450)    # expected chain forecast units/day for the next 30 days
+CHAIN_DAILY_SANITY = (300, 500)    # expected chain forecast units/day, next 30 days (Nov 2025 ran 434; Diwali + weddings fall in Nov 2026)
 
 MOVE_TYPES = ("WH_TO_STORE", "STORE_TO_STORE", "PULL_BACK")
 PROBLEM_KINDS = ("CAPACITY", "OVERSTOCK", "UNDERSTOCK", "SCARCITY", "NEW_LAUNCH",
