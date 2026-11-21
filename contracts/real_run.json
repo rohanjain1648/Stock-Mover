@@ -1,7 +1,7 @@
 {
- "run_id": "20261121T074642Z",
+ "run_id": "20261121T081148Z",
  "as_of": "2026-10-31",
- "generated_at": "2026-11-21T07:46:42+00:00",
+ "generated_at": "2026-11-21T08:11:48+00:00",
  "trigger": "manual",
  "summary": {
   "n_groups": 278,
@@ -121,46 +121,22 @@
   {
    "problem_id": "P04",
    "kind": "SCARCITY",
-   "title": "IW-04 Mint Asymmetric Indo-Western: 4 units for 35 units of need",
-   "detail": "Warehouse supply is short of demand, so 2 selling stores each get a presentation minimum first and the rest is split by need x velocity.",
+   "title": "Small warehouse shortages · 4 styles: 12 units for 156 units of need",
+   "detail": "The warehouse holds only a few units of IW-02, IW-04, IW-05, SHW-05; each unit goes to the selling store that needs it most. Buyer to review re-orders.",
    "group_ids": [
+    "G076",
+    "G103",
     "G111",
     "G112",
+    "G115",
+    "G138",
+    "G143",
+    "G174",
     "G199"
    ]
   },
   {
    "problem_id": "P05",
-   "kind": "SCARCITY",
-   "title": "IW-05 Onion Pink Mirror-work Indo-Western: 3 units for 32 units of need",
-   "detail": "Warehouse supply is short of demand, so 3 selling stores each get a presentation minimum first and the rest is split by need x velocity.",
-   "group_ids": [
-    "G103",
-    "G143",
-    "G174"
-   ]
-  },
-  {
-   "problem_id": "P06",
-   "kind": "SCARCITY",
-   "title": "SHW-05 Rust Silk Zari Sherwani: 2 units for 36 units of need",
-   "detail": "Warehouse supply is short of demand, so 2 selling stores each get a presentation minimum first and the rest is split by need x velocity.",
-   "group_ids": [
-    "G115",
-    "G138"
-   ]
-  },
-  {
-   "problem_id": "P07",
-   "kind": "SCARCITY",
-   "title": "IW-02 Cream Draped Indo-Western: 3 units for 53 units of need",
-   "detail": "Warehouse supply is short of demand, so 1 selling stores each get a presentation minimum first and the rest is split by need x velocity.",
-   "group_ids": [
-    "G076"
-   ]
-  },
-  {
-   "problem_id": "P08",
    "kind": "UNDERSTOCK",
    "title": "MZF-01 is starved: 128 units at 37% of capacity",
    "detail": "MZF-01 holds 128 units against capacity 350. Send 100 units across 11 styles (Rs 5.3 L at MRP) to cover lead time + 7 review + 7 safety days of cover.",
@@ -179,7 +155,7 @@
    ]
   },
   {
-   "problem_id": "P09",
+   "problem_id": "P06",
    "kind": "AGEING",
    "title": "161 aged units are not selling where they sit",
    "detail": "Stock older than 180 days (core) / 90 days (fashion) selling <= 0.02/day: 89 units move to stores that sell them, 72 go back to WH.",
@@ -276,7 +252,7 @@
    ]
   },
   {
-   "problem_id": "P10",
+   "problem_id": "P07",
    "kind": "SOLD_OUT_CONSOLIDATION",
    "title": "1 styles sold out at the WH: 1 unit consolidated between stores",
    "detail": "No warehouse stock for these styles, so slow stores' surplus (1 unit, Rs 26,899) moves to stores that sell them.",
@@ -285,7 +261,7 @@
    ]
   },
   {
-   "problem_id": "P11",
+   "problem_id": "P08",
    "kind": "OVERSTOCK",
    "title": "86 units are overstocked (> 120 days of cover)",
    "detail": "Deep cover rows: 66 units go to stores that need them, 20 go back to WH.",
@@ -303,7 +279,7 @@
    ]
   },
   {
-   "problem_id": "P12",
+   "problem_id": "P09",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · PAT-01 · 12 styles, 137 units",
    "detail": "Top up PAT-01 to lead time + 7 review + 7 safety days of cover: 137 units worth Rs 9.4 L at MRP.",
@@ -323,7 +299,7 @@
    ]
   },
   {
-   "problem_id": "P13",
+   "problem_id": "P10",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · BLR-02 · 8 styles, 58 units",
    "detail": "Top up BLR-02 to lead time + 7 review + 7 safety days of cover: 58 units worth Rs 4.4 L at MRP.",
@@ -339,7 +315,7 @@
    ]
   },
   {
-   "problem_id": "P14",
+   "problem_id": "P11",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · LKO-04 · 6 styles, 65 units",
    "detail": "Top up LKO-04 to lead time + 7 review + 7 safety days of cover: 65 units worth Rs 4.3 L at MRP.",
@@ -353,7 +329,7 @@
    ]
   },
   {
-   "problem_id": "P15",
+   "problem_id": "P12",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · BLR-04 · 10 styles, 61 units",
    "detail": "Top up BLR-04 to lead time + 7 review + 7 safety days of cover: 61 units worth Rs 3.7 L at MRP.",
@@ -371,7 +347,7 @@
    ]
   },
   {
-   "problem_id": "P16",
+   "problem_id": "P13",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · BLR-01 · 6 styles, 19 units",
    "detail": "Top up BLR-01 to lead time + 7 review + 7 safety days of cover: 19 units worth Rs 2.7 L at MRP.",
@@ -385,7 +361,7 @@
    ]
   },
   {
-   "problem_id": "P17",
+   "problem_id": "P14",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · LKO-02 · 8 styles, 24 units",
    "detail": "Top up LKO-02 to lead time + 7 review + 7 safety days of cover: 24 units worth Rs 2.0 L at MRP.",
@@ -401,7 +377,7 @@
    ]
   },
   {
-   "problem_id": "P18",
+   "problem_id": "P15",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · LKO-01 · 4 styles, 15 units",
    "detail": "Top up LKO-01 to lead time + 7 review + 7 safety days of cover: 15 units worth Rs 1.9 L at MRP.",
@@ -413,7 +389,7 @@
    ]
   },
   {
-   "problem_id": "P19",
+   "problem_id": "P16",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · PAT-02 · 4 styles, 18 units",
    "detail": "Top up PAT-02 to lead time + 7 review + 7 safety days of cover: 18 units worth Rs 2.5 L at MRP.",
@@ -426,7 +402,7 @@
    ]
   },
   {
-   "problem_id": "P20",
+   "problem_id": "P17",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · PAT-03 · 3 styles, 11 units",
    "detail": "Top up PAT-03 to lead time + 7 review + 7 safety days of cover: 11 units worth Rs 2.0 L at MRP.",
@@ -437,7 +413,7 @@
    ]
   },
   {
-   "problem_id": "P21",
+   "problem_id": "P18",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · MZF-02 · 3 styles, 15 units",
    "detail": "Top up MZF-02 to lead time + 7 review + 7 safety days of cover: 15 units worth Rs 1.4 L at MRP.",
@@ -448,7 +424,7 @@
    ]
   },
   {
-   "problem_id": "P22",
+   "problem_id": "P19",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · MYS-01 · 4 styles, 19 units",
    "detail": "Top up MYS-01 to lead time + 7 review + 7 safety days of cover: 19 units worth Rs 1.3 L at MRP.",
@@ -461,7 +437,7 @@
    ]
   },
   {
-   "problem_id": "P23",
+   "problem_id": "P20",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · MYS-02 · 4 styles, 10 units",
    "detail": "Top up MYS-02 to lead time + 7 review + 7 safety days of cover: 10 units worth Rs 1.4 L at MRP.",
@@ -474,7 +450,7 @@
    ]
   },
   {
-   "problem_id": "P24",
+   "problem_id": "P21",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · BLR-03 · 4 styles, 7 units",
    "detail": "Top up BLR-03 to lead time + 7 review + 7 safety days of cover: 7 units worth Rs 1.1 L at MRP.",
@@ -486,7 +462,7 @@
    ]
   },
   {
-   "problem_id": "P25",
+   "problem_id": "P22",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · LKO-03 · 4 styles, 11 units",
    "detail": "Top up LKO-03 to lead time + 7 review + 7 safety days of cover: 11 units worth Rs 90,089 at MRP.",
@@ -498,7 +474,7 @@
    ]
   },
   {
-   "problem_id": "P26",
+   "problem_id": "P23",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · KNP-02 · 2 styles, 8 units",
    "detail": "Top up KNP-02 to lead time + 7 review + 7 safety days of cover: 8 units worth Rs 59,792 at MRP.",
@@ -508,7 +484,7 @@
    ]
   },
   {
-   "problem_id": "P27",
+   "problem_id": "P24",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · BLR-05 · 1 styles, 3 units",
    "detail": "Top up BLR-05 to lead time + 7 review + 7 safety days of cover: 3 units worth Rs 83,097 at MRP.",
@@ -517,7 +493,7 @@
    ]
   },
   {
-   "problem_id": "P28",
+   "problem_id": "P25",
    "kind": "UNDERSTOCK",
    "title": "Routine top-up · PAT-04 · 1 styles, 3 units",
    "detail": "Top up PAT-04 to lead time + 7 review + 7 safety days of cover: 3 units worth Rs 15,297 at MRP.",

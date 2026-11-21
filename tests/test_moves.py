@@ -100,3 +100,12 @@ def test_validator_passes(ctx):
     from engine.interfaces import validate
     v = validate(data, feats, res["groups"])
     assert v["passed"], v["violations"][:5]
+
+
+def test_small_shortages_share_one_card(ctx):
+    _, _, res = ctx
+    gid_qty = {g["group_id"]: g["qty"] for g in res["groups"]}
+    scarcity = [p for p in res["problems"] if p["kind"] == "SCARCITY"]
+    singles = [p for p in scarcity if not p["title"].startswith("Small warehouse shortages")]
+    assert all(sum(gid_qty[i] for i in p["group_ids"]) >= 10 for p in singles)
+    assert sum(1 for p in scarcity if p["title"].startswith("Small warehouse shortages")) <= 1

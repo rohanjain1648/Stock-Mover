@@ -712,6 +712,8 @@ def _inr(v) -> str:
 
 
 STARVED_UTILISATION = 0.5   # a store holding < 50% of its capacity is starved (its top-ups get a headline card)
+SMALL_SHORTAGE_UNITS = 10   # shortage styles sending fewer units than this share one combined card
+SMALL_SHORTAGE_REF = "_SMALL"
 CARD_ORDER = ("CAPACITY", "NEW_LAUNCH", "SCARCITY", "STARVED", "MIN_DISPLAY", "AGEING",
               "SOLD_OUT_CONSOLIDATION", "OVERSTOCK", "ROUTINE")
 
@@ -726,11 +728,17 @@ def build_problems(groups: list[dict], data: Data, feats: Features) -> list[dict
     start_units = sp.groupby("location_id")["available"].sum()
     starved = {s for s in st.index if start_units.get(s, 0) < STARVED_UTILISATION * int(st.at[s, "capacity"])}
     style_name = data.items.groupby("style_id")["style_name"].first()
+    scarcity_units: dict[str, int] = defaultdict(int)
+    for g in groups:
+        if g["problem_kind"] == "SCARCITY":
+            scarcity_units[g["style_id"]] += g["qty"]
     buckets: dict[tuple, list[dict]] = defaultdict(list)
     for g in groups:
         k = g["problem_kind"]
         if k == "CAPACITY":
             key = (k, g["from"])
+        elif k == "SCARCITY" and scarcity_units[g["style_id"]] < SMALL_SHORTAGE_UNITS:
+            key = (k, SMALL_SHORTAGE_REF)
         elif k in ("NEW_LAUNCH", "SCARCITY"):
             key = (k, g["style_id"])
         elif k == "MIN_DISPLAY":
@@ -758,6 +766,12 @@ def build_problems(groups: list[dict], data: Data, feats: Features) -> list[dict
             days = (data.as_of - ld).days if pd.notna(ld) else None
             title = f"{ref} {style_name.get(ref, '')} launched {days} days ago: {_units(units)} to {len(stores)} stores"
             detail = f"New launch: send {_units(units)} ({_inr(mrp)} at MRP) to the {len(stores)} stores selling it, sized by need."
+        elif kind == "SCARCITY" and ref == SMALL_SHORTAGE_REF:
+            styles = sorted({g["style_id"] for g in gs})
+            need = int(sp.loc[sp.style_id.isin(styles) & (sp.location_id != C.WH_ID), "need_units"].sum())
+            title = f"Small warehouse shortages · {len(styles)} styles: {_units(units)} for {_units(need)} of need"
+            detail = (f"The warehouse holds only a few units of {', '.join(styles)}; each unit goes to the selling "
+                      f"store that needs it most. Buyer to review re-orders.")
         elif kind == "SCARCITY":
             need = int(sum(sp.loc[(sp.style_id == ref) & (sp.location_id != C.WH_ID), "need_units"]))
             title = f"{ref} {style_name.get(ref, '')}: {_units(units)} for {_units(need)} of need"
