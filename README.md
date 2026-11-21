@@ -6,7 +6,7 @@ Every morning Stock Mover reads Manyavar's sales and stock, finds stock in the w
 merchandiser a ranked, ready-to-approve list of **warehouse sends, store-to-store moves and pull-backs** —
 each explained in one line, checked against every rule, and delivered to the people who act on it.
 
-- **Live app:** _VERCEL_URL_ · **API:** _RENDER_URL_/api/health
+- **Live app:** https://stock-mover-teal.vercel.app · **API:** https://stock-mover-api.onrender.com/api/health
 - Design: [docs/superpowers/specs/2026-11-21-stock-mover-design.md](docs/superpowers/specs/2026-11-21-stock-mover-design.md) · Contracts: [contracts/CONTRACTS.md](contracts/CONTRACTS.md)
 
 ## What today's run finds (data as of close 31 Oct 2026)
@@ -35,7 +35,7 @@ each explained in one line, checked against every rule, and delivered to the peo
 4. **Moves** — one ledger, five passes: capacity/overstock → store-to-store → warehouse allocation under scarcity (by date, inbound-aware) → minimum display → ageing.
 5. **Rules enforced** — minimum display, S++ top-20 protection, capacity, in-transit, 30-day donor cover (style level), lead times; > ₹1 lakh needs sign-off.
 6. **Explained** — every line is built from the numbers, e.g. *"WH → LKO-01 · 128 × KUR-04 (M27 L50 XL34 XXL17): new launch (20 Sep) selling 62.2/day chain-wide; LKO-01 holds 0; similar stores sell 7.0/day."*
-7. **Runs on its own** — 07:00 IST scheduler in the API + a daily GitHub Action; email digest to the merchandiser, ≤ 5 alerts per area manager per week (their `max_alerts_per_week`), and a Claude Code skill that hands the day's alerts to **Fo (Wajo)** to email, text or call.
+7. **Runs on its own** — 07:00 IST scheduler in the API + a daily GitHub Action; email digest to the merchandiser, ≤ 5 alerts per area manager per week (their `max_alerts_per_week`), and a Claude Code skill ([.claude/skills/dispatch-alerts](.claude/skills/dispatch-alerts/SKILL.md)) that hands the day's alerts to **Fo (Wajo)** to email, text or call.
 
 ## Run it
 ```bash

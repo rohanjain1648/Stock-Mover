@@ -1,0 +1,5 @@
+{
+  "merchandiser": { "name": "Merchandiser", "email": "you@example.com", "phone": "+91XXXXXXXXXX" },
+  "AM-01": { "name": "Rakesh Srivastava", "phone": "+91XXXXXXXXXX", "email": "" },
+  "AM-02": { "name": "Alok Tiwari", "phone": "+91XXXXXXXXXX", "email": "" }
+}
