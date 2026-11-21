@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Warm Manyavar-brief palette, as HSL channels for the shadcn variables. */
+@layer base {
+  :root {
+    --background: 40 65% 95.5%;      /* cream #FBF6EC */
+    --foreground: 27 12% 15%;        /* ink #2B2622 */
+
+    --card: 40 60% 98.5%;
+    --card-foreground: 27 12% 15%;
+
+    --popover: 40 60% 98.5%;
+    --popover-foreground: 27 12% 15%;
+
+    --primary: 22 76% 48%;           /* saffron #D9641E */
+    --primary-foreground: 40 65% 97%;
+
+    --secondary: 38 35% 90%;
+    --secondary-foreground: 27 12% 15%;
+
+    --muted: 38 35% 91%;
+    --muted-foreground: 27 8% 38%;
+
+    --accent: 30 50% 90%;
+    --accent-foreground: 27 12% 15%;
+
+    --destructive: 0 45% 33%;        /* maroon #7A2E2E */
+    --destructive-foreground: 40 65% 97%;
+
+    --border: 35 25% 84%;
+    --input: 35 25% 80%;
+    --ring: 22 76% 48%;
+
+    --radius: 0.6rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
